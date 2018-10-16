@@ -1,0 +1,26 @@
+  input{
+    border:none;
+    background-color: transparent;
+    outline: none;
+    padding-left: 1%;
+  }
+  input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+  i{
+    color: gray;
+  }
+  
+  .input-group{
+    border: 1px gray solid;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    background: white;
+    color: #181818;
+
+    outline: none;
+  }
