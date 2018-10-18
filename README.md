@@ -1,6 +1,6 @@
 # VinylApp Frontend
-![logo](img/logo.png)
-![logo negativo](img/logo-neg.png)
+![logo](https://github.com/Uniandes-isis2603/s3-front-TiendaDiscos/blob/master/img/Logo.png "Logo")
+![logo negativo](https://github.com/Uniandes-isis2603/s3-front-TiendaDiscos/blob/master/img/Logo-neg.png "Logo Negativo")
 
 
 
