@@ -1,7 +1,9 @@
 <app-searchbar></app-searchbar>
 <app-navbar></app-navbar>
-<div style="height: 10vh;"></div>
-<a routerLink="/">Home</a>
-<a routerLink="/lazy">Lazy</a>
-<a routerLink="/lazy/nested">Lazy_Nested</a>
-<router-outlet></router-outlet>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-10">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
