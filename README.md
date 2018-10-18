@@ -1,9 +1,10 @@
-# Angular Universal Starter
+# VinylApp Frontend
+![logo](img/logo.png)
+![logo negativo](img/logo-neg.png)
 
-![Angular Universal](https://angular.io/assets/images/logos/concept-icons/universal.png)
 
-A minimal Angular starter for Universal JavaScript using the [Angular CLI](https://github.com/angular/angular-cli)
-If you're looking for the Angular Universal repo go to [**angular/universal**](https://github.com/angular/universal)  
+
+
 
 ## Getting Started
 
