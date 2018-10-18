@@ -1,2 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import url("./assets/bootstrap.css")
+@import url("./assets/bootstrap.css");
+.btn:hover,.btn:active, .btn:focus, .btn:visited{
+    outline: none !important;
+  
+  }

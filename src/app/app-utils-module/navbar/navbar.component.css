@@ -1,0 +1,41 @@
+div.col-2{
+  height: 90vh;
+  margin-top: 10vh;
+  position: fixed;
+  background: var(--gray-dark);
+  padding: 2vh 0;
+}
+
+.titulo{
+  color:#f2f2f2;
+  font-weight: 600;
+  font-size: 1.5em;
+  padding-left: 5vh;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  border-left: 5px solid var(--primary);
+}
+.nav{
+  margin-left: 5vh;
+}
+.nav *{
+  margin-left: 0;
+  padding-left: 0;
+}
+.nav a{
+  color: #ADAFB2;
+  font-weight: bolder;
+}
+.nav a:hover,.nav a:active{
+  color: #f2f2f2;
+}
+
+.nav span{
+  color: #ADAFB2;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+.navegacion{
+  overflow: scroll;
+  max-height: 70vh;
+}

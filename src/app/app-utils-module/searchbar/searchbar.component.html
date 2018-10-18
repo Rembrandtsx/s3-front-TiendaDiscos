@@ -1,9 +1,11 @@
 <div class="container-fluid">
     <div class="row" style="height: 10vh; position: fixed; background: var(--dark); width: 100vw;">
-    
-        <div class="col-2"> <a href="#" ><img src="../../../assets/logo.png" alt="" style="max-height: 10vh;"></a></div>
-        
-        <div class="search col-8" style="display: flex; flex-direction: column; justify-content: space-around">
+        <!--Imagen-->
+        <div class="col-2"> 
+            <a href="#" ><img src="../../../assets/logo.png" alt="" style="height: 10vh;"></a>
+        </div>
+        <!--Barra de Navegación-->
+        <div class="search col-7" style="display: flex; flex-direction: column; justify-content: space-around">
             <div class="input-group">
                 <span>
                     <i class="fas fa-search"></i>
@@ -11,6 +13,21 @@
                 <input type="text" placeholder="Search" />
                 
             </div> 
-          </div>
+        </div>
+        <!--Perfil Usuario/Boton de Login-->
+        <div class="col-3 " style="display: flex; flex-direction: column; justify-content: center; padding: 0 5vw;">
+            <div ngbDropdown class="d-inline-block">
+                <div class="profile" ngbDropdownToggle>
+                    <img src="https://via.placeholder.com/150x150" alt="" class="pic">
+                    <div class="btn " id="dropdownBasic1" >Nombre de Usuario</div>
+                    <i class="fas fa-chevron-down"></i>
+                </div> 
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1" style="background: #000;">
+                        <button class="dropdown-item">Mi Cuenta</button>
+                        <button class="dropdown-item">Transacciones</button>
+                        <button class="dropdown-item">Salir</button>
+                    </div>
+            </div>
+        </div>
     </div>
 </div>

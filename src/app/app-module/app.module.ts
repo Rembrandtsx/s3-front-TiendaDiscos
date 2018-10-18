@@ -5,23 +5,26 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 import { AppComponent } from './app-component/app.component';
-import { SearchBarComponent } from '../app-utils-module/searchbar/searchbar.component';
+
 
 import { HomeComponent } from '../app-utils-module/home/home.component';
 import {TransferHttpCacheModule} from '@nguniversal/common';
 import { routes } from './routes';
 
+import { UtilsModule } from '../app-utils-module/utils.module';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    SearchBarComponent
+
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
     RouterModule.forRoot(routes),
     NgbModule,
     TransferHttpCacheModule,
+    UtilsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
