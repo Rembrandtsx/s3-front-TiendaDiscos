@@ -1,0 +1,12 @@
+.router-outlet{
+    position: fixed; 
+    margin-top: 10vh; 
+    margin-left: calc(100vw*2/12); 
+    height: 90vh;
+    overflow-y: scroll;
+    background: #212121;
+    padding: 5vw;
+}
+.router-outlet .row {
+    margin: 0;
+}
