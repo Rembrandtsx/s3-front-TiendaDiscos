@@ -12,6 +12,7 @@ import {TransferHttpCacheModule} from '@nguniversal/common';
 import { routes } from './routes';
 
 import { UtilsModule } from '../app-utils-module/utils.module';
+import { TransaccionModule } from '../transaccion/transaccion.module';
 
 @NgModule({
   declarations: [
@@ -22,9 +23,12 @@ import { UtilsModule } from '../app-utils-module/utils.module';
     RouterModule.forRoot(routes),
     NgbModule,
     TransferHttpCacheModule,
-    UtilsModule
+    UtilsModule,
+    TransaccionModule,
+
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports:[]
 })
 export class AppModule { }
