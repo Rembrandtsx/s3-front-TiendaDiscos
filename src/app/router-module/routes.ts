@@ -1,3 +1,4 @@
+import { Routes } from '@angular/router';
 //AQUI SE MANEJAN LAS RUTAS DE LA APP
 
 import { HomeComponent } from '../app-utils-module/home/home.component'
@@ -7,7 +8,7 @@ import { TransaccionListComponent } from '../transaccion/transaccion-list/transa
 
 
 
-export const routes = [
+export const routes : Routes = [
     { path: '', component: HomeComponent, pathMatch: 'full'},
     { path: 'map', component: SearchBarComponent, pathMatch: 'full'},
     { path: 'transacciones', component:TransaccionListComponent , pathMatch: 'full' }
