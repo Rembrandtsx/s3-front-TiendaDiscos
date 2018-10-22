@@ -7,7 +7,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app-component/app.component';
 
 
-import { HomeComponent } from '../app-utils-module/home/home.component';
+
 import {TransferHttpCacheModule} from '@nguniversal/common';
 import { routes } from './routes';
 
@@ -16,9 +16,7 @@ import { TransaccionModule } from '../transaccion/transaccion.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-
+    AppComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
