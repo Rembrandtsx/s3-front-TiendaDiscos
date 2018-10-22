@@ -10,21 +10,21 @@ import { AppComponent } from './app-component/app.component';
 import { HomeComponent } from '../app-utils-module/home/home.component';
 import {TransferHttpCacheModule} from '@nguniversal/common';
 import { routes } from './routes';
-
 import { UtilsModule } from '../app-utils-module/utils.module';
+import {vinilomoduleModule} from '../vinilomodule';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
     RouterModule.forRoot(routes),
     NgbModule,
     TransferHttpCacheModule,
-    UtilsModule
+    UtilsModule,
+    vinilomoduleModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
