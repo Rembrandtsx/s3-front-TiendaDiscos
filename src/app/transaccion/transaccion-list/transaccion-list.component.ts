@@ -5,6 +5,7 @@ import { TransaccionService}  from '../transaccion.service';
 @Component({
   selector: 'list-transacciones',
   templateUrl: './transaccion-list.component.html',
+  styleUrls:['./transaccion-list.component.css']
 })
 export class TransaccionListComponent implements OnInit {
 

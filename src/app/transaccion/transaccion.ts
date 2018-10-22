@@ -10,4 +10,5 @@ export interface Transaccion{
     /**
      *  de una transaccion
      */
+    url: string;
 }

@@ -1,11 +1,39 @@
 [
     {
-        "id": 3
+        "id": 3,
+        "url": "https://jazztojazz.com/wp-content/uploads/feeling-good-vinil.jpg"
     },
     {
-        "id": 9
+        "id": 6,
+        "url": "https://www.cutoff.es/422-large_default/vinilo-color-rojo.jpg"
     },
     {
-        "id": 13
+        "id": 9,
+        "url": "https://image.freepik.com/vector-gratis/disco-vinilo_1021-30.jpg"
+    },
+    {
+        "id": 3,
+        "url": "https://jazztojazz.com/wp-content/uploads/feeling-good-vinil.jpg"
+    },
+    {
+        "id": 6,
+        "url": "https://www.cutoff.es/422-large_default/vinilo-color-rojo.jpg"
+    },
+    {
+        "id": 9,
+        "url": "https://image.freepik.com/vector-gratis/disco-vinilo_1021-30.jpg"
+    },
+    {
+        "id": 3,
+        "url": "https://jazztojazz.com/wp-content/uploads/feeling-good-vinil.jpg"
+    },
+    {
+        "id": 6,
+        "url": "https://www.cutoff.es/422-large_default/vinilo-color-rojo.jpg"
+    },
+    {
+        "id": 9,
+        "url": "https://image.freepik.com/vector-gratis/disco-vinilo_1021-30.jpg"
     }
+    
 ]

@@ -28,6 +28,7 @@ import { TransaccionModule } from '../transaccion/transaccion.module';
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports:[]
 })
 export class AppModule { }
