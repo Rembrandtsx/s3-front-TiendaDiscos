@@ -1,3 +1,37 @@
-<p>
-  billinginformation-list works!
-</p>
+<div class="titulo mx-auto text-center">
+  <h1 class="display-4">Pricing</h1>
+</div>
+<div class="container" *ngFor="let billingInformation of billingsInformation">
+  <div class="card-deck mb-3 text-center">
+    <div class="card mb-4 box-shadow">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Cuenta De Ahorros</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="">{{billingInformation.cuentaDeAhorros}}</h1>
+        <ul class="list-unstyled mt-3 mb-4">
+        </ul>
+      </div>
+    </div>
+    <div class="card mb-4 box-shadow">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Gastado</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">$ {{billingInformation.spent}}</h1>
+        <ul class="list-unstyled mt-3 mb-4">
+        </ul>
+      </div>
+    </div>
+    <div class="card mb-4 box-shadow">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Recibido</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">$ {{billingInformation.received}} </h1>
+        <ul class="list-unstyled mt-3 mb-4">
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>

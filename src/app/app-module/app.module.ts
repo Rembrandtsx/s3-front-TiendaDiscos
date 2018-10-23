@@ -13,6 +13,8 @@ import { routes } from './routes';
 
 import { UtilsModule } from '../app-utils-module/utils.module';
 import { TransaccionModule } from '../transaccion/transaccion.module';
+import { BillinginformationModule } from '../billinginformation/billinginformation.module';
+
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { TransaccionModule } from '../transaccion/transaccion.module';
     TransferHttpCacheModule,
     UtilsModule,
     TransaccionModule,
+    BillinginformationModule
 
   ],
   providers: [],
