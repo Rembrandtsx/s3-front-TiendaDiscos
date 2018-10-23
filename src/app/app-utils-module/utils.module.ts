@@ -5,6 +5,7 @@ import { NavbarBarComponent } from './navbar/navbar.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
+import { RouterVinylAppModule } from '../router-module/router.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { HomeComponent } from './home/home.component';
     HomeComponent
   ],
   imports: [
-    NgbModule
+    NgbModule,
+    RouterVinylAppModule
   ],
   providers: [],
   bootstrap: [],

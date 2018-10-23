@@ -13,3 +13,6 @@
     outline: none !important;
   
   }
+  .dropdown-menu .show{
+    z-index: 1000;
+  }
