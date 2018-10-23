@@ -10,7 +10,7 @@ import { AppComponent } from './app-component/app.component';
 
 import {TransferHttpCacheModule} from '@nguniversal/common';
 
-import { AppRoutingModule } from '../router-module/router.module';
+import { RouterVinylAppModule } from '../router-module/router.module';
 import { UtilsModule } from '../app-utils-module/utils.module';
 import { TransaccionModule } from '../transaccion/transaccion.module';
 
@@ -21,7 +21,7 @@ import { TransaccionModule } from '../transaccion/transaccion.module';
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
-    AppRoutingModule,
+    RouterVinylAppModule,
     NgbModule,
     TransferHttpCacheModule,
     UtilsModule,
