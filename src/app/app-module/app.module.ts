@@ -11,11 +11,13 @@ import { UtilsModule } from '../app-utils-module/utils.module';
 import { TransaccionModule } from '../transaccion/transaccion.module';
 import { BillinginformationModule } from '../billinginformation/billinginformation.module';
 import {ViniloModule} from '../vinilo/vinilo.module';
+import { UsuarioModule } from '../UsuariosModule/usuario.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent ],
+    AppComponent
+   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
     RouterVinylAppModule,
@@ -24,7 +26,8 @@ import {ViniloModule} from '../vinilo/vinilo.module';
     UtilsModule,
     TransaccionModule,
     BillinginformationModule,
-    ViniloModule
+    ViniloModule,
+    UsuarioModule
   ],
   providers: [],
   bootstrap: [AppComponent],
