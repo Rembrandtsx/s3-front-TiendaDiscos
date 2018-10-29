@@ -1,0 +1,34 @@
+<div class="container2">
+    <div class="login-wrapper">
+        <div class="login-form">
+            <h1 class="display-4" style="color: #fff;margin-bottom: 1em;">Registro</h1>
+          
+
+          <!-- username --> 
+          <div class="username">
+            <label><span class="entypo-user"><i class="fas fa-at"></i></span></label>
+            <input type="email" placeholder="Email"  />
+          </div>
+          <!--email-->
+          <div class="password">
+            <label><span class="entypo-lock"><i class="fas fa-user-circle"></i></span></label>
+            <input type="text" placeholder="Username" />
+          </div>  
+          <!-- password -->
+          <div class="password">
+            <label><span class="entypo-lock"><i class="fas fa-lock"></i></span></label>
+            <input type="password" placeholder="Contraseña" />
+          </div>
+          <!--dirección-->  
+          <div class="password">
+            <label><span class="entypo-lock"><i class="fas fa-map-marker-alt"></i></span></label>
+            <input type="text" placeholder="Direccion" />
+          </div>
+          <!-- button -->
+          <button class="btn" (click)="this.login()">Registrarse</button>
+          <p>
+            Ya tienes una cuenta y quieres loguearte? <a routerLink="/login" class="link">Ingresa ahora! <span class="entypo-right-thin"></span></a>
+          </p>
+        </div>
+      </div> 
+</div>
