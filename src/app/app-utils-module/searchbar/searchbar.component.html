@@ -14,20 +14,36 @@
                 
             </div> 
         </div>
+
+        <div class="col-3" *ngIf="(this.auth.getUserObject()==null);then notLogged else logged"></div>
+        
+        <!--Boton de inicio de sesión-->
+        <ng-template #notLogged>
+            <section class="col-3" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <a routerLink="/login" style="color: #fff;background: var(--primary); border: none; border-radius: 1vh; padding: 1vw 3vw;">
+                    Ingresa
+                </a>
+            </section>
+        </ng-template>
+
         <!--Perfil Usuario/Boton de Login-->
-        <div class="col-3 " style="display: flex; flex-direction: column; justify-content: center; padding: 0 5vw;">
+        <ng-template #logged>
+            
+                <div style="display: flex; flex-direction: column; justify-content: center; padding: 0 5vw;" class="col-3">
             <div ngbDropdown class="d-inline-block">
                 <div class="profile" ngbDropdownToggle>
                     <img src="https://via.placeholder.com/150x150" alt="" class="pic">
-                    <div class="btn " id="dropdownBasic1" >Nombre de Usuario</div>
+                    <div class="btn " id="dropdownBasic1" >{{this.auth.getUserObject().nombre}}</div>
                     <i class="fas fa-chevron-down"></i>
                 </div> 
                     <div ngbDropdownMenu aria-labelledby="dropdownBasic1" style="background: #000; z-index: 100;">
                         <button class="dropdown-item">Mi Cuenta</button>
                         <button class="dropdown-item">Transacciones</button>
-                        <button class="dropdown-item">Salir</button>
+                        <button class="dropdown-item" (click)="this.logout()">Salir</button>
                     </div>
             </div>
-        </div>
+                </div>
+         
+        </ng-template>
     </div>
 </div>

@@ -16,3 +16,6 @@
   .dropdown-menu .show{
     z-index: 1000;
   }
+button:focus,button:active {
+  outline:0;  
+}

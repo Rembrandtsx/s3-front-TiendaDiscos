@@ -1,7 +1,7 @@
 <div class="container2">
     <div class="login-wrapper">
         <div class="login-form">
-            <h1 *ngIf="credenciales">Hola</h1>
+          <h1 class="display-4" style="color: #fff;margin-bottom: 1em;">Login</h1>
           <!-- username --> 
           <div class="username">
             <label><span class="entypo-user"><i class="fas fa-user-circle"></i></span></label>
@@ -15,7 +15,7 @@
           <!-- button -->
           <button class="btn" (click)="this.login()">Ingresar</button>
           <p>
-            No tienes una cuenta aún? <a href="#" class="link">Registrate ahora! <span class="entypo-right-thin"></span></a>
+            No tienes una cuenta aún? <a routerLink="/register" class="link">Registrate ahora! <span class="entypo-right-thin"></span></a>
           </p>
         </div>
       </div> 
