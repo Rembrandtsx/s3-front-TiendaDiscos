@@ -3,7 +3,7 @@ import { DecimalPipe } from "@angular/common";
 /**
  * Esta clase representa un BillingInformation de VinilApp
  */
-export interface BillingInformation{
+export class BillingInformation{
 
     /**
      * Id de un BillingInformation

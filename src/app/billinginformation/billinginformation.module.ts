@@ -3,14 +3,15 @@ import { CommonModule } from '@angular/common';
 import { BillinginformationListComponent } from './billinginformation-list/billinginformation-list.component';
 import { BillingInformationService } from './billinginformation.service';
 import { RouterVinylAppModule } from '../router-module/router.module';
+import { BillinginformationDetailComponent } from './billinginformation-detail/billinginformation-detail.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterVinylAppModule
+    RouterVinylAppModule,
+    
   ],
-  declarations: [BillinginformationListComponent],
+  declarations: [BillinginformationListComponent, BillinginformationDetailComponent],
   providers: [BillingInformationService],
-  exports:[BillinginformationListComponent]
 })
 export class BillinginformationModule { }
