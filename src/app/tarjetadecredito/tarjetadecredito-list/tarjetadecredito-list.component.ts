@@ -18,17 +18,18 @@ export class TarjetadecreditoListComponent implements OnInit {
   /**
    * Lista de los billing 
    */
-  tajertas: TarjetaDeCredito[];
+  tarjertas: TarjetaDeCredito[];
 
 
   /**
    * Pregunta al servicio para actualizar la lista de billingInformation
    */
   getTarjetasInformation(): void {
-    this.tarjetaDeCreditoService.getTarjetasInformation().subscribe(tajertas => this.tajertas = tajertas );
-  }
+    this.tarjetaDeCreditoService.getTarjetasInformation().subscribe(tarjertas => this.tarjertas = tarjertas );
+    }
   ngOnInit() {
 
+    
     this.getTarjetasInformation();
   }
 
