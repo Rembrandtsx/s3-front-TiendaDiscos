@@ -10,7 +10,6 @@ import { AuthGuard } from '../UsuariosModule/guards/auth.guard';
 import { LoggedGuard } from '../UsuariosModule/guards/logged.guard';
 import { LoginComponent } from '../app-utils-module/login/login.component';
 import { RegisterComponent } from '../app-utils-module/register/register.component';
-import { TarjetadecreditoListComponent } from '../tarjetadecredito/tarjetadecredito-list/tarjetadecredito-list.component';
 
 
 
@@ -21,7 +20,6 @@ export const routes : Routes = [
     { path: 'map', component: SearchBarComponent, pathMatch: 'full'},
     { path: 'transacciones', component:TransaccionListComponent , pathMatch: 'full' },
     { path: 'billing', component:BillinginformationListComponent , pathMatch: 'full' },
-    { path: 'tarjetas', component:TarjetadecreditoListComponent , pathMatch: 'full' },
     { path: 'usuarios', component:UsuarioListComponent , pathMatch: 'full' },
     { path: 'me', component:UsuarioListComponent, pathMatch:'full', canActivate:[AuthGuard]},
     { path: 'login', component: LoginComponent, pathMatch:'full', canActivate:[LoggedGuard]},

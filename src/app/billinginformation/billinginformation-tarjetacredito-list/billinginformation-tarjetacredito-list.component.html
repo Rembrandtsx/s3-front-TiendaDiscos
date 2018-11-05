@@ -6,10 +6,10 @@
 <!-- Team -->
 <section id="team" class="pb-5">
     <div class="container">
-        <h5 class="section-title h1">OUR TEAM</h5>
-        <div class="row">
+        <h5 class="section-title h1 ">TARJETAS DE CREDITO</h5>
+        <div class="row text-center">
             <!-- Team member -->
-            <div class="col-xs-12 col-sm-12 col-md-4"  *ngFor="let tarjeta of billingtarjetas"  > <!--  ngIf="tarjeta.name.startsWith('S')" -->
+            <div class="col-xs-12 col-sm-12 col-md-5"  *ngFor="let tarjeta of billingtarjetas"  > <!--  ngIf="tarjeta.name.startsWith('S')" -->
                 <div class="image-flip" ontouchstart="this.classList.toggle('hover');" >
                     <div class="mainflip">
                         <div class="frontside">
@@ -29,7 +29,7 @@
                                     <h4 class="card-title">VISA</h4>
                                     <p class="card-text"> Fecha de vencimiento: {{tarjeta.fechaVencimiento | date:'yyyy-MM-dd'}}</p>
                                     <p class="card-text"> CVC: {{tarjeta.cvc}}</p>
-                                  <div class= "row" style="height: 200px;" >
+                                  <div class= "row" >
                                     <div class="col align-self-end">
                                     <ul class="list-inline  " style="height: 100%;">
                                         <li class="list-inline-item ">

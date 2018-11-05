@@ -12,7 +12,6 @@ import { TransaccionModule } from '../transaccion/transaccion.module';
 import { BillinginformationModule } from '../billinginformation/billinginformation.module';
 import {ViniloModule} from '../vinilo/vinilo.module';
 import { UsuarioModule } from '../UsuariosModule/usuario.module';
-import { TarjetadecreditoModule } from '../tarjetadecredito/tarjetadecredito.module';
 
 
 @NgModule({
@@ -27,7 +26,6 @@ import { TarjetadecreditoModule } from '../tarjetadecredito/tarjetadecredito.mod
     UtilsModule,
     TransaccionModule,
     BillinginformationModule,
-    TarjetadecreditoModule,
     ViniloModule,
     UsuarioModule
   ],

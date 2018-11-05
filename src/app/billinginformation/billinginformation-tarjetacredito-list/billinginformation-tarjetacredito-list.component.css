@@ -2,7 +2,7 @@
 
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 #team {
-    background: #eee !important;
+    background: #212121 !important;
 }
 
 .btn-primary:hover,
@@ -25,7 +25,7 @@ section {
 
 section .section-title {
     text-align: center;
-    color: #007b5e;
+    color: #ffffff;
     margin-bottom: 50px;
     text-transform: uppercase;
 }
@@ -109,7 +109,7 @@ section .section-title {
 
 .frontside .card,
 .backside .card {
-    min-height: 400px;
+    min-height: 300px;
     min-width: 350px;
 }
 
