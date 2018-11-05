@@ -13,6 +13,7 @@ import { routes } from './routes';
 
 import { UtilsModule } from '../app-utils-module/utils.module';
 import { TransaccionModule } from '../transaccion/transaccion.module';
+import { ComentarioModule } from '../comentario/comentario.module';
 
 @NgModule({
   declarations: [
@@ -25,10 +26,10 @@ import { TransaccionModule } from '../transaccion/transaccion.module';
     TransferHttpCacheModule,
     UtilsModule,
     TransaccionModule,
-
+    ComentarioModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports:[]
+  exports: []
 })
 export class AppModule { }
