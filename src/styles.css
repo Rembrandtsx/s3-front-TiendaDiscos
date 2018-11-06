@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("./assets/bootstrap.css");
+@import url("./assets/videogular2.css");
 
 
 
@@ -18,4 +19,13 @@
   }
 button:focus,button:active {
   outline:0;  
+}
+
+
+vg-controls vg-scrub-bar-current-time .background{
+  border: 1px solid brown;
+}
+vg-scrub-bar-current-time .background
+{
+  background: var(--primary);
 }
