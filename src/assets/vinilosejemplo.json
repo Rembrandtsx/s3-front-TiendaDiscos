@@ -2,45 +2,50 @@
     {
         "nombre":"Nevermind",
         "artista":"Nirvana",
-        "fechaLanzamiento":"1999-09-24T00:00:000Z",
+        "fechaLanzamiento":"1999-09-24",
         "precio": 80000,
         "productora": "DGC Records", 
         "previewURL":null,
-        "url" :"https://jazztojazz.com/wp-content/uploads/feeling-good-vinil.jpg"
+        "url" :"https://jazztojazz.com/wp-content/uploads/feeling-good-vinil.jpg",
+        "id":1
+    },
+    {
+        "nombre":"Forever Nerverland",
+        "artista":"MØ",
+        "fechaLanzamiento":"2018-10-19",
+        "precio": 100000,
+        "productora": "Chess Club/RCA Victor", 
+        "previewURL":null,
+        "url" :"https://s3.amazonaws.com/dev1.mtimg.com/product_photos/imgs/000/041/142/full/M_C3_98_20FN_20Vinyl.jpg",
+        "id":2
     },
     {
         "nombre":"Nevermind",
         "artista":"Nirvana",
-        "fechaLanzamiento":"1999-09-24T00:00:000Z",
+        "fechaLanzamiento":"1999-09-24",
         "precio": 80000,
         "productora": "DGC Records", 
         "previewURL":null,
-        "url" :"https://jazztojazz.com/wp-content/uploads/feeling-good-vinil.jpg"
+        "url" :"https://jazztojazz.com/wp-content/uploads/feeling-good-vinil.jpg",
+        "id":3
     },
     {
         "nombre":"Nevermind",
         "artista":"Nirvana",
-        "fechaLanzamiento":"1999-09-24T00:00:000Z",
+        "fechaLanzamiento":"1999-09-24",
         "precio": 80000,
         "productora": "DGC Records", 
         "previewURL":null,
-        "url" :"https://jazztojazz.com/wp-content/uploads/feeling-good-vinil.jpg"
+        "url" :"https://jazztojazz.com/wp-content/uploads/feeling-good-vinil.jpg",
+        "id":4
     },
     {
         "nombre":"Nevermind",
         "artista":"Nirvana",
-        "fechaLanzamiento":"1999-09-24T00:00:000Z",
-        "precio": 80000,
-        "productora": "DGC Records", 
-        "previewURL":null,
-        "url" :"https://jazztojazz.com/wp-content/uploads/feeling-good-vinil.jpg"
-    },
-    {
-        "nombre":"Nevermind",
-        "artista":"Nirvana",
-        "fechaLanzamiento":"1999-09-24T00:00:000Z",
+        "fechaLanzamiento":"1999-09-24",
         "precio": 80000,
         "previewURL":null,
-        "url" :"https://jazztojazz.com/wp-content/uploads/feeling-good-vinil.jpg"
+        "url" :"https://jazztojazz.com/wp-content/uploads/feeling-good-vinil.jpg",
+        "id":5
     }
 ]

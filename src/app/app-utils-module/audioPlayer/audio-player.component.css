@@ -1,0 +1,28 @@
+vg-player{
+    position: fixed;
+    bottom: 0;
+    
+    background: #212121;
+    right: 0;
+    background: #000;
+}
+
+vg-scrub-bar{
+    
+}
+vg-scrub-bar .scrubBar vg-scrub-bar-current-time .background{
+    border: 1px solid brown;
+    background: var(--primary);
+}
+vg-controls{
+    position: relative;
+    height: 100%;
+}
+
+.background{
+    border: 1px solid brown;
+}
+.background
+{
+    background: var(--primary);
+}
