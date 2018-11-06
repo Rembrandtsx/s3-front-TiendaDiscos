@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 //AQUI SE MANEJAN LAS RUTAS DE LA APP
 
-import { HomeComponent } from '../app-utils-module/home/home.component'
+import { HomeComponent } from '../app-utils-module/home/home.component';
 import { SearchBarComponent } from '../app-utils-module/searchbar/searchbar.component';
 import { TransaccionListComponent } from '../transaccion/transaccion-list/transaccion-list.component';
 import { TransaccionDetailComponent } from '../transaccion/transaccion-detail/transaccion-detail.component';
@@ -58,6 +58,9 @@ export const routes : Routes = [
     { path: 'me', component:UsuarioComponent, pathMatch:'full', canActivate:[AuthGuard]},
     { path: 'login', component: LoginComponent, pathMatch:'full', canActivate:[LoggedGuard]},
     { path: 'register', component: RegisterComponent, pathMatch:'full', canActivate:[LoggedGuard]},
+    { path: 'comentarios', component: ComentarioListComponent , pathMatch: 'full' },
+    { path: 'wishList', component: WishListListComponent , pathMatch: 'full' },
+    { path: 'wishListt', component: WishListDetailComponent , pathMatch: 'full' },
     { path: 'transacciones',
     children:[{path: 'list', component:TransaccionListComponent },{path: ':id', component:TransaccionDetailComponent }], 
      },
