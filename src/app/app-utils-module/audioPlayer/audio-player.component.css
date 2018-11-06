@@ -1,0 +1,21 @@
+vg-player{
+    position: fixed;
+    bottom: 0;
+    
+    background: #212121;
+    right: 0;
+    background: #000;
+}
+
+vg-scrub-bar{
+    width: 100%;
+}
+
+
+.background{
+    border: 1px solid brown;
+}
+.background
+{
+    background: var(--primary);
+}

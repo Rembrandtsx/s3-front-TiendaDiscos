@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { vinilo } from './Vinilo';
+import { HttpClient } from '@angular/common/http';
+import { Vinilo } from './vinilo';
 import { Observable } from 'rxjs';
 
 /**
@@ -23,7 +23,7 @@ export class ViniloService{
     /**
      * obtiene todos los vinilos.
      */
-    getVinilos(): Observable<vinilo[]> {
-        return this.http.get<vinilo[]>(API_URL);
+    getVinilos(): Observable<Vinilo[]> {
+        return this.http.get<Vinilo[]>(API_URL);
     }
 }
