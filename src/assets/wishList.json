@@ -4,12 +4,14 @@
         "costoTotal" : 3500,
         "vinilos":[
             {
-                "id": 1,
-                "contenido": "hola que hace"
+                "id" : 1,
+                "autor" : "juanito",
+                "url": "https://www.cutoff.es/422-large_default/vinilo-color-rojo.jpg"
             },
             {
-                "id": 2,
-                "contenido": "Odio sistrans"
+                "id" : 2,
+                "autor" : "pepito",
+                "url": "https://jazztojazz.com/wp-content/uploads/feeling-good-vinil.jpg"
             }
         ]
 
@@ -17,15 +19,7 @@
     {
         "id" : 2,
         "costoTotal" : 50000,
-        "vinilos" : [
-        {
-            "id": 3,
-            "contenido": "hola que dfghj"
-        },
-        {
-            "id": 4,
-            "contenido": "Odio vbnm,."
-        }]
+        "vinilos" : []
     }
 
 ]
