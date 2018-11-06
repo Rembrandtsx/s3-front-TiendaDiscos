@@ -18,18 +18,19 @@ export class BillinginformationListComponent implements OnInit {
   /**
    * Lista de los billing 
    */
-  billingsInformation: BillingInformation[];
+  billingInformation: BillingInformation;
 
 
   /**
    * Pregunta al servicio para actualizar la lista de billingInformation
    */
-  getBillingsInformation(): void {
-    this.billingInformationService.getBillingsInformation().subscribe(billingsInformation => this.billingsInformation = billingsInformation );
+  getBillingInformation(): void {
+    this.billingInformationService.getBillingInformationDetail().subscribe(billingInformation => this.billingInformation = billingInformation );
   }
   ngOnInit() {
 
-    this.getBillingsInformation();
+    this.billingInformation = new BillingInformation();
+    this.getBillingInformation();
   }
 
 }
