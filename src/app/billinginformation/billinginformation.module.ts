@@ -4,15 +4,19 @@ import { BillinginformationListComponent } from './billinginformation-list/billi
 import { BillingInformationService } from './billinginformation.service';
 import { RouterVinylAppModule } from '../router-module/router.module';
 import { BillinginformationDetailComponent } from './billinginformation-detail/billinginformation-detail.component';
-import { BillinginformationTarjetacreditoListComponent } from './billinginformation-tarjetacredito-list/billinginformation-tarjetacredito-list.component';
+import { BillinginformationMedioDePagoListComponent } from './billinginformation-medio-de-pago-list/billinginformation-medio-de-pago-list.component';
+import { BillinginformationCreateComponent } from './billinginformation-create/billinginformation-create.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   imports: [
     CommonModule,
     RouterVinylAppModule,
+    FormsModule
     
   ],
-  declarations: [BillinginformationListComponent, BillinginformationDetailComponent, BillinginformationTarjetacreditoListComponent],
+  declarations: [BillinginformationListComponent, BillinginformationDetailComponent, BillinginformationMedioDePagoListComponent, BillinginformationCreateComponent],
   providers: [BillingInformationService],
 })
 export class BillinginformationModule { }

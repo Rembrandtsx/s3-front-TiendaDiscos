@@ -1,4 +1,3 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
@@ -6,17 +5,17 @@
 <!-- Team -->
 <section id="team" class="pb-5">
     <div class="container">
-        <h5 class="section-title h1 ">TARJETAS DE CREDITO</h5>
+        <h5 class="section-title h1 ">MEDIOS DE PAGO</h5>
         <div class="row text-center">
             <!-- Team member -->
-            <div class="col-xs-12 col-sm-12 col-md-5"  *ngFor="let tarjeta of billingtarjetas"  > <!--  ngIf="tarjeta.name.startsWith('S')" -->
+            <div class="col-xs-12 col-sm-12 col-md-4"  *ngFor="let tarjeta of billingtarjetas"  > <!--  ngIf="tarjeta.name.startsWith('S')" -->
                 <div class="image-flip" ontouchstart="this.classList.toggle('hover');" >
                     <div class="mainflip">
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center"  >
 
-                                    <p><img class="img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/1/16/Former_Visa_%28company%29_logo.svg" alt="card image"></p>
+                                    <p><img class="img-fluid" src='{{tarjeta.imagen}}' alt="card image"></p>
                                     <h4 class="card-title">VISA</h4>
                                     <p class="card-text">{{tarjeta.name}}</p>
                                     <p class="card-text">{{tarjeta.numero}}</p>

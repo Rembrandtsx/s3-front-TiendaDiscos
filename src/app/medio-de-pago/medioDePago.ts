@@ -1,4 +1,4 @@
-export class TarjetaDeCredito {
+export class MedioDePago {
 
 
     /**
@@ -31,6 +31,14 @@ export class TarjetaDeCredito {
      * cvc de la tarjeta
      */
     cvc:String;
+
+
+    /**
+    * imagen de la tarjeta 
+    */
+    imagen:String;
+
+
 
 
 

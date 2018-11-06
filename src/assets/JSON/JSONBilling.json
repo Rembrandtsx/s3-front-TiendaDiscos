@@ -7,42 +7,51 @@
     "spent": 886931 ,
     
     "received": 625356, 
-    "tarjetasDeCredito": 
+    "mediosDePago": 
     [{
-        "id": 1,
-        "name": "Massimiliano",
-        "numero": "3536599259384707",
-        "numeroVerificacion": "3536599259384707",
-        "fechaVencimiento": "2020-05-22",
-        "cvc": 51
-      }, {
-        "id": 2,
-        "name": "Buck",
-        "numero": "3560612112174709",
-        "numeroVerificacion": "3560612112174709",
-        "fechaVencimiento": "2019-09-24",
-        "cvc": 81
-      }, {
-        "id": 3,
-        "name": "Claiborne",
-        "numero": "6767742877092128190",
-        "numeroVerificacion": "6767742877092128190",
-        "fechaVencimiento": "2019-05-15",
-        "cvc": 70
-      }, {
-        "id": 4,
-        "name": "Skell",
-        "numero": "3581245202566487",
-        "numeroVerificacion": "3581245202566487",
-        "fechaVencimiento": "2020-02-26",
-        "cvc": 59
-      }, {
-        "id": 5,
-        "name": "Libbie",
-        "numero": "36665219532221",
-        "numeroVerificacion": "36665219532221",
-        "fechaVencimiento": "2019-01-01",
-        "cvc": 25
-      }]
+      "id": 1,
+      "name": "Massimiliano",
+      "numero": "3536599259384707",
+      "numeroVerificacion": "3536599259384707",
+      "fechaVencimiento": "2020-05-22",
+      "cvc": 51,
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/1280px-MasterCard_Logo.svg.png"
+  
+    }, {
+      "id": 2,
+      "name": "Buck",
+      "numero": "3560612112174709",
+      "numeroVerificacion": "3560612112174709",
+      "fechaVencimiento": "2019-09-24",
+      "cvc": 81,
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Old_Visa_Logo.svg/1280px-Old_Visa_Logo.svg.png"
+  
+    }, {
+      "id": 3,
+      "name": "Claiborne",
+      "numero": "6767742877092128190",
+      "numeroVerificacion": "6767742877092128190",
+      "fechaVencimiento": "2019-05-15",
+      "cvc": 70,
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/1280px-MasterCard_Logo.svg.png"
+  
+    }, {
+      "id": 4,
+      "name": "Skell",
+      "numero": "3581245202566487",
+      "numeroVerificacion": "3581245202566487",
+      "fechaVencimiento": "2020-02-26",
+      "cvc": 59,
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/1280px-MasterCard_Logo.svg.png"
+  
+    }, {
+      "id": 5,
+      "name": "Libbie",
+      "numero": "36665219532221",
+      "numeroVerificacion": "36665219532221",
+      "fechaVencimiento": "2019-01-01",
+      "cvc": 25,
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Old_Visa_Logo.svg/1280px-Old_Visa_Logo.svg.png"
+    }]
     
     }

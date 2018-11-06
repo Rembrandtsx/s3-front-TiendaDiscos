@@ -1,5 +1,5 @@
 import { DecimalPipe } from "@angular/common";
-import { TarjetaDeCredito } from "./tarjetadecredito";
+import { MedioDePago } from "../medio-de-pago/medioDePago";
 
 /**
  * Esta clase representa un BillingInformation de VinilApp
@@ -26,7 +26,7 @@ export class BillingInformation{
      */
     received: number;
 
-    tarjetasDeCredito:TarjetaDeCredito[];
+    c:MedioDePago[];
 
 
 }

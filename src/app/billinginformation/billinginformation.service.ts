@@ -27,8 +27,32 @@ export class BillingInformationService {
     getBillingsInformation(): Observable<BillingInformation[]>{
         return this.http.get<BillingInformation[]>(API_URL);
     }
-
-    getBillingInformationDetail(): Observable<BillingInformation> {
+    
+ 
+      
+    /**
+     * Retorna el detail del billing
+     * @param billingId 
+    */
+    getBillingInformationDetail(billingId): Observable<BillingInformation> {
         return this.http.get<BillingInformation>(API_URL);
     }
+
+    /**
+     * Retorna los medios de pago
+     * @param billingId id del billing
+     
+    getMediosDePagoDeBilling(billingId): Observable<MedioDePago[]>{
+        return this.http.get<MedioDePago[]>(API_URL);
+
+    }
+ 
+
+    /**
+     * Crear un nuevo medio de pago
+     * @param medioDePago el nuevo medio de pago
+     */
+   createMedioDePago(medioDePago): Observable<boolean> {
+    return this.http.post<boolean>(API_URL+"2",medioDePago);
+}
 } 
