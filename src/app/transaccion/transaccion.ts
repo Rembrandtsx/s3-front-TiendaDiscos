@@ -1,7 +1,7 @@
 /**
  * Esta clase representa una transaccion de VinilApp
  */
-export interface Transaccion{
+export class Transaccion{
 
     /**
      * Id de una transaccion

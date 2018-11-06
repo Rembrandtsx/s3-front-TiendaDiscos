@@ -7,7 +7,8 @@ import { BillingInformation } from './billinginformation';
 /**
  * URL para hacer la peticion HTTP
  */
-const API_URL = '../../assets/JSONBilling.json';
+const API_URL = '../../assets/JSON/JSONBilling.json';
+//const BILLINGS = "/billing"
 /**
  * El servicio que utiliza el modulo BillingInformation
  */
@@ -25,5 +26,9 @@ export class BillingInformationService {
      */
     getBillingsInformation(): Observable<BillingInformation[]>{
         return this.http.get<BillingInformation[]>(API_URL);
+    }
+
+    getBillingInformationDetail(): Observable<BillingInformation> {
+        return this.http.get<BillingInformation>(API_URL);
     }
 } 
