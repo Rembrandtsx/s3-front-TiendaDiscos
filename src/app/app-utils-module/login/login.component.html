@@ -1,0 +1,22 @@
+<div class="container2">
+    <div class="login-wrapper">
+        <div class="login-form">
+          <h1 class="display-4" style="color: #fff;margin-bottom: 1em;">Login</h1>
+          <!-- username --> 
+          <div class="username">
+            <label><span class="entypo-user"><i class="fas fa-user-circle"></i></span></label>
+            <input type="email" placeholder="Email" [(ngModel)]="this.credenciales.email" />
+          </div>
+          <!-- password -->
+          <div class="password">
+            <label><span class="entypo-lock"><i class="fas fa-lock"></i></span></label>
+            <input type="password" placeholder="Contraseña" [(ngModel)]="this.credenciales.contrasenha"/>
+          </div>
+          <!-- button -->
+          <button class="btn" (click)="this.login()">Ingresar</button>
+          <p>
+            No tienes una cuenta aún? <a routerLink="/register" class="link">Registrate ahora! <span class="entypo-right-thin"></span></a>
+          </p>
+        </div>
+      </div> 
+</div>

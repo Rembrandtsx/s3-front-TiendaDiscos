@@ -1,0 +1,14 @@
+{
+    "id" : 1,
+    "costoTotal" : 3500,
+    "vinilos":[
+        {
+            "id": 1,
+            "contenido": "hola que hace"
+        },
+        {
+            "id": 2,
+            "contenido": "Odio sistrans"
+        }
+    ]
+}
