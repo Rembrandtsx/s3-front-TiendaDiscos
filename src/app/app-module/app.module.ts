@@ -13,6 +13,7 @@ import { routes } from './routes';
 
 import { UtilsModule } from '../app-utils-module/utils.module';
 import { TransaccionModule } from '../transaccion/transaccion.module';
+import { CarritoComprasModule } from '../carritoCompras/carritoCompras.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { TransaccionModule } from '../transaccion/transaccion.module';
     TransferHttpCacheModule,
     UtilsModule,
     TransaccionModule,
+    CarritoComprasModule
 
   ],
   providers: [],
