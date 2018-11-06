@@ -7,7 +7,7 @@ import { WishListService } from './wishList.service';
 import { WishListListComponent } from './wishList-list/wishList-list.component';
 import { WishListDetailComponent} from './wishList-detail/wishList-detail.component';
 import { ComentarioModule} from '../comentario/comentario.module';
-
+import { WishListCreateComponent} from './wishList-create/wishList-create.component';
 
 @NgModule({
     imports: [
@@ -15,11 +15,12 @@ import { ComentarioModule} from '../comentario/comentario.module';
         CommonModule,
         FormsModule,
         ComentarioModule,
+
     ],
     declarations: [
-        WishListListComponent, WishListDetailComponent
+        WishListListComponent, WishListDetailComponent, WishListCreateComponent
     ],
     providers: [WishListService],
-    exports: [WishListListComponent]
+    exports: [WishListListComponent, WishListCreateComponent]
 })
 export class WishListModule { }

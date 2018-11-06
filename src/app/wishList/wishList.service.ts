@@ -18,4 +18,8 @@ export class WishListService {
   getWishListlDetail(wishListId): Observable<WishListDetail> {
     return this.http.get<WishListDetail>('../../assets/wishListDetail.json');
   }
+
+  creatWishList(wishList): Observable<WishList> {
+    return this.http.post<WishList>('../../assets/wishList.json', wishList);
+  }
 }
