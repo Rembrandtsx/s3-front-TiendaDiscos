@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Usuario } from "../interfaces/usuario";
 
 
-const API_URL = '../../assets/JSON/usuariosEjemplo.json';
+const API_URL = 'http://localhost:8080/s3_tiendadiscos-api/api/usuarios/';
 
 
 @Injectable()
