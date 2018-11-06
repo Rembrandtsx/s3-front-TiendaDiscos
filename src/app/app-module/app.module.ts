@@ -13,6 +13,8 @@ import { BillinginformationModule } from '../billinginformation/billinginformati
 import {ViniloModule} from '../vinilo/vinilo.module';
 import { UsuarioModule } from '../UsuariosModule/usuario.module';
 
+import { ComentarioModule } from '../comentario/comentario.module';
+import { WishListModule } from '../wishList/wishList.module';
 
 @NgModule({
   declarations: [
@@ -27,10 +29,12 @@ import { UsuarioModule } from '../UsuariosModule/usuario.module';
     TransaccionModule,
     BillinginformationModule,
     ViniloModule,
-    UsuarioModule
+    UsuarioModule,
+    ComentarioModule,
+    WishListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports:[]
+  exports: []
 })
 export class AppModule { }
