@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {ComentarioService} from '../comentario.service';
 import { Comentario } from '../comentario';
 
@@ -11,7 +11,7 @@ export class ComentarioListComponent implements OnInit {
 
   constructor (private comentarioService: ComentarioService) { }
 
-  comentario: Comentario[];
+  @Input() comentario: Comentario[];
 
   getComentarios (): void {
     this.comentarioService.getComentarios().subscribe(comentarios => this.comentario = comentarios);

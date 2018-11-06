@@ -14,6 +14,7 @@ import { routes } from './routes';
 import { UtilsModule } from '../app-utils-module/utils.module';
 import { TransaccionModule } from '../transaccion/transaccion.module';
 import { ComentarioModule } from '../comentario/comentario.module';
+import { WishListModule } from '../wishList/wishList.module';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ComentarioModule } from '../comentario/comentario.module';
     UtilsModule,
     TransaccionModule,
     ComentarioModule,
+    WishListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
