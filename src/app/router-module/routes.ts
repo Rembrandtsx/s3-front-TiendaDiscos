@@ -17,6 +17,7 @@ import { WishListDetailComponent } from '../wishList/wishList-detail/wishList-de
 import { TransaccionDetailComponent } from '../transaccion/transaccion-detail/transaccion-detail.component';
 import { CancionesComponent } from '../canciones/canciones-list/canciones.component';
 import { ViniloComponent } from '../vinilo/vinilo-detail/vinilo.component';
+import { UsuarioComponent } from '../UsuariosModule/usuario-detail/usuario.component';
 
 
 
@@ -32,7 +33,7 @@ export const routes : Routes = [
       path: 'vinilos/:id', component: ViniloComponent, pathMatch:'full'
     },
     { path: 'usuarios', component:UsuarioListComponent , pathMatch: 'full' },
-    { path: 'me', component:UsuarioListComponent, pathMatch:'full', canActivate:[AuthGuard]},
+    { path: 'me', component:UsuarioComponent, pathMatch:'full', canActivate:[AuthGuard]},
     { path: 'login', component: LoginComponent, pathMatch:'full', canActivate:[LoggedGuard]},
     { path: 'register', component: RegisterComponent, pathMatch:'full', canActivate:[LoggedGuard]},
     { path: 'transacciones',

@@ -6,7 +6,8 @@
         "nombre":"Santiago Salazar",
         "direccion":"Cll22 #12-34",
         "rol":"usuario",
-        "calificacion":3.8
+        "calificacion":3.8,
+        "imagen": "http://santiagosalazar.me/img/IMG_20180427_143742.jpg"
     },
     {
         "username":"Rembrandtsx",
@@ -15,7 +16,8 @@
         "nombre":"Camilo Salinas",
         "direccion":"cll 6 #1a-99este",
         "rol":"admin",
-        "calificacion":4.8
+        "calificacion":4.8,
+        "imagen":"https://i.postimg.cc/ncRHjBnJ/2088c27f-050e-45af-82b9-04fc53a774c7.jpg"
     },
     {
         "username":"Lauisa341",
@@ -24,7 +26,8 @@
         "nombre":"Laura Forero",
         "direccion":"Cll 1 #33-44",
         "rol":"admin",
-        "calificacion":5
+        "calificacion":5,
+        "imagen":""
     },
     {
         "username":"Keblato",
@@ -33,7 +36,8 @@
         "nombre":"Kevin Blanco",
         "direccion":"Cll 18 #11-22",
         "rol":"usuario",
-        "calificacion":4.2
+        "calificacion":4.2,
+        "imagen":""
     },
     {
         "username":"Marnz",
@@ -42,7 +46,8 @@
         "nombre":"Juan Sebastian Niño",
         "direccion":"Cll 18 #11-22",
         "rol":"usuario",
-        "calificacion":4.2
+        "calificacion":4.2,
+        "imagen":""
     },
     {
         "username":"linkhl",
@@ -51,6 +56,7 @@
         "nombre":"Andres Hernandez",
         "direccion":"Cll 12 #33-45",
         "rol":"admin",
-        "calificacion":4.6
+        "calificacion":4.6,
+        "imagen":""
     }
 ]

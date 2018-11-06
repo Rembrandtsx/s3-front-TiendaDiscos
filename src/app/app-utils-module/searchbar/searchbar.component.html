@@ -5,7 +5,7 @@
             <a href="#" ><img src="../../../assets/logo.png" alt="" style="height: 10vh;"></a>
         </div>
         <!--Barra de Navegación-->
-        <div class="search col-7" style="display: flex; flex-direction: column; justify-content: space-around">
+        <div class="search col-6" style="display: flex; flex-direction: column; justify-content: space-around">
             <div class="input-group">
                 <span>
                     <i class="fas fa-search"></i>
@@ -13,6 +13,14 @@
                 <input type="text" placeholder="Search" />
                 
             </div> 
+
+        </div>
+        <div class="col-1" style="display:flex; color:white; flex-direction: column;justify-content: center;">
+                <div style="font-size: 1.5em; display: flex; justify-content: space-around">
+                        <i class="fas fa-star" style="cursor: pointer;" routerLink="/wishList"></i>
+                        <i class="fas fa-shopping-cart" style="cursor: pointer;" routerLink="/carrito"></i>
+                </div>
+                
         </div>
 
         <div class="col-3" *ngIf="(this.auth.getUserObject()==null);then notLogged else logged"></div>
