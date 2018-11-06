@@ -8,7 +8,7 @@ import {TransaccionDetail} from './transaccion-detail';
 /**
  * URL para hacer la petion HTTP
  */
-const API_URL = '../../assets/transaccionesejemplo.json';
+const API_URL = 'http://localhost:8080/s3_tiendadiscos-api/api/transacciones/';
 const transaccion= '';
 const API_URL2='../../assets/transaccion';
 /**
@@ -26,10 +26,14 @@ export class TransaccionService {
     /**
      * Obtiene todas las transacciones
      */
-    getTransacciones (): Observable<Transaccion[]>{
-        return this.http.get<Transaccion[]>( API_URL+ transaccion);
+
+    getTransacciones (): Observable<Transaccion[]> {
+        return this.http.get<Transaccion[]>( API_URL);
     }
-    getTransaccionDetail(idTransaccion):Observable<TransaccionDetail>{
-        return this.http.get<TransaccionDetail>( API_URL2+ idTransaccion+'.json');
+    createTransaccion(transaccion): Observable<Transaccion>{
+        return this.http.post<Transaccion>(API_URL, transaccion);
+    }
+    getTransaccionDetail(transaccionId):Observable<Transaccion>{
+        return this.http.get<Transaccion>(API_URL+ transaccionId);
     }
 }

@@ -9,6 +9,8 @@ import {TransferHttpCacheModule} from '@nguniversal/common';
 import { RouterVinylAppModule } from '../router-module/router.module';
 import { UtilsModule } from '../app-utils-module/utils.module';
 import { TransaccionModule } from '../transaccion/transaccion.module';
+import { CarritoComprasModule } from '../carrito-compras/carrito-compras.module';
+
 import { BillinginformationModule } from '../billinginformation/billinginformation.module';
 import {ViniloModule} from '../vinilo/vinilo.module';
 import { UsuarioModule } from '../UsuariosModule/usuario.module';
@@ -34,6 +36,7 @@ import { Overlay } from '../canciones/overlay';
     UsuarioModule,
     ComentarioModule,
     WishListModule,
+    CarritoComprasModule,
     CancionModule
   ],
   providers: [Overlay],

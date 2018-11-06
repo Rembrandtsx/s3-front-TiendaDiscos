@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core'
 import {HttpClientModule, HttpClient} from '@angular/common/http'
-import {CarritoCompras} from './carritoCompras'
+import {CarritoCompras} from './carrito-Compras'
 import {Observable} from 'rxjs'
 import {environment} from '../../environments/environment'
 
-const APIURL="";
+const API_URL=".././assets/vinilosCarritoCompras.json";
 
 @Injectable()
 export class CarritoComprasService{
@@ -16,7 +16,10 @@ export class CarritoComprasService{
     carritosCompras: CarritoCompras[]
 
     getCarritosCompras(): Observable<CarritoCompras[]>{
-        return this.http.get<CarritoCompras[]>(APIURL);
+        return this.http.get<CarritoCompras[]>(API_URL);
         
+    }
+    getCarritoComprasDetail(carritoComprasId):Observable<CarritoCompras>{
+        return this.http.get<CarritoCompras>(API_URL);
     }
 }
