@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { vinilo } from '../vinilo';
 import { ViniloService } from '../vinilo.service';
 
@@ -9,11 +9,11 @@ import { ViniloService } from '../vinilo.service';
 })
 export class ViniloListComponent implements OnInit {
 
-  constructor(private viniloService : ViniloService) { }
+  constructor(private viniloService: ViniloService) { }
 
-  vinilos : vinilo[];
+  @Input() vinilos: vinilo[];
 
-  getVinilos(): void{
+  getVinilos(): void {
     this.viniloService.getVinilos().subscribe(vinilos => this.vinilos = vinilos)
   }
 

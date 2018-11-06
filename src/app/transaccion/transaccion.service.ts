@@ -26,15 +26,10 @@ export class TransaccionService {
     /**
      * Obtiene todas las transacciones
      */
-<<<<<<< HEAD
     getTransacciones (): Observable<Transaccion[]>{
         return this.http.get<Transaccion[]>( API_URL+ transaccion);
     }
     getTransaccionDetail(idTransaccion):Observable<TransaccionDetail>{
         return this.http.get<TransaccionDetail>( API_URL2+ idTransaccion+'.json');
-=======
-    getTransacciones (): Observable<Transaccion[]> {
-        return this.http.get<Transaccion[]>( API_URL);
->>>>>>> master
     }
 }
