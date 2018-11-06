@@ -1,7 +1,7 @@
 /**
  * Esta clase representa un vinilo de VinilApp
  */
-export interface vinilo{
+export interface Vinilo{
 
     /**
      * Nombre del Vinilo.
@@ -37,4 +37,8 @@ export interface vinilo{
      * url con la imagen del Vinilo.
      */
     url : String;
+    /**
+     * El id del vinilo
+     */
+    id:number;
 }

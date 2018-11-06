@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import { SearchBarComponent } from '../../app-utils-module/searchbar/searchbar.component';
+import { Overlay } from '../../canciones/overlay';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,7 @@ import { SearchBarComponent } from '../../app-utils-module/searchbar/searchbar.c
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  
+  constructor(private overlay: Overlay){
+
+  }
 }
