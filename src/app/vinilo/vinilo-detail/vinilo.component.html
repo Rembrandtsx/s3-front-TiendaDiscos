@@ -1,0 +1,45 @@
+<div class="overview__albums">
+              
+    <div class="overview__albums__head">
+    
+      <span class="section-title">{{vinilo?.artista}}</span> 
+    </div>
+    
+    <div class="album">
+    
+      <div class="album__info">
+      
+        <div class="album__info__art">
+        
+          <img [src]="vinilo?.url" alt="When It's Dark Out" />
+          
+        </div>
+        
+        <div class="album__info__meta">
+        
+          <div class="album__year">{{vinilo?.fechaLanzamiento | date}}</div>
+          
+          <div class="album__name">{{vinilo?.nombre}}</div>
+          <div class="album__year" style="font-size: 0.8em">$ {{vinilo?.precio}}</div>
+          
+          <div class="album__actions">
+          
+            <button class="button-light save">Agregar a carrito</button>
+
+            <button class="button-light save">Agregar a wishlist</button>
+            
+           
+            
+          </div>
+          
+        </div>
+        
+      </div>
+      
+
+      
+    </div>
+    
+  </div>
+
+  <list-canciones></list-canciones>
