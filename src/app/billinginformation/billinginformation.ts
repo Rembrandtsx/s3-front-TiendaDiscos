@@ -1,9 +1,10 @@
 import { DecimalPipe } from "@angular/common";
+import { TarjetaDeCredito } from "./tarjetadecredito";
 
 /**
  * Esta clase representa un BillingInformation de VinilApp
  */
-export interface BillingInformation{
+export class BillingInformation{
 
     /**
      * Id de un BillingInformation
@@ -24,6 +25,8 @@ export interface BillingInformation{
      *  cantidad recivida en un billing
      */
     received: number;
+
+    tarjetasDeCredito:TarjetaDeCredito[];
 
 
 }

@@ -1,0 +1,11 @@
+<div class="col-md-12">
+        <div class="container-fluid">
+            <h4>Lista de deseos</h4>  
+            <p class="h5 p-3">CostoTotal: {{wishListDetail.costoTotal}}</p>
+            
+            <div class="row border margin">
+                <p class="h4 p-3">Vinilos: </p>
+                <app-comentario-list [comentario]="wishListDetail.vinilos"></app-comentario-list>
+            </div>
+        </div>
+    </div>
