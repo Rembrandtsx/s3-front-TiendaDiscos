@@ -1,0 +1,37 @@
+
+<!-- Based on: https://dribbble.com/shots/4883028-Profile-Stats-->
+<div class="layout">
+        <div class="profile">
+          <div class="profile__picture"><img [src]="login.currentUser.imagen" alt="ananddavis"/></div>
+          <div class="profile__header">
+            <div class="profile__account">
+              <h4 class="profile__username">{{login.currentUser.username}}</h4>
+            </div>
+            <div class="profile__edit"></div>
+          </div>
+          <div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem iusto earum voluptas molestias, explicabo, unde nesciunt pariatur totam, odio necessitatibus itaque in deleniti dolore culpa blanditiis provident exercitationem quas. Ab!</p>
+          </div>
+          <div class="profile__stats">
+            <div class="profile__stat">
+              <div class="profile__icon profile__icon--gold"><i class="fas fa-shopping-cart"></i></div>
+              <div class="profile__value">47
+                <div class="profile__key">Compras</div>
+              </div>
+            </div>
+            <div class="profile__stat">
+              <div class="profile__icon profile__icon--blue"><i class="fas fa-star"></i></div>
+              <div class="profile__value">{{login.currentUser.calificacion }}
+                <div class="profile__key">Calificacion</div>
+              </div>
+            </div>
+            <div class="profile__stat">
+                    <div class="profile__value">{{login.currentUser.nombre}}
+                            <div class="profile__key">Nombre</div>
+                          </div>
+                
+              
+            </div>
+          </div>
+        </div>
+      </div>
