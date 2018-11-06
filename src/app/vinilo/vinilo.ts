@@ -37,4 +37,8 @@ export interface Vinilo{
      * url con la imagen del Vinilo.
      */
     url : String;
+    /**
+     * El id del vinilo
+     */
+    id:number;
 }

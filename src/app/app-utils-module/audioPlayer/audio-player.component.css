@@ -8,9 +8,16 @@ vg-player{
 }
 
 vg-scrub-bar{
-    width: 100%;
+    
 }
-
+vg-scrub-bar .scrubBar vg-scrub-bar-current-time .background{
+    border: 1px solid brown;
+    background: var(--primary);
+}
+vg-controls{
+    position: relative;
+    height: 100%;
+}
 
 .background{
     border: 1px solid brown;
