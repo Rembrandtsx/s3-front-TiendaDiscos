@@ -6,9 +6,8 @@ export class Transaccion{
     /**
      * Id de una transaccion
      */
+    
     id: number;
-    /**
-     *  de una transaccion
-     */
-    url: string;
+    estado: string;
+    formaDePago: string
 }

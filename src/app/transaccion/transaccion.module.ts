@@ -5,6 +5,7 @@ import { TransaccionService } from './transaccion.service';
 
 import { HttpClientModule } from '@angular/common/http';
 import { TransaccionDetailComponent } from './transaccion-detail/transaccion-detail.component';
+import { TransaccionCreateComponent } from './transaccion-create/transaccion-create.component';
 
 @NgModule({
   imports: [
@@ -13,14 +14,16 @@ import { TransaccionDetailComponent } from './transaccion-detail/transaccion-det
   ],
   declarations: [
     TransaccionListComponent,
-    TransaccionDetailComponent
+    TransaccionDetailComponent,
+    TransaccionCreateComponent
   ],
   providers: [
     TransaccionService,
   ],
   exports: [
     TransaccionListComponent,
-    TransaccionDetailComponent
+    TransaccionDetailComponent,
+    TransaccionCreateComponent
   ]
 })
 export class TransaccionModule { }

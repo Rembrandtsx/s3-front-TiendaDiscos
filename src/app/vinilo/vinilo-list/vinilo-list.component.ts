@@ -9,11 +9,12 @@ import { ViniloService } from '../vinilo.service';
 })
 export class ViniloListComponent implements OnInit {
 
-  constructor(private viniloService : ViniloService) { }
+  constructor(private viniloService: ViniloService) { }
 
+  @Input() vinilos: vinilo[];
   vinilos : Vinilo[];
 
-  getVinilos(): void{
+  getVinilos(): void {
     this.viniloService.getVinilos().subscribe(vinilos => this.vinilos = vinilos)
   }
 

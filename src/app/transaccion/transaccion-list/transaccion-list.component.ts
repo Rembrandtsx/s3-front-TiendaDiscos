@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Transaccion } from '../transaccion';
 import { TransaccionService} from '../transaccion.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'list-transacciones',
@@ -16,8 +17,10 @@ export class TransaccionListComponent implements OnInit {
   getTransacciones(): void{
     this.transaccionService.getTransacciones().subscribe(transacciones => this.transacciones= transacciones);
   }
+  
   ngOnInit() {
     this.getTransacciones();
   }
+
 
 }
