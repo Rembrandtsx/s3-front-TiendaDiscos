@@ -1,7 +1,7 @@
 import {WishList } from './wishList';
-import {Comentario} from '../comentario/comentario';
+import {vinilo} from '../vinilo/vinilo';
 
 export class WishListDetail extends WishList {
 
-    vinilos: Object[];
+    vinilos: vinilo[];
 }

@@ -6,6 +6,7 @@ import { CommonModule } from "@angular/common";
 import { LoginService } from "./services/login.service";
 import { AuthGuard } from "./guards/auth.guard";
 import { LoggedGuard } from "./guards/logged.guard";
+import { UsuarioComponent } from "./usuario-detail/usuario.component";
 
 @NgModule({
     imports:[
@@ -13,7 +14,8 @@ import { LoggedGuard } from "./guards/logged.guard";
         CommonModule
     ],
     declarations:[
-        UsuarioListComponent
+        UsuarioListComponent,
+        UsuarioComponent
     ],
     providers:[
         UsuarioService,
@@ -22,7 +24,8 @@ import { LoggedGuard } from "./guards/logged.guard";
         LoggedGuard
     ],
     exports:[
-        UsuarioListComponent
+        UsuarioListComponent,
+        UsuarioComponent
     ]
 })
 export class UsuarioModule{

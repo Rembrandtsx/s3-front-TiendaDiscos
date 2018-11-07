@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { WishListService } from './wishList.service';
 import { WishListListComponent } from './wishList-list/wishList-list.component';
 import { WishListDetailComponent} from './wishList-detail/wishList-detail.component';
-import { ComentarioModule} from '../comentario/comentario.module';
+import { ViniloModule} from '../vinilo/vinilo.module';
 
 
 @NgModule({
@@ -14,7 +14,7 @@ import { ComentarioModule} from '../comentario/comentario.module';
         BrowserModule,
         CommonModule,
         FormsModule,
-        ComentarioModule,
+        ViniloModule,
     ],
     declarations: [
         WishListListComponent, WishListDetailComponent

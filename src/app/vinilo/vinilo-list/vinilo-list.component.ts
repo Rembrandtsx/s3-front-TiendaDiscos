@@ -1,19 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { Vinilo } from '../vinilo';
+import { ViniloService } from '../vinilo.service';
 
 @Component({
-  selector: 'app-vinilomodule-list',
-  template: `
-    <p>
-      vinilomodule-list works!
-    </p>
-  `,
-  styles: []
+  selector: 'list-vinilos',
+  templateUrl: './vinilo-list.component.html',
+  styleUrls: [ './vinilo-list.component.css']
 })
 export class ViniloListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private viniloService: ViniloService) { }
+
+  @Input() vinilos: vinilo[];
+  vinilos : Vinilo[];
+
+  getVinilos(): void {
+    this.viniloService.getVinilos().subscribe(vinilos => this.vinilos = vinilos)
+  }
 
   ngOnInit() {
+    this.getVinilos();
   }
 
 }

@@ -17,6 +17,8 @@ import { UsuarioModule } from '../UsuariosModule/usuario.module';
 
 import { ComentarioModule } from '../comentario/comentario.module';
 import { WishListModule } from '../wishList/wishList.module';
+import { CancionModule } from '../canciones/canciones.module';
+import { Overlay } from '../canciones/overlay';
 
 @NgModule({
   declarations: [
@@ -34,9 +36,10 @@ import { WishListModule } from '../wishList/wishList.module';
     UsuarioModule,
     ComentarioModule,
     WishListModule,
-    CarritoComprasModule
+    CarritoComprasModule,
+    CancionModule
   ],
-  providers: [],
+  providers: [Overlay],
   bootstrap: [AppComponent],
   exports: []
 })

@@ -11,6 +11,11 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
+import { VgCoreModule } from 'videogular2/core';
+import { VgControlsModule } from "videogular2/controls";
+import { VgOverlayPlayModule } from "videogular2/overlay-play";
+import { VgBufferingModule } from "videogular2/buffering";
+import { AudioPlayerComponent } from './audioPlayer/audio-player.component';
 
 
 @NgModule({
@@ -19,17 +24,22 @@ import { RegisterComponent } from './register/register.component';
     NavbarBarComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AudioPlayerComponent
   ],
   imports: [
     NgbModule,
     RouterVinylAppModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    VgCoreModule,
+    VgControlsModule,
+    VgOverlayPlayModule,
+    VgBufferingModule
     
   ],
   providers: [LoginService],
   bootstrap: [],
-  exports:[SearchBarComponent,NavbarBarComponent,HomeComponent,RegisterComponent]
+  exports:[SearchBarComponent,NavbarBarComponent,HomeComponent,RegisterComponent,AudioPlayerComponent]
 })
 export class UtilsModule { }

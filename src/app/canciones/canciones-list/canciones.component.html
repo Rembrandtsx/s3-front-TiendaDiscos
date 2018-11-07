@@ -1,0 +1,65 @@
+
+      
+      <div class="album__tracks">
+      
+        <div class="tracks">
+          
+          <div class="tracks__heading">
+          
+            <div class="tracks__heading__number">#</div>
+            
+            <div class="tracks__heading__title">Song</div>
+            
+            <div class="tracks__heading__length">
+            
+              <i class="ion-ios-stopwatch-outline"></i>
+              
+            </div>
+            
+            <div class="tracks__heading__popularity">
+            
+              <i class="ion-thumbsup"></i>
+              
+            </div>
+            
+          </div>
+
+
+          
+          <div class="track" *ngFor="let cancion of canciones; index as i">
+
+            <div class="track__number">{{i+1}}</div>
+
+            <div class="track__added" >
+
+                <i class="far fa-play-circle" *ngIf="!overlay.IsVisible" style="cursor: pointer;" (click)="reproducir(cancion.previewURI)"></i>
+                <i class="far fa-pause-circle" *ngIf="overlay.IsVisible" style="cursor: pointer;" (click)="reproducir(cancion.previewURI)"></i>
+
+            </div>
+
+            <div class="track__title featured">
+            
+              <span class="title">{{cancion.nombre}}</span>
+              <span class="feature">{{cancion.descripcion}}</span>
+              
+            </div>
+
+
+            
+            <div class="track__length">{{cancion.duracion}}</div>
+            
+            <div class="track__popularity">
+            
+              <i class="ion-arrow-graph-up-right"></i>
+              
+            </div>
+
+          </div>
+
+
+        </div>
+        
+      </div>
+
+
+
