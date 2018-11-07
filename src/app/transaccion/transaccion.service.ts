@@ -30,7 +30,7 @@ export class TransaccionService {
     getTransacciones (): Observable<Transaccion[]> {
         return this.http.get<Transaccion[]>( API_URL);
     }
-    createTransaccion(transaccion:any): Observable<Transaccion>{
+    createTransaccion(transaccion): Observable<Transaccion>{
         return this.http.post<Transaccion>(API_URL, transaccion);
     }
     getTransaccionDetail(transaccionId):Observable<Transaccion>{

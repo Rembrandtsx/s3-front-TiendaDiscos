@@ -4,7 +4,7 @@ import {CarritoCompras} from './carrito-Compras'
 import {Observable} from 'rxjs'
 import {environment} from '../../environments/environment'
 
-const API_URL=".././assets/vinilosCarritoCompras.json";
+const API_URL='.././assets/vinilosCarritoCompras.json';
 
 @Injectable()
 export class CarritoComprasService{

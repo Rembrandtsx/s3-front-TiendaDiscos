@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 import { ComentarioService } from './comentario.service';
 import { ComentarioListComponent } from './comentario-list/comentario-list.component';
-
+import { ComentarioCreateComponent} from './comentario-create/comentario-create.component'
 
 
 @NgModule({
@@ -16,9 +16,9 @@ import { ComentarioListComponent } from './comentario-list/comentario-list.compo
 
     ],
     declarations: [
-        ComentarioListComponent
+        ComentarioListComponent,ComentarioCreateComponent
     ],
     providers: [ComentarioService],
-    exports:[ComentarioListComponent]
+    exports:[ComentarioListComponent,ComentarioCreateComponent]
 })
 export class ComentarioModule { }

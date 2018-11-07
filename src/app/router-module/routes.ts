@@ -21,6 +21,7 @@ import { WishListDetailComponent } from '../wishList/wishList-detail/wishList-de
 import { CancionesComponent } from '../canciones/canciones-list/canciones.component';
 import { ViniloComponent } from '../vinilo/vinilo-detail/vinilo.component';
 import { UsuarioComponent } from '../UsuariosModule/usuario-detail/usuario.component';
+import { ComentarioCreateComponent } from '../comentario/comentario-create/comentario-create.component';
 
 
 
@@ -58,13 +59,13 @@ export const routes : Routes = [
     { path: 'me', component:UsuarioComponent, pathMatch:'full', canActivate:[AuthGuard]},
     { path: 'login', component: LoginComponent, pathMatch:'full', canActivate:[LoggedGuard]},
     { path: 'register', component: RegisterComponent, pathMatch:'full', canActivate:[LoggedGuard]},
-    { path: 'comentarios', component: ComentarioListComponent , pathMatch: 'full' },
+    { path: 'comentariosCreate', component: ComentarioCreateComponent , pathMatch: 'full' },
     { path: 'wishList', component: WishListListComponent , pathMatch: 'full' },
     { path: 'wishListt', component: WishListDetailComponent , pathMatch: 'full' },
     { path: 'transacciones',
     children:[{path: 'list', component:TransaccionListComponent },{path: ':id', component:TransaccionDetailComponent }], 
      },
-    { path: 'transacciones', component: TransaccionListComponent , pathMatch: 'full' },
+    { path: 'transaccion', component: TransaccionListComponent , pathMatch: 'full' },
     { path: 'comentarios', component: ComentarioListComponent , pathMatch: 'full' },
     { path: 'wishList', component: WishListListComponent , pathMatch: 'full' },
     { path: 'wishListt', component: WishListDetailComponent , pathMatch: 'full' },
