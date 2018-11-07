@@ -5,7 +5,7 @@ import { HomeComponent } from '../app-utils-module/home/home.component'
 import { SearchBarComponent } from '../app-utils-module/searchbar/searchbar.component';
 import { TransaccionListComponent } from '../transaccion/transaccion-list/transaccion-list.component';
 import { TransaccionDetailComponent } from '../transaccion/transaccion-detail/transaccion-detail.component';
-import { TransaccionCreateComponent } from '../transaccion/transaccion-create/transaccion-create.component';
+import { CreateComponent } from '../transaccion/create/create.component';
 import { CarritoComprasDetailComponent } from '../carrito-compras/carrito-compras-detail/carrito-compras-detail.component';
 
 import { BillinginformationListComponent } from '../billinginformation/billinginformation-list/billinginformation-list.component';
@@ -34,7 +34,7 @@ export const routes : Routes = [
             },
             {
                 path: 'create',
-                component: TransaccionCreateComponent  , pathMatch: 'full'
+                component: CreateComponent  , pathMatch: 'full'
             }
         ]},
         { path: 'carrito-compras',
