@@ -16,6 +16,6 @@ export class UsuarioService{
 
 
     getUsuarios(): Observable<Usuario[]>{
-       return this.http.get<Usuario[]>(API_URL)
+       return this.http.get<Usuario[]>(API_URL2)
     };
 }
