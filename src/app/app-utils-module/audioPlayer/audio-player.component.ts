@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import {VgAPI} from 'videogular2/core';
-import { Overlay } from "../../canciones/overlay";
+import { OverlayMusic } from "../../canciones/overlay";
 
 @Component({
     selector: 'app-audio-player',
@@ -10,7 +10,7 @@ import { Overlay } from "../../canciones/overlay";
 export class AudioPlayerComponent implements OnInit {
     sources: string;
 
-    constructor(private overlay:Overlay) {
+    constructor(private overlay:OverlayMusic) {
         this.sources = overlay.cancnionActual;
     }
 

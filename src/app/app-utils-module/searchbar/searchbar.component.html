@@ -45,8 +45,8 @@
                     <i class="fas fa-chevron-down"></i>
                 </div> 
                     <div ngbDropdownMenu aria-labelledby="dropdownBasic1" style="background: #000; z-index: 100;">
-                        <button class="dropdown-item">Mi Cuenta</button>
-                        <button class="dropdown-item">Transacciones</button>
+                        <button class="dropdown-item" routerLink="/me">Mi Cuenta</button>
+                        <button class="dropdown-item" routerLink="/transacciones">Transacciones</button>
                         <button class="dropdown-item" (click)="this.logout()">Salir</button>
                     </div>
             </div>

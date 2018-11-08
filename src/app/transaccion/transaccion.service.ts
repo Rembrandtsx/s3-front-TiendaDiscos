@@ -8,9 +8,9 @@ import {TransaccionDetail} from './transaccion-detail';
 /**
  * URL para hacer la petion HTTP
  */
-const API_URL = 'http://localhost:8080/s3_tiendadiscos-api/api/transacciones/';
+const API_URL2 = 'http://localhost:8080/s3_tiendadiscos-api/api/transacciones/';
 const transaccion= '';
-const API_URL2='../../assets/transaccion';
+const API_URL=".././assets/transaccionesejemplo1.json";
 /**
  * El servicio que utiliza el modulo transaccion
  */

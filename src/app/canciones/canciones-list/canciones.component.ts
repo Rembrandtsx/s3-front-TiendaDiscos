@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Canciones } from '../canciones';
 import { CancionesService } from '../canciones.service';
-import { Overlay } from '../overlay';
+import { OverlayMusic } from '../overlay';
 
 @Component({
   selector: 'list-canciones',
@@ -10,7 +10,7 @@ import { Overlay } from '../overlay';
 })
 export class CancionesComponent implements OnInit,OnDestroy {
 
-  constructor(private cancionesService : CancionesService,private overlay:Overlay) { 
+  constructor(private cancionesService : CancionesService,private overlay:OverlayMusic) { 
       this.urlCancionActual = null;
   }
 
@@ -31,7 +31,7 @@ export class CancionesComponent implements OnInit,OnDestroy {
       this.overlay.Toggle();
   }
   ngOnDestroy(){
-      this.overlay.Toggle();
+      this.overlay.IsVisible=false;
   }
 
 }
