@@ -1,9 +1,15 @@
+<div class="col-sm-4">
+     
+        <h1  style="color:#ffffff">Transacciones</h1>
+</div>
+<br>
+<br>
 
     <div class="row">
       
         
-            <div class="col-sm-3"  *ngFor="let transaccion of transacciones">
-                <div class="card text-white bg-dark mb-3" style="cursor: pointer;"  >
+            <div class="col-sm-4"  *ngFor="let transaccion of transacciones">
+                <div class="card text-white bg-dark mb-4" style="cursor: pointer;"  >
                     
                     <img class="card-img-top" src="https://jazztojazz.com/wp-content/uploads/feeling-good-vinil.jpg" alt="Card image cap" > 
                     <div class="card-body" >
@@ -11,8 +17,8 @@
                         <p class="card-text">Id: {{transaccion.id}}</p>
                         <p class="card-text">Estado: {{transaccion.estado}}</p>
                         
-                        <p class="card-text"><small class="text-muted">{{transaccion.formaDePago}}</small></p>
-                        <a href="/transacciones/{{transaccion.id}}" class="card-link">Acceder Detalle</a>
+                        <p class="card-text"><small class="text-muted">Forma de pago: {{transaccion.formaDePago}}</small></p>
+                        <a routerLink="/transacciones/{{transaccion.id}}" class="card-link">Acceder Detalle</a>
                     </div>
                     
                 </div>

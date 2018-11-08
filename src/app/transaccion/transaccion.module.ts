@@ -5,21 +5,21 @@ import { TransaccionService } from './transaccion.service';
 
 import { HttpClientModule } from '@angular/common/http';
 import { TransaccionDetailComponent } from './transaccion-detail/transaccion-detail.component';
-import { TransaccionCreateComponent } from './transaccion-create/transaccion-create.component';
-import {CreateComponent} from './create/create.component';
 import { FormsModule } from '@angular/forms';
+import { RouterVinylAppModule } from '../router-module/router.module';
+import { ViniloComponent } from './vinilo-detail/vinilo.component';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterVinylAppModule
   ],
   declarations: [
     TransaccionListComponent,
     TransaccionDetailComponent,
-    TransaccionCreateComponent,
-    CreateComponent
+    ViniloComponent
   ],
   providers: [
     TransaccionService,
@@ -27,7 +27,7 @@ import { FormsModule } from '@angular/forms';
   exports: [
     TransaccionListComponent,
     TransaccionDetailComponent,
-    TransaccionCreateComponent
+     ViniloComponent
   ]
 })
 export class TransaccionModule { }

@@ -5,7 +5,6 @@ import { HomeComponent } from '../app-utils-module/home/home.component';
 import { SearchBarComponent } from '../app-utils-module/searchbar/searchbar.component';
 import { TransaccionListComponent } from '../transaccion/transaccion-list/transaccion-list.component';
 import { TransaccionDetailComponent } from '../transaccion/transaccion-detail/transaccion-detail.component';
-import { CreateComponent } from '../transaccion/create/create.component';
 import { CarritoComprasDetailComponent } from '../carrito-compras/carrito-compras-detail/carrito-compras-detail.component';
 
 import { BillinginformationListComponent } from '../billinginformation/billinginformation-list/billinginformation-list.component';
@@ -29,25 +28,10 @@ import { UsuarioComponent } from '../UsuariosModule/usuario-detail/usuario.compo
 export const routes : Routes = [
     { path: '', component: HomeComponent, pathMatch: 'full'},
     { path: 'map', component: SearchBarComponent, pathMatch: 'full'},
-    { path: 'transacciones',
-        children: [
-            {
-                path: 'list',
-                component: TransaccionListComponent  , pathMatch: 'full'
-            },
-            {
-                path: ':id',
-                component: TransaccionDetailComponent  , pathMatch: 'full'
-            },
-            {
-                path: 'create',
-                component: CreateComponent  , pathMatch: 'full'
-            }
-        ]},
-        { path: 'carrito-compras',
-        
-                component: CarritoComprasDetailComponent  , pathMatch: 'full'
-            },
+    { path: 'transacciones',component: TransaccionListComponent  , pathMatch: 'full'},
+    { path: 'transacciones/:id',component: TransaccionDetailComponent  , pathMatch: 'full'},
+
+     { path: 'carrito-compras',component: CarritoComprasDetailComponent  , pathMatch: 'full' },
    
     { path: 'billing', component:BillinginformationListComponent , pathMatch: 'full' },
     { path: 'vinilos' , component : ViniloListComponent, pathMatch : 'full'},
@@ -61,9 +45,7 @@ export const routes : Routes = [
     { path: 'comentarios', component: ComentarioListComponent , pathMatch: 'full' },
     { path: 'wishList', component: WishListListComponent , pathMatch: 'full' },
     { path: 'wishListt', component: WishListDetailComponent , pathMatch: 'full' },
-    { path: 'transacciones',
-    children:[{path: 'list', component:TransaccionListComponent },{path: ':id', component:TransaccionDetailComponent }], 
-     },
+   
     { path: 'transacciones', component: TransaccionListComponent , pathMatch: 'full' },
     { path: 'comentarios', component: ComentarioListComponent , pathMatch: 'full' },
     { path: 'wishList', component: WishListListComponent , pathMatch: 'full' },
