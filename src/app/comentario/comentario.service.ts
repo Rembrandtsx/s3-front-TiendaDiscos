@@ -9,7 +9,14 @@ export class ComentarioService {
 
   constructor(private http: HttpClient){}
 
+  tipo: String;
+
+
   getComentarios(): Observable<Comentario[]> {
-    return this.http.get<Comentario[]>('../../assets/comentarios.json');
+    this.tipo = 'usuarios';
+    return this.http.get<Comentario[]>('http://localhost:8080/s3_tiendadiscos-api/api/'+this.tipo+'/1/comentarios/');
     }
+  createComentarios(comentario): Observable<Comentario>{
+    return this.http.post<Comentario>('http://localhost:8080/s3_tiendadiscos-api/api/usuarios/1/comentarios/1',comentario)
+  }
 }

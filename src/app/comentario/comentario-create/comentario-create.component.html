@@ -1,0 +1,18 @@
+<div class = "row">
+    <div class ="col12">
+        
+        <h4>Crear un comentario</h4>
+        <form name = "comentario" (ngSubmit) = "f.form.valid && createComentario()" #f="ngForm" novalidate>
+            <div class = "form-group" >
+                <label for = "contenidoMensaje"><b>Contenido del mensaje</b></label>
+                <input type = "text" name = "contenidoMensaje" class = "form-control" id= "contenidoMensaje" [(ngModel)] = "comentario.contenido" 
+                #contenidoMensaje = "ngModel" [ngClass]="{'is-valid' : f.submitted && contenidoMensaje.invalid}" required>
+            </div>
+            <div class = "row form-inline justify-content-center aliign-self-center">
+                <button type = "submit" class = "btn btn-primary">Crear</button>
+                <div class = "divider"></div>
+                <button type = "button" class = "btn btn-danger" (click) = "cancelCreation()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -5,7 +5,7 @@ import { Injectable } from "@angular/core";
 
 
 @Injectable()
-export class Overlay {
+export class OverlayMusic {
 
   public IsVisible: boolean = false;
   public cancnionActual: string;
@@ -15,7 +15,8 @@ export class Overlay {
     }
 
 
-  public Toggle(): void {
+    public Toggle(): void {
+    console.log("inyectado");
     this.IsVisible = !this.IsVisible;
   }
 }
