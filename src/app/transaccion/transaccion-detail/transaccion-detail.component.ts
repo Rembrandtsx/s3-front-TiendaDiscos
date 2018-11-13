@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { TransaccionService} from '../transaccion.service'
 import { ActivatedRoute, Router, NavigationEnd} from '@angular/router'
 import { TransaccionDetail } from '../transaccion-detail';
+import { Vinilo } from '../../vinilo/vinilo';
 @Component({
   selector: 'detail-transaccion',
   templateUrl: './transaccion-detail.component.html',
-  styles: []
+  styleUrls: ['./transaccion-detail.component.css']
 })
 export class TransaccionDetailComponent implements OnInit {
 

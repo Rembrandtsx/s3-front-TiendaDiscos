@@ -1,9 +1,9 @@
 import { Component, OnInit,Input } from '@angular/core';
-import { Vinilo } from '../vinilo';
-import { ViniloService } from '../vinilo.service';
+import { Vinilo } from '../../vinilo/vinilo';
+import { ViniloService } from '../../vinilo/vinilo.service';
 
 @Component({
-  selector: S,
+  selector: 'list-vinilosCarritoCompras',
   templateUrl: './vinilo-list.component.html',
   styleUrls: [ './vinilo-list.component.css']
 })

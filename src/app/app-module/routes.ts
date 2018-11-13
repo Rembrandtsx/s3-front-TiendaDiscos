@@ -18,8 +18,6 @@ export const routes = [
     { path: 'comentarios', component: ComentarioListComponent , pathMatch: 'full' },
     { path: 'wishList', component: WishListListComponent , pathMatch: 'full' },
     { path: 'wishListt', component: WishListDetailComponent , pathMatch: 'full' },
-    { path: 'vinilo', component: ViniloListComponent , pathMatch: 'full' },
-    { path: 'transacciones',
-    children:[{path: 'list', component:TransaccionListComponent },{path: ':id', component:TransaccionDetailComponent }]},
-
+    { path: 'vinilo', component: ViniloListComponent , pathMatch: 'full' }
+    
   ];
