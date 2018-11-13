@@ -1,25 +1,21 @@
-<h1  style="color:#ffffff">Carrito Compras</h1>
-<dl>
-    <dl>
-    <div class="row">
-      
-        <div class="col-sm-3"  *ngFor="let carritoCompras of carritoComprasDetail">
-            <div class="card text-white bg-dark mb-3" style="cursor: pointer;"  >
-                
-                <img class="card-img-top" [src]='carritoCompras' alt="Card image cap" > 
-                <div class="card-body" >
-                    <h5 clas="card-title">Vinilos</h5>
-                    <p class="card-text">Id : {{carritoCompras.id}}</p>
-                    <p class="card-text"></p>
-                    
-                    <p class="card-text"><small class="text-muted">Voy haciendolo</small></p>
-                    <a href="/transacciones/{{carritoCompras.id}}" class="card-link">Temp</a>
-                </div>
-                
-            </div>
-        </div> 
+<div class="row">
+    <div class="col-sm-4">
+     
+        <h1  style="color:#ffffff">Carrito Compras</h1>
+    </div>
 
-   
-   
+        
+    <div class="col-sm-4">
+        
+        <button class="btn btn-success"><span style="margin-right:20px" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Comprar</button>
+    </div>
+              
+
+</div>
+<br>
+<br>
+
+<div>
+    <list-vinilosCarritoCompras [vinilos]="carritoComprasDetail.vinilos"></list-vinilosCarritoCompras>
 </div>
 

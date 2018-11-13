@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-sm-4"  *ngFor="let vinilo of vinilos">
+         <div class="card text-white bg-dark mb-4" routerLink="#" style="cursor: pointer;">
+            <img class="card-img-top" [src]='vinilo.url' alt="Card image cap"> 
+                <div class="card-body">
+                    <h5 clas="card-title">{{vinilo.nombre}}</h5>
+                    <p class="card-text"> Precio: ${{vinilo.precio}}</p>
+                    <p class="card-text"> Productora: ${{vinilo.productora}}</p>
+                    <button class="btn btn-success"><span style="margin-right:20px" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Eliminar del carrito</button>
+                  
+                     </div>
+        </div>
+    </div>    
+</div>

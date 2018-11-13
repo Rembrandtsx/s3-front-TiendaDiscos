@@ -1,0 +1,41 @@
+<div class="overview__albums">
+              
+    <div class="overview__albums__head">
+    
+      <span class="section-title" style="font-size: 1.5em">{{vinilo?.artista}}</span> 
+    </div>
+    
+    <div class="album">
+    
+      <div class="album__info">
+      
+        <div class="album__info__art" >
+        
+          <img [src]="vinilo?.url"  alt="When It's Dark Out" />
+          
+        </div>
+        
+        <div class="album__info__meta">
+        
+          <div class="album__year"  style="font-size: 1em">{{vinilo?.fechaLanzamiento | date}}</div>
+          
+          <div class="album__name"  style="font-size: 3em">{{vinilo?.nombre}}</div>
+        <br>
+        <div class="album__name"  style="font-size: 1em">COSTO TOTAL:</div>
+        
+       
+          <div class="album__year" style="font-size: 2em">$ {{vinilo?.precio}}</div>
+          
+          
+          
+        </div>
+        
+      </div>
+      
+
+      
+    </div>
+    
+  </div>
+
+  

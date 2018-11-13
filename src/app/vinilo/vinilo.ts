@@ -1,7 +1,7 @@
 /**
  * Esta clase representa un vinilo de VinilApp
  */
-export interface Vinilo{
+export class Vinilo{
 
     /**
      * Nombre del Vinilo.
