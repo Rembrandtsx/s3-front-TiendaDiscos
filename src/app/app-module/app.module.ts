@@ -2,6 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 
 import { AppComponent } from './app-component/app.component';
@@ -20,6 +21,7 @@ import { WishListModule } from '../wishList/wishList.module';
 import { CancionModule } from '../canciones/canciones.module';
 import { OverlayMusic } from '../canciones/overlay';
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -37,7 +39,8 @@ import { OverlayMusic } from '../canciones/overlay';
     ComentarioModule,
     WishListModule,
     CarritoComprasModule,
-    CancionModule
+    CancionModule,
+    NgxPermissionsModule.forRoot()
   ],
   providers: [OverlayMusic],
   bootstrap: [AppComponent],

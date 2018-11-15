@@ -46,15 +46,10 @@ export const routes : Routes = [
     { path: 'comentariosCreate', component: ComentarioCreateComponent , pathMatch: 'full' },
     { path: 'wishList', component: WishListListComponent , pathMatch: 'full' },
     { path: 'wishListt', component: WishListDetailComponent , pathMatch: 'full' },
-<<<<<<< HEAD
-   
-    { path: 'transacciones', component: TransaccionListComponent , pathMatch: 'full' },
-=======
     { path: 'transacciones',
     children:[{path: 'list', component:TransaccionListComponent },{path: ':id', component:TransaccionDetailComponent }], 
      },
     { path: 'transaccion', component: TransaccionListComponent , pathMatch: 'full' },
->>>>>>> master
     { path: 'comentarios', component: ComentarioListComponent , pathMatch: 'full' },
     { path: 'wishList', component: WishListListComponent , pathMatch: 'full' },
     { path: 'wishListt', component: WishListDetailComponent , pathMatch: 'full' },

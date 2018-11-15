@@ -3,7 +3,7 @@ import { Vinilo } from '../vinilo';
 import { ViniloService } from '../vinilo.service';
 
 @Component({
-  selector: S,
+  selector: "list-vinilos",
   templateUrl: './vinilo-list.component.html',
   styleUrls: [ './vinilo-list.component.css']
 })
