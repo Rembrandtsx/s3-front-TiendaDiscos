@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { CancionesComponent } from './canciones-list/canciones.component';
 import { CancionesService } from './canciones.service';
 import { HttpClientModule } from '@angular/common/http';
-
+import { ComentarioModule } from '../comentario/comentario.module'
 
 @NgModule({
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    ComentarioModule
   ],
   declarations: [
     CancionesComponent

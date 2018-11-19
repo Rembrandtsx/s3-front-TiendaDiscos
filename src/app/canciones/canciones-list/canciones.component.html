@@ -53,12 +53,16 @@
               <i class="ion-arrow-graph-up-right"></i>
               
             </div>
-
+            <button [ngClass]="{ 'button-light save': !showCreate, 'button-light save': showCreate }" type="button" class="btn"
+            (click)="showHideCreate()">Ver comentarios</button>
+            <div *ngIf="showCreate">
+            <app-comentario-list [tipo]="tipo" [id] = "id" ></app-comentario-list>
+             </div>
           </div>
 
 
         </div>
-        
+
       </div>
 
 

@@ -43,7 +43,7 @@
 
   <list-canciones></list-canciones>
   <button [ngClass]="{ 'button-light save': !showCreate, 'button-light save': showCreate }" type="button" class="btn"
-  (click)="showHideCreate()">Ver comentarios</button>
+  (click)="showHideCreate()">Ver comentarios Vinilo</button>
   <div *ngIf="showCreate">
   <app-comentario-list [tipo]="tipo" [id] = "id" ></app-comentario-list>
 </div>
