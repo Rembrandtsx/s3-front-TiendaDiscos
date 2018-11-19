@@ -4,18 +4,21 @@ import { CancionesComponent } from './canciones-list/canciones.component';
 import { CancionesService } from './canciones.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ComentarioModule } from '../comentario/comentario.module'
-
+import { CancionComponent } from './canciones-detail/canciones-detail.component'
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
-    ComentarioModule
+    ComentarioModule,
+    
   ],
   declarations: [
-    CancionesComponent
+    CancionesComponent,
+    CancionComponent
   ],
   providers: [
-    CancionesService
+    CancionesService,
+    CancionComponent
   ],
   exports: [
     CancionesComponent

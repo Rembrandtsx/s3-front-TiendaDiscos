@@ -18,7 +18,7 @@ export class CancionesComponent implements OnInit,OnDestroy {
   canciones : Canciones[];
   urlCancionActual:string;
   tipo : string;
-  id:number;
+  id:number[];
 
   showCreate: boolean;
   
@@ -26,7 +26,10 @@ export class CancionesComponent implements OnInit,OnDestroy {
     this.showCreate = !this.showCreate;
 }
   getCanciones(): void{
-    this.cancionesService.getCanciones().subscribe((vinilos: Canciones[])  => {this.canciones = vinilos; this.id = vinilos[0].id; } );
+    this.cancionesService.getCanciones().subscribe((vinilos: Canciones[]) =>{
+       this.canciones = vinilos;
+       this.id = vinilos.map(x => x.id);
+       } );
   }
 
   ngOnInit() {
