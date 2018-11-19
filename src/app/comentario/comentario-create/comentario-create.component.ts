@@ -41,7 +41,7 @@ export class ComentarioCreateComponent implements OnInit {
 
     @Input () tipo:string;
     
-    @Input()id:number;
+    @Input() id:number;
 
 
     /**
@@ -52,7 +52,7 @@ export class ComentarioCreateComponent implements OnInit {
             .subscribe((comentario) => {
                 this.comentario = comentario;
                 this.create.emit();
-                this.toastrService.success("The editorial was created", "Editorial creation");
+               // this.toastrService.success("The editorial was created", "Editorial creation");
             }, err => {
                 this.toastrService.error(err, "Error");
             });

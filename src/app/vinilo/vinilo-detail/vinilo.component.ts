@@ -38,7 +38,6 @@ export class ViniloComponent implements OnInit {
     this.getVinilos(viniloId);
     this.tipo = 'vinilos';
     this.id =  +this.routes.snapshot.paramMap.get('id');
-    this.showCreate = false;
   }
 
 }

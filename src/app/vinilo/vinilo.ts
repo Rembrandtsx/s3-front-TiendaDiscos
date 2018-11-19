@@ -34,10 +34,6 @@ export class Vinilo{
     previewURL : String;
 
     /**
-     * url con la imagen del Vinilo.
-     */
-    url : String;
-    /**
      * El id del vinilo
      */
     id:number;
