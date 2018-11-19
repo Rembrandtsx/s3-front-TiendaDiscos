@@ -21,14 +21,13 @@
           
           <div class="album__name">{{vinilo?.nombre}}</div>
           <div class="album__year" style="font-size: 0.8em">$ {{vinilo?.precio}}</div>
-          
+
           <div class="album__actions">
           
             <button class="button-light save">Agregar a carrito</button>
 
             <button class="button-light save">Agregar a wishlist</button>
             
-           
             
           </div>
           
@@ -43,3 +42,8 @@
   </div>
 
   <list-canciones></list-canciones>
+  <button [ngClass]="{ 'button-light save': !showCreate, 'button-light save': showCreate }" type="button" class="btn"
+  (click)="showHideCreate()">Ver comentarios</button>
+  <div *ngIf="showCreate">
+  <app-comentario-list [tipo]="tipo" [id] = "id" ></app-comentario-list>
+</div>

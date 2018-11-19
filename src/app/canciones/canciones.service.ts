@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 /**
  * URL para hacer la petición HTTP
  */
-const API_URL = '../../assets/JSON/cancionesEjemplo.json';
+const API_URL = 'http://localhost:8080/s3_tiendadiscos-api/api/canciones';
 
 /**
  * El servicio que utiliza el modulo canciones.

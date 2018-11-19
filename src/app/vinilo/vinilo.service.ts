@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 /**
  * URL para hacer la petición HTTP
  */
-const API_URL = '../../assets/vinilosejemplo.json';
+const API_URL = 'http://localhost:8080/s3_tiendadiscos-api/api/vinilos/';
 
 /**
  * El servicio que utiliza el modulo vinilo.

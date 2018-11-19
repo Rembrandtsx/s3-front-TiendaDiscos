@@ -18,7 +18,7 @@ export class CancionesComponent implements OnInit,OnDestroy {
   urlCancionActual:string;
 
   getCanciones(): void{
-    this.cancionesService.getCanciones().subscribe(vinilos => {this.canciones = vinilos; console.log(this.canciones)})
+    this.cancionesService.getCanciones().subscribe(vinilos => this.canciones = vinilos)
   }
 
   ngOnInit() {
