@@ -41,9 +41,18 @@
     
   </div>
 
-  <list-canciones></list-canciones>
+  <list-canciones [canciones] = "vinilo?.can"></list-canciones>
+
+  <button [ngClass]="{ 'button-light save': !showCreates, 'button-light save': showCreates }" type="button" class="btn"
+  (click)="showHideCreates()">Agregar cancion</button>
+  <div *ngIf="showCreates">
+
+  <app-cancion-create></app-cancion-create>
+</div>
+
   <button [ngClass]="{ 'button-light save': !showCreate, 'button-light save': showCreate }" type="button" class="btn"
   (click)="showHideCreate()">Ver comentarios Vinilo</button>
   <div *ngIf="showCreate">
   <app-comentario-list [tipo]="tipo" [id] = "id" ></app-comentario-list>
+
 </div>

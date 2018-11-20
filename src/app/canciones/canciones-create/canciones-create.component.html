@@ -1,0 +1,18 @@
+<div class = "row">
+        <div class ="col12">
+            
+            <h4>Crear una cancion</h4>
+            <form name = "cancion" (ngSubmit) = "f.form.valid && createCancion()" #f="ngForm" novalidate>
+                <div class = "form-group" >
+                    <label for = "contenidoMensaje"><b>Nombre de ka cancion</b></label>
+                    <input type = "text" name = "contenidoMensaje" class = "form-control" id= "contenidoMensaje" [(ngModel)] = "cancion.nombre" 
+                    #contenidoMensaje = "ngModel" [ngClass]="{'is-valid' : f.submitted && contenidoMensaje.invalid}" required>
+                </div>
+                <div class = "row form-inline justify-content-center aliign-self-center">
+                    <button type = "submit" class = "button-light save">Crear</button>
+                    <div class = "divider"></div>
+                    <button type = "button" class = "button-light saver" (click) = "cancelCreation()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>

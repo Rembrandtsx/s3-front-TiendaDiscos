@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CancionComponent implements OnInit {
 
-  constructor(private service : CancionesService) { }
+  constructor(private service : CancionesService,private routes : ActivatedRoute) { }
 
   @Input () cancion : Canciones;
   tipo : string;
@@ -23,13 +23,13 @@ export class CancionComponent implements OnInit {
 }
   
   getCancion(): void{
-    this.service.getCanciones().subscribe((vinilos: Canciones[]) =>
-    {this.cancion = vinilos.filter(obj=>{ return obj.id == id})[0];}
+    this.service.getCanciones(+this.routes.snapshot.paramMap.get('id')+'/canciones').subscribe((vinilos: Canciones[]) =>
+    {this.cancion = vinilos.filter(obj=>{ return obj.id == this.id})[0]})
   }
 
   ngOnInit() {
     this.getCancion();
-    this.tipo = 'canciones';
+    this.tipo = 'vinilos/'+this.routes.snapshot.paramMap.get('id')+'/canciones';
   }
 
 }

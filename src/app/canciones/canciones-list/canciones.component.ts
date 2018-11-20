@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy ,Input} from '@angular/core';
 import { Canciones } from '../canciones';
 import { CancionesService } from '../canciones.service';
 import { OverlayMusic } from '../overlay';
@@ -15,7 +15,7 @@ export class CancionesComponent implements OnInit,OnDestroy {
       this.urlCancionActual = null;
   }
 
-  canciones : Canciones[];
+  @Input() canciones : Canciones[];
   urlCancionActual:string;
   tipo : string;
   id:number[];
@@ -26,7 +26,7 @@ export class CancionesComponent implements OnInit,OnDestroy {
     this.showCreate = !this.showCreate;
 }
   getCanciones(): void{
-    this.cancionesService.getCanciones().subscribe((vinilos: Canciones[]) =>{
+    this.cancionesService.getCanciones(+this.routes.snapshot.paramMap.get('id') + '/canciones').subscribe((vinilos: Canciones[]) =>{
        this.canciones = vinilos;
        this.id = vinilos.map(x => x.id);
        } );

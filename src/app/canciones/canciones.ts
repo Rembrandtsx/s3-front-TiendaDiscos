@@ -1,4 +1,4 @@
-export interface Canciones {
+export class Canciones {
     calificacion:number,
     descripcion:string,
     duracion:string,

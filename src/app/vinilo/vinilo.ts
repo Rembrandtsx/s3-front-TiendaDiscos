@@ -1,7 +1,7 @@
 /**
  * Esta clase representa un vinilo de VinilApp
  */
-export class Vinilo{
+export class Vinilo {
 
     /**
      * Nombre del Vinilo.
@@ -21,20 +21,20 @@ export class Vinilo{
     /**
      * Precio del Vinilo.
      */
-    precio : number;
+    precio: number;
 
     /**
      * Productora del Vinilo.
      */
-    productora : String;
+    productora: String;
 
     /**
      * URL de una vista prieva mp3 del Vinilo.
      */
-    previewURL : String;
+    previewURL: String;
 
     /**
      * El id del vinilo
      */
-    id:number;
+    id: number;
 }

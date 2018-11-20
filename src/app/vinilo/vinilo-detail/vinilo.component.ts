@@ -18,8 +18,15 @@ export class ViniloComponent implements OnInit {
 
   showCreate: boolean;
   
+  showCreates: boolean;
+
   showHideCreate(): void {
     this.showCreate = !this.showCreate;
+}
+
+  
+showHideCreates(): void {
+  this.showCreates = !this.showCreates;
 }
   
   getVinilos(id:number): void{
