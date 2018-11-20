@@ -1,3 +1,5 @@
+import { Usuario } from '../UsuariosModule/interfaces/usuario'
+
 export class Comentario{
     /**
      * Id del comentario
@@ -22,5 +24,5 @@ export class Comentario{
     /**
      * Id de la cancion
      */
-    usuario: number;
+    usuario: Usuario;
 }

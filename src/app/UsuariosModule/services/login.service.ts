@@ -10,7 +10,7 @@ const API_URL = '../../assets/JSON/usuariosEjemplo.json';
 
 @Injectable()
 export class LoginService{
-    //currentUser:Usuario=null;
+    // currentUser:Usuario=null;
     currentUser:Usuario={
         username:"as",
         email:"as",

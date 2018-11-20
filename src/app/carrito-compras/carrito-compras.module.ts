@@ -4,13 +4,14 @@ import { CarritoComprasDetailComponent } from './carrito-compras-detail/carrito-
 
 import { CarritoComprasService } from './carrito-compras.service';
 import {HttpClientModule} from '@angular/common/http'
+import { ViniloListComponent } from './vinilo-list/vinilo-list.component';
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule
   ],
-  declarations: [CarritoComprasDetailComponent],
+  declarations: [CarritoComprasDetailComponent,ViniloListComponent ],
   providers:[CarritoComprasService],
-  exports: [ CarritoComprasDetailComponent]
+  exports: [ CarritoComprasDetailComponent, ViniloListComponent]
 })
 export class CarritoComprasModule { }

@@ -13,11 +13,18 @@ export class ComentarioListComponent implements OnInit {
 
   @Input() comentario: Comentario[];
 
+  showCreate: boolean;
+  
+  showHideCreate(): void {
+    this.showCreate = !this.showCreate;
+}
+
   getComentarios (): void {
     this.comentarioService.getComentarios().subscribe(comentarios => this.comentario = comentarios);
   }
 
   ngOnInit() {
+    this.showCreate = false;
     this.getComentarios();
   }
 
