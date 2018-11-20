@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import { SearchBarComponent } from '../../app-utils-module/searchbar/searchbar.component';
-import { OverlayMusic } from '../../canciones/overlay';
+import { Overlay } from '../../canciones/overlay';
+import { LoginService } from '../../UsuariosModule/services/login.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,11 @@ import { OverlayMusic } from '../../canciones/overlay';
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  constructor(private overlay: OverlayMusic){
+  constructor(public overlay: Overlay, public auth:LoginService){
 
+  }
+  logout(){
+    this.overlay.toogleMenu();
+    this.auth.logout();
   }
 }

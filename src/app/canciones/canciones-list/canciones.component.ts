@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy ,Input} from '@angular/core';
 import { Canciones } from '../canciones';
 import { CancionesService } from '../canciones.service';
-import { OverlayMusic } from '../overlay';
+import { Overlay} from '../overlay';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CancionesComponent implements OnInit,OnDestroy {
 
-  constructor(private cancionesService : CancionesService,private overlay:OverlayMusic,private routes: ActivatedRoute) { 
+  constructor(private cancionesService : CancionesService,private overlay:Overlay,private routes: ActivatedRoute) { 
       this.urlCancionActual = null;
   }
 
