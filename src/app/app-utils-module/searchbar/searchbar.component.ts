@@ -48,16 +48,13 @@ export class SearchBarComponent implements OnInit{
         
         this.vinilos.getVinilos().subscribe(vin=>{
             this.ListaVinilos= vin
-            this.llenarLista();
+            this.nombreVinilos= this.ListaVinilos.map(v=>v.nombre);
         
         });
 
         
     }
-    llenarLista(){
-        this.nombreVinilos= this.ListaVinilos.map(v=>v.nombre);
-        console.log(this.nombreVinilos);
-    }
+ 
     logout(){
         console.log("salido");
         this.auth.logout();

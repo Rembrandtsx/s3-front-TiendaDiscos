@@ -29,9 +29,6 @@ import { ComentarioCreateComponent } from '../comentario/comentario-create/comen
 export const routes : Routes = [
     { path: '', component: HomeComponent, pathMatch: 'full'},
     { path: 'map', component: SearchBarComponent, pathMatch: 'full'},
-    { path: 'transacciones',component: TransaccionListComponent  , pathMatch: 'full'},
-    { path: 'transacciones/:id',component: TransaccionDetailComponent  , pathMatch: 'full'},
-
      { path: 'carrito-compras',component: CarritoComprasDetailComponent  , pathMatch: 'full' },
    
     { path: 'billing', component:BillinginformationListComponent , pathMatch: 'full' },

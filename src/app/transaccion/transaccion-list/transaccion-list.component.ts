@@ -4,7 +4,7 @@ import { TransaccionService} from '../transaccion.service';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'list-transacciones',
+  selector: 'transacciones-list',
   templateUrl: './transaccion-list.component.html',
   styleUrls:['./transaccion-list.component.css']
 })
@@ -21,6 +21,4 @@ export class TransaccionListComponent implements OnInit {
   ngOnInit() {
     this.getTransacciones();
   }
-
-
 }

@@ -11,8 +11,12 @@ export class ComentarioListComponent implements OnInit {
 
   constructor (private comentarioService: ComentarioService) { }
 
-  @Input() comentario: Comentario[];
+  comentario: Comentario[];
 
+  @Input() tipo:string;
+
+  @Input() id:number;
+  
   showCreate: boolean;
   
   showHideCreate(): void {
@@ -20,7 +24,7 @@ export class ComentarioListComponent implements OnInit {
 }
 
   getComentarios (): void {
-    this.comentarioService.getComentarios().subscribe(comentarios => this.comentario = comentarios);
+    this.comentarioService.getComentarios(this.tipo, this.id).subscribe(comentarios => this.comentario = comentarios);
   }
 
   ngOnInit() {

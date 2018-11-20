@@ -1,16 +1,16 @@
 import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 
 import {ToastrService} from 'ngx-toastr';
-
-import {Comentario } from '../comentario';
-import { ComentarioService } from '../comentario.service';
+import { ActivatedRoute } from '@angular/router';
+import {Canciones } from '../canciones';
+import { CancionesService } from '../canciones.service';
 
 @Component({
-    selector: 'app-comentario-create',
-    templateUrl: './comentario-create.component.html',
-    styleUrls: ['./comentario-create.component.css']
+    selector: 'app-cancion-create',
+    templateUrl: './canciones-create.component.html',
+   // styleUrls: ['./comentario-create.component.css']
 })
-export class ComentarioCreateComponent implements OnInit {
+export class CancionCreateComponent implements OnInit {
 
     /**
     * Constructor for the component
@@ -18,14 +18,15 @@ export class ComentarioCreateComponent implements OnInit {
     * @param toastrService The toastr to show messages to the user 
     */
     constructor(
-        private comentarioService: ComentarioService,
-        private toastrService: ToastrService
+        private cancionesService: CancionesService,
+        private toastrService: ToastrService,
+        private routes: ActivatedRoute,
     ) {}
 
     /**
     * The new editorial
     */
-   comentario: Comentario;
+   cancion: Canciones;
 
     /**
     * The output which tells the parent component
@@ -39,24 +40,21 @@ export class ComentarioCreateComponent implements OnInit {
     */
     @Output() create = new EventEmitter();
 
-    @Input () tipo:string;
-    
-    @Input() id:number;
 
 
     /**
     * Creates a new editorial
     */
-    createComentario(): Comentario {
-        this.comentarioService.createComentarios(this.comentario,this.tipo,this.id)
-            .subscribe((comentario) => {
-                this.comentario = comentario;
+    createCancion(): Canciones {
+        this.cancionesService.createCanciones(this.cancion,+this.routes.snapshot.paramMap.get('id')+'/canciones')
+            .subscribe(cancion => {
+                this.cancion = cancion;
                 this.create.emit();
-                this.toastrService.success("The editorial was created", "Editorial creation");
+               // this.toastrService.success("The editorial was created", "Editorial creation");
             }, err => {
                 this.toastrService.error(err, "Error");
             });
-        return this.comentario;
+        return this.cancion;
     }
 
     /**
@@ -70,6 +68,7 @@ export class ComentarioCreateComponent implements OnInit {
     * This function will initialize the component
     */
     ngOnInit() {
-        this.comentario = new Comentario();
-    }
+        this.cancion = new Canciones();
+        this.createCancion()
+;    }
 }
