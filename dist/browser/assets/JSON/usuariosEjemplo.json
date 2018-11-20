@@ -1,0 +1,62 @@
+[
+    {
+        "username":"Salozord",
+        "email":"example@example.com",
+        "contrasenha":"123456",
+        "nombre":"Santiago Salazar",
+        "direccion":"Cll22 #12-34",
+        "rol":"usuario",
+        "calificacion":3.8,
+        "imagen": "http://santiagosalazar.me/img/IMG_20180427_143742.jpg"
+    },
+    {
+        "username":"Rembrandtsx",
+        "email":"iam@camilosalinas.me",
+        "contrasenha":"123456",
+        "nombre":"Camilo Salinas",
+        "direccion":"cll 6 #1a-99este",
+        "rol":"admin",
+        "calificacion":4.8,
+        "imagen":"https://i.postimg.cc/ncRHjBnJ/2088c27f-050e-45af-82b9-04fc53a774c7.jpg"
+    },
+    {
+        "username":"Lauisa341",
+        "email":"li.forero@uniandes.edu.co",
+        "contrasenha":"123456",
+        "nombre":"Laura Forero",
+        "direccion":"Cll 1 #33-44",
+        "rol":"admin",
+        "calificacion":5,
+        "imagen":""
+    },
+    {
+        "username":"Keblato",
+        "email":"ks.blanco@uniandes.edu.co",
+        "contrasenha":"123456",
+        "nombre":"Kevin Blanco",
+        "direccion":"Cll 18 #11-22",
+        "rol":"usuario",
+        "calificacion":4.2,
+        "imagen":""
+    },
+    {
+        "username":"Marnz",
+        "email":"js.martinezn@uniandes.edu.co",
+        "contrasenha":"123456",
+        "nombre":"Juan Sebastian Niño",
+        "direccion":"Cll 18 #11-22",
+        "rol":"usuario",
+        "calificacion":4.2,
+        "imagen":""
+    },
+    {
+        "username":"linkhl",
+        "email":"af.hernandezl@uniandes.edu.co",
+        "contrasenha":"123456",
+        "nombre":"Andres Hernandez",
+        "direccion":"Cll 12 #33-45",
+        "rol":"admin",
+        "calificacion":4.6,
+        "imagen":""
+    }
+]

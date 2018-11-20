@@ -1,0 +1,81 @@
+[
+    {
+        "calificacion": 4.5,
+        "descripcion": "George Michael",
+        "duracion": "5:05",
+        "id": 1,
+        "nombre": "Fast Love",
+        "previewURI": "https://s1.vocaroo.com/media/download_temp/Vocaroo_s1j7kSbEOaTr.mp3"
+    },
+    {
+        "calificacion": 4.5,
+        "descripcion": "Nirvana",
+        "duracion": "4:15",
+        "id": 2,
+        "nombre": "In Bloom",
+        "previewURI": "https://s1.vocaroo.com/media/download_temp/Vocaroo_s1wfVKBKepZm.mp3"
+    },
+    {
+        "calificacion": 4.5,
+        "descripcion": "Aerosmith",
+        "duracion": "3:57",
+        "id": 3,
+        "nombre": "Blind man",
+        "previewURI": "https://s0.vocaroo.com/media/download_temp/Vocaroo_s0ADxKX4pw5P.mp3"
+    },
+    {
+        "calificacion": 4.5,
+        "descripcion": "Van Halen",
+        "duracion": "4:42",
+        "id": 4,
+        "nombre": "Hot for teacher",
+        "previewURI": "https://s0.vocaroo.com/media/download_temp/Vocaroo_s0OuJ4dHJnSS.mp3"
+    },    {
+        "calificacion": 4.5,
+        "descripcion": "Keane",
+        "duracion": "3:55",
+        "id": 5,
+        "nombre": "Somewhere only we know",
+        "previewURI": "https://s0.vocaroo.com/media/download_temp/Vocaroo_s0hFwniaN4SE.mp3"
+    },
+    {
+        "calificacion": 4.5,
+        "descripcion": "Silvio Rodriguez acustica.",
+        "duracion": "3:57",
+        "id": 6,
+        "nombre": "La familia, la propiedad privada y el amor.",
+        "previewURI": "https://s0.vocaroo.com/media/download_temp/Vocaroo_s0dDvmxBSnvd.mp3"
+    },
+    {
+        "calificacion": 4.5,
+        "descripcion": "Hora del despecho",
+        "duracion": "3:23",
+        "id": 7,
+        "nombre": "Noviembre sin ti",
+        "previewURI": "https://s0.vocaroo.com/media/download_temp/Vocaroo_s04p7h56MSk1.mp3"
+    },
+    {
+        "calificacion": 4.5,
+        "descripcion": "Versión en vivo de Elvis",
+        "duracion": "2:47",
+        "id": 8,
+        "nombre": "Burning love",
+        "previewURI": "https://s0.vocaroo.com/media/download_temp/Vocaroo_s0aRBVg6Zu07.mp3"
+    },
+    {
+        "calificacion": 4.5,
+        "descripcion": "",
+        "duracion": "4:27",
+        "id": 9,
+        "nombre": "Cannabis",
+        "previewURI": "https://s0.vocaroo.com/media/download_temp/Vocaroo_s00oPYL28641.mp3"
+    },
+    {
+        "calificacion": 4.5,
+        "descripcion": "Original de David Bowie",
+        "duracion": "3:33",
+        "id": 10,
+        "nombre": "Changes",
+        "previewURI": "https://s0.vocaroo.com/media/download_temp/Vocaroo_s0CgvmHmcym1.mp3"
+    }
+]
