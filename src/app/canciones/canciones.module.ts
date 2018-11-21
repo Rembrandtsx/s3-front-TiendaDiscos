@@ -7,30 +7,31 @@ import { ComentarioModule } from '../comentario/comentario.module'
 import { CancionComponent } from './canciones-detail/canciones-detail.component'
 import { CancionCreateComponent} from './canciones-create/canciones-create.component';
 import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
-import { ToastrModule } from 'ngx-toastr';
+import { CancionEditComponent } from './canciones-edit/canciones-edit.component';
+
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
     ComentarioModule,
-    FormsModule,
-    BrowserModule,
-    ToastrModule.forRoot()
+    FormsModule
   ],
   declarations: [
     CancionesComponent,
     CancionComponent,
-    CancionCreateComponent
+    CancionCreateComponent,
+    CancionEditComponent
   ],
   providers: [
     CancionesService,
     CancionComponent,
-    CancionCreateComponent
+    CancionCreateComponent,
+    CancionEditComponent
   ],
   exports: [
     CancionesComponent,
-    CancionCreateComponent
+    CancionCreateComponent,
+    CancionEditComponent
   ]
 })
 export class CancionModule { }
