@@ -1,0 +1,23 @@
+<div class = "md-2">
+    <div class="track__title featured">
+    
+      <span class="title">{{cancion.nombre}}</span>
+      <span class="feature">{{cancion.descripcion}}</span>
+      
+    </div>
+
+
+    
+    <div class="track__length">{{cancion.duracion}}</div>
+    
+    <div class="track__popularity">
+    
+      <i class="ion-arrow-graph-up-right"></i>
+      
+    </div>
+    <button [ngClass]="{ 'button-light save': !showCreate, 'button-light save': showCreate }" type="button" class="btn"
+    (click)="showHideCreate()">Ver comentarios</button>
+    <div *ngIf="showCreate">
+    <app-comentario-list [tipo]="tipo" [id] = "cancion?.id" ></app-comentario-list>
+     </div>
+    </div>

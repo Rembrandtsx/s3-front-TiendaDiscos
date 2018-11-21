@@ -29,36 +29,19 @@
           <div class="track" *ngFor="let cancion of canciones; index as i">
 
             <div class="track__number">{{i+1}}</div>
-
             <div class="track__added" >
 
                 <i class="far fa-play-circle" *ngIf="!overlay.IsVisible" style="cursor: pointer;" (click)="reproducir(cancion.previewURI)"></i>
                 <i class="far fa-pause-circle" *ngIf="overlay.IsVisible" style="cursor: pointer;" (click)="reproducir(cancion.previewURI)"></i>
-
+        
             </div>
-
-            <div class="track__title featured">
-            
-              <span class="title">{{cancion.nombre}}</span>
-              <span class="feature">{{cancion.descripcion}}</span>
-              
-            </div>
-
-
-            
-            <div class="track__length">{{cancion.duracion}}</div>
-            
-            <div class="track__popularity">
-            
-              <i class="ion-arrow-graph-up-right"></i>
-              
-            </div>
-
+        
+            <app-cancion-detail [cancion] = "cancion" [id] = "cancion?.id"></app-cancion-detail>
           </div>
 
 
         </div>
-        
+
       </div>
 
 

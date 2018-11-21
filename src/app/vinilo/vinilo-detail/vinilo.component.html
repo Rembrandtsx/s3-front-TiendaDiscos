@@ -11,7 +11,7 @@
       
         <div class="album__info__art">
         
-          <img [src]="vinilo?.url" alt="When It's Dark Out" />
+            <img class="card-img-top" [src]='vinilo?.previewURI || ""' alt="Card image cap"> 
           
         </div>
         
@@ -21,14 +21,13 @@
           
           <div class="album__name">{{vinilo?.nombre}}</div>
           <div class="album__year" style="font-size: 0.8em">$ {{vinilo?.precio}}</div>
-          
+
           <div class="album__actions">
           
             <button class="button-light save">Agregar a carrito</button>
 
             <button class="button-light save">Agregar a wishlist</button>
             
-           
             
           </div>
           
@@ -42,4 +41,18 @@
     
   </div>
 
-  <list-canciones></list-canciones>
+  <list-canciones [canciones] = "vinilo?.canciones"></list-canciones>
+
+  <button [ngClass]="{ 'button-light save': !showCreates, 'button-light save': showCreates }" type="button" class="btn"
+  (click)="showHideCreates()">Agregar cancion</button>
+  <div *ngIf="showCreates">
+
+  <app-cancion-create></app-cancion-create>
+</div>
+
+  <button [ngClass]="{ 'button-light save': !showCreate, 'button-light save': showCreate }" type="button" class="btn"
+  (click)="showHideCreate()">Ver comentarios Vinilo</button>
+  <div *ngIf="showCreate">
+  <app-comentario-list [tipo]="tipo" [id] = "id" ></app-comentario-list>
+
+</div>

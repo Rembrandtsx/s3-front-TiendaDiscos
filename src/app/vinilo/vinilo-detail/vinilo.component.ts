@@ -13,15 +13,29 @@ export class ViniloComponent implements OnInit {
   constructor(private viniloService : ViniloService, private routes: ActivatedRoute) { }
 
   vinilo : Vinilo;
+  tipo : string;
+  id:number;
 
+  showCreate: boolean;
+  
+  showCreates: boolean;
+
+  showHideCreate(): void {
+    this.showCreate = !this.showCreate;
+}
+
+  
+showHideCreates(): void {
+  this.showCreates = !this.showCreates;
+}
+  
   getVinilos(id:number): void{
     this.viniloService.getVinilos().subscribe(vinilos => 
         {
             
             
             this.vinilo = vinilos.filter(obj=>{ return obj.id == id})[0];
-        
-        
+           
         
         })
   }
@@ -29,6 +43,8 @@ export class ViniloComponent implements OnInit {
   ngOnInit() {
     let viniloId = +this.routes.snapshot.paramMap.get('id'); 
     this.getVinilos(viniloId);
+    this.tipo = 'vinilos';
+    this.id =  +this.routes.snapshot.paramMap.get('id');
   }
 
 }
