@@ -7,7 +7,7 @@ import { BillingInformation } from './billinginformation';
 /**
  * URL para hacer la peticion HTTP
  */
-const API_URL = '../../assets/JSON/JSONBilling.json';
+const API_URL = 'http://localhost:8080/s3_tiendadiscos-api/api/usuarios/23/billing';
 //const BILLINGS = "/billing"
 /**
  * El servicio que utiliza el modulo BillingInformation
@@ -54,5 +54,9 @@ export class BillingInformationService {
      */
    createMedioDePago(medioDePago): Observable<boolean> {
     return this.http.post<boolean>(API_URL+"2",medioDePago);
+}
+
+createBilling(billing): Observable<BillingInformation> {
+    return this.http.post<BillingInformation>(API_URL , billing);
 }
 } 

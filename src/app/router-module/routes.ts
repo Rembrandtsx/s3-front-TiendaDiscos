@@ -23,6 +23,7 @@ export const routes : Routes = [
     { path: 'transacciones', component:TransaccionListComponent , pathMatch: 'full' },
     { path: 'billing', component:BillinginformationListComponent , pathMatch: 'full' },
     { path: 'billing/tarjeta/crear', component:MadioDePagoCreateComponent , pathMatch: 'full' },
+    { path: 'billing/crear', component:BillinginformationCreateComponent , pathMatch: 'full' },
 
     { path: 'usuarios', component:UsuarioListComponent , pathMatch: 'full' },
     { path: 'me', component:UsuarioListComponent, pathMatch:'full', canActivate:[AuthGuard]},

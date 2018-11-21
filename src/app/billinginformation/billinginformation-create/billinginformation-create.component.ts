@@ -1,53 +1,60 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { BillingInformationService } from '../billinginformation.service';
-import { MedioDePago } from '../../medio-de-pago/medioDePago';
+import { ToastrService } from 'ngx-toastr';
+import { BillingInformation } from '../billinginformation';
 
 @Component({
-  selector: 'app-billinginformation-create',
-  templateUrl: './billinginformation-create.component.html',
-  styleUrls: ['./billinginformation-create.component.css']
+    selector: 'app-billinginformation-create',
+    templateUrl: './billinginformation-create.component.html',
+    styleUrls: ['./billinginformation-create.component.css']
 })
 export class BillinginformationCreateComponent implements OnInit {
 
-  constructor( private billingInformationService: BillingInformationService,  ) { }
+    constructor(
+        private billingInformationService: BillingInformationService, ) { }
+    private toastrService: ToastrService
 
-      /**
+
+
+    billing: BillingInformation;
+    /**
+  * The output which tells the parent component
+  * that the user no longer wants to create an author
+  */
+    @Output() cancel = new EventEmitter();
+
+    /**
     * The output which tells the parent component
-    * that the user no longer wants to create an author
+    * that the user created a new author
     */
-   @Output() cancel = new EventEmitter();
+    @Output() create = new EventEmitter();
 
-   /**
-   * The output which tells the parent component
-   * that the user created a new author
-   */
-   @Output() create = new EventEmitter();
-
-   /**
-    * el nuevo medio de pago
-    */
-   medioDePago:MedioDePago;
-
-  ngOnInit() {
-  }
-
-      /**
-    * Creates an author
-    */
-   createMedioDePago(): void {
-    var medioDePago_create = {
-        name: this.medioDePago.name,
-        numero: this.medioDePago.numero,
-        numeroDeVerificacion: this.medioDePago.numeroVerificacion,
-        fechaVencimiento: this.medioDePago.fechaVencimiento,
-        cvc:this.medioDePago.cvc,
-        imagen: this.medioDePago.imagen
-    };
-    this.billingInformationService.createMedioDePago(medioDePago_create)
-        .subscribe(() => {
+    /**
+     * el nuevo medio de pago
+     */
+    createBilling(): void {
+        var billing_create= {
+            cuentaDeAhorros:this.billing.cuentaDeAhorros
+        };
+        this.billingInformationService.createBilling(billing_create)
+        .subscribe(()=> {
             this.create.emit();
-        }, err => {
+            this.toastrService.success("The author was created", "Author creation");
+        },err => {
+            this.toastrService.error(err, "Error");
         });
-}
+    }
+
+
+    cancelCreation(): void {
+        this.cancel.emit();
+    }
+
+    ngOnInit() {
+        this.billing = new BillingInformation();
+
+    }
+
+
 
 }
