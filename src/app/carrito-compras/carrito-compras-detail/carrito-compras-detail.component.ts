@@ -6,7 +6,7 @@ import { Vinilo } from '../../vinilo/vinilo';
 @Component({
   selector: 'detail-carrito-compras',
   templateUrl: './carrito-compras-detail.component.html',
-  styles: []
+  styleUrls: ['./carrito-compras-detail.component.css']
 })
 export class CarritoComprasDetailComponent implements OnInit {
 
