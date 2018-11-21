@@ -1,6 +1,5 @@
 .router-outlet{
     position: fixed; 
-    margin-top: 10vh; 
     margin-left: calc(100vw*2/12); 
     height: 90vh;
     overflow-y: scroll;
@@ -10,11 +9,41 @@
 }
 .router-outlet .row {
     margin: 0;
+    padding-bottom: 10vh;
 }
+.menu{
+    margin-left: calc(2*100vw/12);
+    height: 35vh;
+    background: #333;
+}
+.centrado{
+    display: flex;
 
+}
+.fila{
+    height: 7vh;
+    color: #fff;
+    display: flex;
+    padding: 0 2em;
+    font-size: 1em;
+    align-items: center;
+    
+}
+.fila i {
+    flex-grow: 1;
+}
+.fila div{
+    flex-grow: 30;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 3vw;
+}
 @media (max-width: 900px) {
-     nav{
-      display: none;
+ 
+
+    .router-outlet{
+        margin-top: 0;
     }
   }
 

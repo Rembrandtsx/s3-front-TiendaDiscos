@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { ComentarioService } from './comentario.service';
 import { ComentarioListComponent } from './comentario-list/comentario-list.component';
 import { ComentarioCreateComponent} from './comentario-create/comentario-create.component'
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -13,6 +15,8 @@ import { ComentarioCreateComponent} from './comentario-create/comentario-create.
         BrowserModule,
         CommonModule,
         FormsModule,
+        ToastrModule.forRoot(),
+        BrowserAnimationsModule,
 
     ],
     declarations: [

@@ -11,7 +11,7 @@ export class UsuarioComponent implements OnInit{
     
     usuarios:Usuario;
 
-    constructor(private usuarioService:UsuarioService, private login : LoginService){
+    constructor(public usuarioService:UsuarioService, public login : LoginService){
 
     }
 
