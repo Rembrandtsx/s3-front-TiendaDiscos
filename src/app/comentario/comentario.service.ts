@@ -17,12 +17,7 @@ export class ComentarioService {
     
     return this.http.get<Comentario[]>('http://localhost:8080/s3_tiendadiscos-api/api/'+tipo+'/'+usuario+'/comentarios/');
     }
-  createComentarios(comentario): Observable<Comentario>{
-
-    
-
-
-
-    return this.http.post<Comentario>('http://localhost:8080/s3_tiendadiscos-api/api/usuarios/1/comentarios/'+this.auth.getUserObject().id,comentario)
-  }
+    createComentarios(comentario,tipo:string, usuario:number): Observable<Comentario>{
+      return this.http.post<Comentario>('http://localhost:8080/s3_tiendadiscos-api/api/'+tipo+'/'+usuario+'/comentarios/1',comentario)
+    }
 }
