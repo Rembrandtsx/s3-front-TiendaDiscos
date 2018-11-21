@@ -1,10 +1,10 @@
-export interface Canciones {
-    calificacion:number,
-    descripcion:string,
-    duracion:string,
-    id:number,
-    nombre:string,
-    previewURI:string
+export class Canciones {
+    calificacion:number;
+    descripcion:string;
+    duracion:string;
+    id:number;
+    nombre:string;
+    previewURI:string;
 }
 
 /*

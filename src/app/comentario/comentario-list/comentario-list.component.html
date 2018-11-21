@@ -1,12 +1,7 @@
     <div class="row">
             <div class="col-md-4">
                     <br>
-                    <div class="row justify-content-center align-self-center">
-                        <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button" class="btn"
-                            (click)="showHideCreate()">Crear un comentario</button>
-                    </div>
-                    <br>
-                    <br>
+
         <div class="col-sm-12"  *ngFor="let com of comentario">
             
                 <div class="card-body">
@@ -14,14 +9,17 @@
                     <p class="card-text"> {{com.contenido}}</p>
                 </div>
         </div>
-        <div class="col-md-8">
+        <div class="row justify-content-center align-self-center">
+                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button-light save" class="btn"
+                    (click)="showHideCreate()" style="background:var(--primary)">Agregar un comentario</button>
+            </div>
+            <br>
+            <br>
+        <div class="col-sm-12">
                 <div *ngIf="showCreate">
-                    <app-comentario-create (cancel)="showHideCreate()" (create)="ngOnInit()" *ngIf="showCreate"></app-comentario-create>
+                    <app-comentario-create (cancel)="showHideCreate()" (create)="ngOnInit()" *ngIf="showCreate"
+                    [tipo] = "tipo" [id] = id></app-comentario-create>
                 </div>
                 </div>
         </div>
     </div> 
-
-   
-   
-

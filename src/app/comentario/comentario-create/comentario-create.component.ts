@@ -1,4 +1,4 @@
-import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 
 import {ToastrService} from 'ngx-toastr';
 
@@ -39,11 +39,16 @@ export class ComentarioCreateComponent implements OnInit {
     */
     @Output() create = new EventEmitter();
 
+    @Input () tipo:string;
+    
+    @Input() id:number;
+
+
     /**
     * Creates a new editorial
     */
     createComentario(): Comentario {
-        this.comentarioService.createComentarios(this.comentario)
+        this.comentarioService.createComentarios(this.comentario,this.tipo,this.id)
             .subscribe((comentario) => {
                 this.comentario = comentario;
                 this.create.emit();

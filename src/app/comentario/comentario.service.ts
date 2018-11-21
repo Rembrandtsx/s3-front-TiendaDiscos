@@ -3,20 +3,26 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 import { Comentario } from './comentario';
+import { LoginService } from '../UsuariosModule/services/login.service';
 
 @Injectable()
 export class ComentarioService {
 
-  constructor(private http: HttpClient){}
+  constructor(private http: HttpClient,private auth: LoginService){}
 
-  tipo: String;
+  
 
 
-  getComentarios(): Observable<Comentario[]> {
-    this.tipo = 'usuarios';
-    return this.http.get<Comentario[]>('http://localhost:8080/s3_tiendadiscos-api/api/'+this.tipo+'/1/comentarios/');
+  getComentarios(tipo:string, usuario:number): Observable<Comentario[]> {
+    
+    return this.http.get<Comentario[]>('http://localhost:8080/s3_tiendadiscos-api/api/'+tipo+'/'+usuario+'/comentarios/');
     }
   createComentarios(comentario): Observable<Comentario>{
-    return this.http.post<Comentario>('http://localhost:8080/s3_tiendadiscos-api/api/usuarios/1/comentarios/1',comentario)
+
+    
+
+
+
+    return this.http.post<Comentario>('http://localhost:8080/s3_tiendadiscos-api/api/usuarios/1/comentarios/'+this.auth.getUserObject().id,comentario)
   }
 }

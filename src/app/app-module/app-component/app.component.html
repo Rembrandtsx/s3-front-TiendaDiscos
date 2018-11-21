@@ -3,6 +3,33 @@
 
 <app-searchbar></app-searchbar>
 <app-navbar></app-navbar>
+<div style="height: 10vh;"></div>
+<div class="menu" *ngIf="overlay.menuToogle">
+    <div class="usuario">
+
+    </div>
+    <div class="fila" routerLink="/me">
+            <i class="far fa-user-circle"></i>
+            <div class="texto">Mi Cuenta</div>
+    </div>
+    <div class="fila" routerLink="/transacciones">
+            <i class="fas fa-receipt"></i>
+            <div class="texto">Transacciones</div>
+    </div>
+    <div class="fila" routerLink="/carrito-compras">
+            <i class="fas fa-shopping-cart"></i>
+            <div class="texto">Carrito de Compras</div>
+    </div>
+    <div class="fila" routerLink="/wishList">
+            <i class="fas fa-star"></i>
+            <div class="texto">WishList</div>
+    </div>
+    <div class="fila" (click)="logout()">
+            <i class="fas fa-sign-out-alt"></i>
+            <div class="texto">Salir</div>
+    </div>
+
+</div>
 <div class="container-fluid router-outlet" >
     <div class="row">
         <div class="col-10">

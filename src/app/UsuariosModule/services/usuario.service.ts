@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Usuario } from "../interfaces/usuario";
 
+ 
 
 const API_URL2= 'http://localhost:8080/s3_tiendadiscos-api/api/usuarios/';
 const API_URL = '../../assets/JSON/usuariosEjemplo.json';

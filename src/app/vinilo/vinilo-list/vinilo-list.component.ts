@@ -12,13 +12,18 @@ export class ViniloListComponent implements OnInit {
   constructor(private viniloService: ViniloService) { }
 
   @Input() vinilos: Vinilo[];
+  
+  
  
   getVinilos(): void {
-    this.viniloService.getVinilos().subscribe(vinilos => this.vinilos = vinilos)
+    this.viniloService.getVinilos().subscribe(vinilos => this.vinilos = vinilos);
+ 
   }
 
   ngOnInit() {
+  
     this.getVinilos();
+
   }
 
 }

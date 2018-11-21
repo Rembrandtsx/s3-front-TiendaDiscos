@@ -1,0 +1,24 @@
+{
+    "id" : 1,
+    "costoTotal" : 3500,
+    "vinilos":[
+        {
+            "nombre":"Nevermind",
+            "artista":"Nirvana",
+            "fechaLanzamiento":"1999-09-24T00:00:000Z",
+            "precio": 80000,
+            "productora": "DGC Records", 
+            "previewURL":null,
+            "url" :"https://jazztojazz.com/wp-content/uploads/feeling-good-vinil.jpg"
+        },
+        {
+            "nombre":"Nevermind",
+            "artista":"Nirvana",
+            "fechaLanzamiento":"1999-09-24T00:00:000Z",
+            "precio": 80000,
+            "productora": "DGC Records", 
+            "previewURL":null,
+            "url" :"https://jazztojazz.com/wp-content/uploads/feeling-good-vinil.jpg"
+        }
+    ]
+}

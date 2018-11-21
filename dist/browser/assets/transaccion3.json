@@ -1,0 +1,14 @@
+{
+    "estado": "peticion",
+    "formaDePago": "tarjeta-credito",
+    "vinilo": {
+        "nombre":"Forever Nerverland",
+        "artista":"MØ",
+        "fechaLanzamiento":"2018-10-19",
+        "precio": 100000,
+        "productora": "Chess Club/RCA Victor", 
+        "previewURL":null,
+        "url" :"https://s3.amazonaws.com/dev1.mtimg.com/product_photos/imgs/000/041/142/full/M_C3_98_20FN_20Vinyl.jpg",
+        "id":2
+    }
+}

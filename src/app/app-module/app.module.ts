@@ -19,7 +19,7 @@ import { UsuarioModule } from '../UsuariosModule/usuario.module';
 import { ComentarioModule } from '../comentario/comentario.module';
 import { WishListModule } from '../wishList/wishList.module';
 import { CancionModule } from '../canciones/canciones.module';
-import { OverlayMusic } from '../canciones/overlay';
+import { Overlay } from '../canciones/overlay';
 
 
 @NgModule({
@@ -40,9 +40,10 @@ import { OverlayMusic } from '../canciones/overlay';
     WishListModule,
     CarritoComprasModule,
     CancionModule,
-    NgxPermissionsModule.forRoot()
+    NgxPermissionsModule.forRoot(),
+    
   ],
-  providers: [OverlayMusic],
+  providers: [Overlay],
   bootstrap: [AppComponent],
   exports: []
 })
