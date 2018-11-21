@@ -50,7 +50,7 @@ export class CancionCreateComponent implements OnInit {
             .subscribe(cancion => {
                 this.cancion = cancion;
                 this.create.emit();
-               // this.toastrService.success("The editorial was created", "Editorial creation");
+                this.toastrService.success("The editorial was created", "Editorial creation");
             }, err => {
                 this.toastrService.error(err, "Error");
             });

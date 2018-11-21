@@ -17,10 +17,16 @@ export class CancionComponent implements OnInit {
   @Input() id:number;
 
   showCreate: boolean;
+
+  showCreates: boolean;
   
   showHideCreate(): void {
     this.showCreate = !this.showCreate;
 }
+
+  showHideCreates(): void {
+    this.showCreates = !this.showCreates;
+  }
   
   getCancion(): void{
     this.service.getCanciones(+this.routes.snapshot.paramMap.get('id')+'/canciones').subscribe((vinilos: Canciones[]) =>

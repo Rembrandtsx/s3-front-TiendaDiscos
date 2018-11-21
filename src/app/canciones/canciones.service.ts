@@ -24,12 +24,20 @@ export class CancionesService{
      * obtiene todos las canciones.
      */
     getCanciones(tipo:string): Observable<Canciones[]> {
-        console.log('http://localhost:8080/s3_tiendadiscos-api/api/vinilos/3/canciones');
+        console.log(API_URL + tipo);
         return this.http.get<Canciones[]>(API_URL+tipo);
     }
 
-    createCanciones(cancion,tipo:string): Observable<Canciones>{
+    createCanciones(cancion , tipo: string): Observable<Canciones> {
 
-        return this.http.post<Canciones>(API_URL+tipo, cancion);
+        return this.http.post<Canciones>(API_URL + tipo, cancion);
       }
+          /**
+    * Updates an author
+    * @param author The author's information updated
+    * @returns The confirmation that the author was updated
+    */
+    updateCancion(cancion, tipo): Observable<Canciones> {
+        return this.http.put<Canciones>(API_URL + tipo, cancion);
+    }
 }
