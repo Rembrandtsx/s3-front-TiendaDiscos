@@ -1,8 +1,9 @@
 import { Component, OnInit, OnDestroy ,Input} from '@angular/core';
 import { Canciones } from '../canciones';
 import { CancionesService } from '../canciones.service';
-import { Overlay } from '../overlay';
+import { Overlay} from '../overlay';
 import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'list-canciones',
   templateUrl: './canciones.component.html',
