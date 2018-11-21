@@ -4,7 +4,7 @@ import { BillinginformationListComponent } from './billinginformation-list/billi
 import { BillingInformationService } from './billinginformation.service';
 import { RouterVinylAppModule } from '../router-module/router.module';
 import { BillinginformationDetailComponent } from './billinginformation-detail/billinginformation-detail.component';
-import { BillinginformationTarjetacreditoListComponent } from './billinginformation-tarjetacredito-list/billinginformation-tarjetacredito-list.component';
+import { TarjetacreditoListComponent } from './tarjetacredito-list/tarjetacredito-list.component';
 
 @NgModule({
   imports: [
@@ -12,7 +12,11 @@ import { BillinginformationTarjetacreditoListComponent } from './billinginformat
     RouterVinylAppModule,
     
   ],
-  declarations: [BillinginformationListComponent, BillinginformationDetailComponent, BillinginformationTarjetacreditoListComponent],
+  declarations: [
+    BillinginformationListComponent,
+    BillinginformationDetailComponent,
+    TarjetacreditoListComponent
+  ],
   providers: [BillingInformationService],
 })
 export class BillinginformationModule { }

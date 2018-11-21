@@ -1,60 +1,61 @@
-<div class="container-fluid">
-    <div class="row" style="height: 10vh; position: fixed; background: var(--dark); width: 100vw;">
-        <!--Imagen-->
-        <div class="col-md-2 col-1"> 
-            <a routerLink="/" >
-                <img src="../../../assets/logo.png" class="image1" style="height:10vh;"/>
-                <img src="../../../assets/logomob.png" class="image2" style="height:9vh; margin: .3vh"/>
-            </a>
-        </div>
-        <!--Barra de Navegación-->
-        <div class="search col-6" style="display: flex; flex-direction: column; justify-content: center">
-            <div class="input-group">
-                <span>
-                    <i class="fas fa-search"></i>
-                  </span>
-                <input type="text" placeholder="Search" />
-                
-            </div> 
-
-        </div>
-        <div class="col-1" style="display:flex; color:white; flex-direction: column;justify-content: center;">
-                <div style="font-size: 1.5em; display: flex; justify-content: center">
-                        <i class="fas fa-star" style="cursor: pointer;" routerLink="/wishList"></i>
-                        <i class="fas fa-shopping-cart" style="cursor: pointer;" routerLink="/carrito-compras"></i>
-                </div>
-                
-        </div>
-
-        <div class="col-3" *ngIf="(this.auth.getUserObject()==null);then notLogged else logged"></div>
-        
-        <!--Boton de inicio de sesión-->
-        <ng-template #notLogged>
-            <section class="col-3" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                <a routerLink="/login" style="color: #fff;background: var(--primary); border: none; border-radius: 1vh; padding: 1vw 3vw;">
-                    Ingresa
-                </a>
-            </section>
-        </ng-template>
-
-        <!--Perfil Usuario/Boton de Login-->
-        <ng-template #logged>
-            
-                <div style="display: flex; flex-direction: column; justify-content: center; padding: 0 5vw;" class="col-3">
-            <div ngbDropdown class="d-inline-block">
-                <div class="profile" ngbDropdownToggle>
-                    <img src="https://via.placeholder.com/150x150" alt="" class="pic">
-                    <div class="btn " id="dropdownBasic1" >{{this.auth.getUserObject().nombre}}</div>
-                    <i class="fas fa-chevron-down"></i>
-                </div> 
-                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1" style="background: #000; z-index: 100;">
-                        <button class="dropdown-item" routerLink="/me">Mi Cuenta</button>
-                        <button class="dropdown-item" routerLink="/transacciones">Transacciones</button>
-                        <button class="dropdown-item" (click)="this.logout()">Salir</button>
-                    </div>
-            </div>
-                </div>
-         
-        </ng-template>
+<div class="searchbar" style="">
+    <!--Imagen-->
+    <div class="image">
+        <a routerLink="/">
+            <img src="../../../assets/logo.png" class="image1" style="height:10vh;" />
+            <img src="../../../assets/logomob.png" class="image2" style="width: 7.5vh; margin: .3vh" />
+        </a>
     </div>
+    <!--Barra de Navegación-->
+    <div class="search" style="display: flex; flex-direction: column; justify-content: center; margin:0 1vw;">
+        <div class="input-group">
+            <span style="flex-grow: 2;">
+                <i class="fas fa-search"></i>
+            </span>
+            <input style="flex-grow: 30;" type="text" placeholder="Search" [class.is-invalid]="searchFailed"
+                [(ngModel)]="model" [ngbTypeahead]="search" />
+            <span>
+                <i class="fas fa-spinner fa-spin" style="flex-grow: 2;" *ngIf="searching"></i>
+            </span>
+        </div>
+    </div>
+    <!---Botones WishList y Carrito de Compras-->
+    <div class="buttons" style="display:flex;flex-direction: column;justify-content: center;">
+        <div style="font-size: 1.5em; display: flex; justify-content: space-around">
+            <i class="fas fa-star" style="cursor: pointer;" routerLink="/wishList"></i>
+            <i class="fas fa-shopping-cart" style="cursor: pointer;" routerLink="/carrito-compras"></i>
+        </div>
+    </div>
+    <div  *ngIf="(this.auth.getUserObject()==null);then notLogged else logged"></div>
+    <!--Boton de inicio de sesión-->
+    <ng-template #notLogged>
+        <section class="menus" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <a routerLink="/login" style="color: #fff;background: var(--primary); border: none; border-radius: 1vh; padding: 1vw 3vw;">
+                Ingresa
+            </a>
+        </section>
+    </ng-template>
+    <!--Perfil Usuario/Boton de Login-->
+    <ng-template #logged>
+
+            <div class="menuFive " id="menu" (click)="this.toogle()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+            </div>
+             
+ 
+        <div ngbDropdown class="menu menus">
+            <div class="profile" ngbDropdownToggle>
+                <img src="https://via.placeholder.com/150x150" alt="" class="pic">
+                <div class="btn " id="dropdownBasic1">{{this.auth.getUserObject().nombre}}</div>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1" style="background: #000; z-index: 100;">
+                <button class="dropdown-item" routerLink="/me">Mi Cuenta</button>
+                <button class="dropdown-item" routerLink="/transacciones">Transacciones</button>
+                <button class="dropdown-item" (click)="this.logout()">Salir</button>
+            </div>
+        </div>
+    </ng-template>
 </div>
