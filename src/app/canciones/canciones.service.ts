@@ -24,11 +24,12 @@ export class CancionesService{
      * obtiene todos las canciones.
      */
     getCanciones(tipo:string): Observable<Canciones[]> {
+        console.log('http://localhost:8080/s3_tiendadiscos-api/api/vinilos/3/canciones');
         return this.http.get<Canciones[]>(API_URL+tipo);
     }
 
     createCanciones(cancion,tipo:string): Observable<Canciones>{
-        console.log(API_URL+tipo);
+
         return this.http.post<Canciones>(API_URL+tipo, cancion);
       }
 }

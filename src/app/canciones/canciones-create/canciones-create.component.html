@@ -4,10 +4,30 @@
             <h4>Crear una cancion</h4>
             <form name = "cancion" (ngSubmit) = "f.form.valid && createCancion()" #f="ngForm" novalidate>
                 <div class = "form-group" >
-                    <label for = "contenidoMensaje"><b>Nombre de ka cancion</b></label>
+                    <label for = "contenidoMensaje"><b>Nombre de la cancion</b></label>
                     <input type = "text" name = "contenidoMensaje" class = "form-control" id= "contenidoMensaje" [(ngModel)] = "cancion.nombre" 
                     #contenidoMensaje = "ngModel" [ngClass]="{'is-valid' : f.submitted && contenidoMensaje.invalid}" required>
                 </div>
+                <div class = "form-group" >
+                    <label for = "descripcion"><b>Descripción</b></label>
+                    <input type = "text" name = "descripcion" class = "form-control" id= "descripcion" [(ngModel)] = "cancion.descripcion" 
+                    #descripcion = "ngModel" [ngClass]="{'is-valid' : f.submitted && descripcion.invalid}" required>
+                </div>
+                <div class = "form-group" >
+                    <label for = "duracion"><b>Duración</b></label>
+                    <input type = "text" name = "duracion" class = "form-control" id= "duracion" [(ngModel)] = "cancion.duracion" 
+                    #duracion = "ngModel" [ngClass]="{'is-valid' : f.submitted && duracion.invalid}" required>
+                </div> 
+                <div class = "form-group" >
+                    <label for = "calificacion"><b>Calificacion</b></label>
+                    <input type = "text" name = "calificacion" class = "form-control" id= "calificacion" [(ngModel)] = "cancion.calificacion" 
+                    #calificacion = "ngModel" [ngClass]="{'is-valid' : f.submitted && calificacion.invalid}" required>
+                </div> 
+                <div class = "form-group" >
+                    <label for = "previewURI"><b>URL de la cancion</b></label>
+                    <input type = "text" name = "previewURI" class = "form-control" id= "previewURI" [(ngModel)] = "cancion.previewURI" 
+                    #previewURI = "ngModel" [ngClass]="{'is-valid' : f.submitted && previewURI.invalid}" required>
+                </div> 
                 <div class = "row form-inline justify-content-center aliign-self-center">
                     <button type = "submit" class = "button-light save">Crear</button>
                     <div class = "divider"></div>

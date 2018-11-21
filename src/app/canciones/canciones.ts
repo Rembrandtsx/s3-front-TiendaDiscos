@@ -1,10 +1,10 @@
 export class Canciones {
-    calificacion:number,
-    descripcion:string,
-    duracion:string,
-    id:number,
-    nombre:string,
-    previewURI:string
+    calificacion:number;
+    descripcion:string;
+    duracion:string;
+    id:number;
+    nombre:string;
+    previewURI:string;
 }
 
 /*

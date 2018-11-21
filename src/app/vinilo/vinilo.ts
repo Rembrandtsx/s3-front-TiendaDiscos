@@ -1,3 +1,4 @@
+import { Canciones } from '../canciones/canciones';
 /**
  * Esta clase representa un vinilo de VinilApp
  */
@@ -37,4 +38,6 @@ export class Vinilo {
      * El id del vinilo
      */
     id: number;
+
+    canciones:Canciones[];
 }

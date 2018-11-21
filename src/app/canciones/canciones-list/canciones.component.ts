@@ -29,6 +29,7 @@ export class CancionesComponent implements OnInit,OnDestroy {
     this.cancionesService.getCanciones(+this.routes.snapshot.paramMap.get('id') + '/canciones').subscribe((vinilos: Canciones[]) =>{
        this.canciones = vinilos;
        this.id = vinilos.map(x => x.id);
+       console.log("hola "+ +this.routes.snapshot.paramMap.get('id') + '/canciones')
        } );
   }
 
