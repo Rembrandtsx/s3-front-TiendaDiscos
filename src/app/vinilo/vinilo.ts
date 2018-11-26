@@ -39,5 +39,7 @@ export class Vinilo {
      */
     id: number;
 
+    informacionAdicional:String;
+
     canciones:Canciones[];
 }

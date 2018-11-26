@@ -1,4 +1,4 @@
-import {Component, OnInit, TemplateRef} from '@angular/core';
+import {Component, OnInit, TemplateRef, EventEmitter} from '@angular/core';
 import { LoginService } from '../../UsuariosModule/services/login.service';
 import { Router } from '@angular/router';
 import {Observable, of} from 'rxjs';
@@ -25,15 +25,7 @@ export class SearchBarComponent implements OnInit{
     constructor(private config: NgSelectConfig,public auth: LoginService, public router:Router, private vinilos:ViniloService, private overlay: Overlay){
         this.config.notFoundText = 'No encontramos un vinilo con ese nombre';
     }
-    cities = [
-        {id: 1, name: 'Vilnius', avatar: '//www.gravatar.com/avatar/b0d8c6e5ea589e6fc3d3e08afb1873bb?d=retro&r=g&s=30 2x'},
-        {id: 2, name: 'Kaunas', avatar: '//www.gravatar.com/avatar/ddac2aa63ce82315b513be9dc93336e5?d=retro&r=g&s=15'},
-        {id: 3, name: 'Pavilnys', avatar: '//www.gravatar.com/avatar/6acb7abf486516ab7fb0a6efa372042b?d=retro&r=g&s=15'},
-        {id: 4, name: 'Siauliai', avatar: '//www.gravatar.com/avatar/b0d8c6e5ea589e6fc3d3e08afb1873bb?d=retro&r=g&s=30 2x'},
-    ];
-    cities2 = this.cities.slice();
-    selectedCity2 = "";
-    placeholder:string="Buscar";
+   
 
 
 
@@ -47,14 +39,7 @@ export class SearchBarComponent implements OnInit{
 
 
 
-    search = (text$: Observable<string>) =>
-    text$.pipe(
-        debounceTime(200),
-        map(term => term === '' ? []
-          : this.ListaVinilos.filter(v => v.nombre.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10))
-      )
   
-    formatter = (x: Vinilo) => x.nombre;
 
 
     ngOnInit(){
@@ -79,4 +64,8 @@ export class SearchBarComponent implements OnInit{
         document.getElementById("menu").classList.toggle("clickMenuFive");
         
     }
+
+
+
+
 }

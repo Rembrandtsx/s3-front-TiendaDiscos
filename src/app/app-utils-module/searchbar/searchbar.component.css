@@ -7,16 +7,22 @@
   background: var(--dark); 
   width: 100vw;
 }
+a{
+  color: inherit;
+}
 .image{
   width: 16.3vw;
   padding-left: 1vw;
 }
+
 .search{
   width: 50vw;
 }
 .buttons{
   width: 8.3vw;
 }
+/*Card de Resultados*/
+
 
 /* menuFive */
 .menuFive{
@@ -94,6 +100,10 @@ input{
     display: flex;
     justify-content: flex-start;
     outline: none;
+    flex-wrap: nowrap;
+  }
+  .dropdown-item.active, .dropdown-item:active{
+    color: #000 !important;
   }
   .search{
     padding:0;
@@ -143,9 +153,11 @@ input{
 
   }
   .dropdown-item:hover{
-    color: #f2f2f2;
-    background: #212121;
+     background: #212121;
 
+  }
+  .dropdown-item.active{
+    color: #000;
   }
   .image1{
     display: block;
@@ -163,7 +175,29 @@ input{
     justify-content: center; 
     padding: 0 5vw;
   }
+  ng-select.custom{
+    
+  }
+  .ng-dropdown-panel-items{
+    background:#fff;
+  }
 
+  .card-body{
+    display: flex;
+    
+  }
+  .card-body .imagen{
+    width: 30%;
+  }
+  .card-body .imagen img{
+    width: 100%;
+  }
+  .card-body .texto{
+    overflow-wrap: break-word;
+    text-overflow: ellipsis;
+    width: 65%;
+    margin-left: 5%;
+  }
   @media (max-width: 900px) {
     .image1{
       display: none;
