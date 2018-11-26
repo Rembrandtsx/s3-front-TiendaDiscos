@@ -16,6 +16,8 @@ import { VgControlsModule } from "videogular2/controls";
 import { VgOverlayPlayModule } from "videogular2/overlay-play";
 import { VgBufferingModule } from "videogular2/buffering";
 import { AudioPlayerComponent } from './audioPlayer/audio-player.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+
 
 
 @NgModule({
@@ -35,7 +37,8 @@ import { AudioPlayerComponent } from './audioPlayer/audio-player.component';
     VgCoreModule,
     VgControlsModule,
     VgOverlayPlayModule,
-    VgBufferingModule
+    VgBufferingModule,
+    NgSelectModule
     
   ],
   providers: [LoginService],

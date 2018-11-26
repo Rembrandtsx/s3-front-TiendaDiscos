@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Vinilo } from '../vinilo';
 import { ViniloService } from '../vinilo.service';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router, NavigationEnd} from '@angular/router';
 
 @Component({
   selector: 'app-vinilo',
@@ -10,11 +10,22 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ViniloComponent implements OnInit {
 
-  constructor(private viniloService : ViniloService, private routes: ActivatedRoute) { }
+  constructor(private viniloService : ViniloService, private routes: ActivatedRoute,private router: Router,) { 
+    this.navigationSubscription = this.router.events.subscribe((e: any) => {
+      if (e instanceof NavigationEnd) {
+          this.ngOnInit();
+      }
+  });
+  }
 
   vinilo : Vinilo;
   tipo : string;
   id:number;
+  /**
+  * The suscription which helps to know when a new book
+  * needs to be loaded
+  */
+  navigationSubscription:any;
 
   showCreate: boolean;
   

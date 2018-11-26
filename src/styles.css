@@ -7,10 +7,6 @@ body{
   background: #000;
 }
 
-*{
-  
-}
-
 
 .btn:hover,.btn:active, .btn:focus, .btn:visited{
     outline: none !important;
@@ -22,7 +18,15 @@ body{
 button:focus,button:active {
   outline:0;  
 }
-
+.dropdown-item.active, .dropdown-item:active{
+  color: #000 !important;
+  word-wrap: break-word !important;
+}
+.card{
+  word-wrap: break-word !important;
+  
+  
+}
 
 vg-controls vg-scrub-bar-current-time .background{
   border: 1px solid brown;
@@ -30,4 +34,11 @@ vg-controls vg-scrub-bar-current-time .background{
 vg-scrub-bar-current-time .background
 {
   background: var(--primary);
+}
+
+ngb-typeahead-window{
+  left: 0 !important;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: scroll;
 }
