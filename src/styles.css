@@ -27,6 +27,9 @@ button:focus,button:active {
   
   
 }
+.menu-responsive{
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
 .ng-dropdown-panel-items{
   background:#fff;
   border-radius: .25rem;
