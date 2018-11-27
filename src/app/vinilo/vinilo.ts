@@ -1,4 +1,5 @@
 import { Canciones } from '../canciones/canciones';
+import { Usuario } from '../UsuariosModule/interfaces/usuario';
 /**
  * Esta clase representa un vinilo de VinilApp
  */
@@ -38,6 +39,8 @@ export class Vinilo {
      * El id del vinilo
      */
     id: number;
+
+    usuario: Usuario;
 
     canciones:Canciones[];
 }

@@ -3,18 +3,33 @@
         <h1  style="color:#ffffff">Transacciones</h1>
 </div>
 <br>
-<br>
+<div class="container">
+<button id= "btNav" style="background-color: transparent;  color:#ffffff " >Compras<span class="sr-only">(current)</span></button>
+<button id= "btNav"  style="background-color: transparent;  color:#ffffff " >Ventas</button>
 
+</div>
+<br>
+<div class="container">
+            <ul class="nav" style="display:flex; color:#ffffff;">
+                
+                  <a class="nav-link"(click)="ngOnInit()">Compras <span class="sr-only">(current)</span></a>
+                
+               
+                  <a class="nav-link" >Ventas</a>
+                
+                
+              </ul>
+            </div>
     <div class="row">
       
         
             <div class="col-sm-4"  *ngFor="let transaccion of transacciones">
                 <div class="card text-white bg-dark mb-4" style="cursor: pointer;"  >
                     
-                    <img class="card-img-top" src="https://jazztojazz.com/wp-content/uploads/feeling-good-vinil.jpg" alt="Card image cap" > 
+                    <img class="card-img-top" [src]='transaccion.vinilo.previewURL' alt="Card image cap" > 
                     <div class="card-body" >
-                        <h5 clas="card-title">Transaccion {{transaccion.id}}</h5>
-                        <p class="card-text">Id: {{transaccion.id}}</p>
+                        <h5 clas="card-title"> {{transaccion.vinilo.nombre}}</h5>
+                        <p class="card-text">{{transaccion.vinilo.precio | currency:'COP'}}</p>
                         <p class="card-text">Estado: {{transaccion.estado}}</p>
                         
                         <p class="card-text"><small class="text-muted">Forma de pago: {{transaccion.formaDePago}}</small></p>
