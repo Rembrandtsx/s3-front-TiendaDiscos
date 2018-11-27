@@ -14,7 +14,7 @@ export class ViniloListComponent implements OnInit {
   @Input() vinilos: Vinilo[];
  
   getVinilos(): void {
-getVinilosUsuario
+
     this.viniloService.getVinilosUsuario(1).subscribe(vinilos => this.vinilos = vinilos)
 
   }
