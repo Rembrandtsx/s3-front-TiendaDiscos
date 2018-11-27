@@ -1,7 +1,9 @@
 import { Component, OnInit,ViewContainerRef,Optional } from '@angular/core';
 import { Vinilo } from '../vinilo';
 import { ViniloService } from '../vinilo.service';
+
 import { ActivatedRoute, Router } from '@angular/router';
+
 
 import {ToastrService} from 'ngx-toastr';
 @Component({
@@ -12,6 +14,7 @@ import {ToastrService} from 'ngx-toastr';
 })
 export class ViniloComponent implements OnInit {
 
+
   constructor(private viniloService : ViniloService, 
               private routes: ActivatedRoute, 
               private router : Router,
@@ -19,9 +22,15 @@ export class ViniloComponent implements OnInit {
               private toastrService: ToastrService
   ) { }
 
+
   vinilo : Vinilo;
   tipo : string;
   id:number;
+  /**
+  * The suscription which helps to know when a new book
+  * needs to be loaded
+  */
+  navigationSubscription:any;
 
   showCreate: boolean;
   

@@ -14,7 +14,9 @@ export class ViniloListComponent implements OnInit {
   @Input() vinilos: Vinilo[];
  
   getVinilos(): void {
+
     this.viniloService.getVinilos(1).subscribe(vinilos => this.vinilos = vinilos)
+
   }
 
   ngOnInit() {

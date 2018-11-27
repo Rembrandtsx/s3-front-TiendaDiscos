@@ -1,10 +1,12 @@
-import {Component, OnInit, TemplateRef} from '@angular/core';
+import {Component, OnInit, TemplateRef, EventEmitter} from '@angular/core';
 import { LoginService } from '../../UsuariosModule/services/login.service';
 import { Router } from '@angular/router';
 import {Observable, of} from 'rxjs';
 import {catchError, debounceTime, distinctUntilChanged, map, tap, switchMap} from 'rxjs/operators';
 import { ViniloService } from '../../vinilo/vinilo.service';
 import { Overlay } from '../../canciones/overlay';
+import { Vinilo } from '../../vinilo/vinilo';
+import { NgSelectConfig } from '@ng-select/ng-select';
 
 
 
@@ -17,12 +19,16 @@ import { Overlay } from '../../canciones/overlay';
 export class SearchBarComponent implements OnInit{
 
 
-
+   
     
     
-    constructor(public auth: LoginService, public router:Router, private vinilos:ViniloService, private overlay: Overlay){
-
+    constructor(private config: NgSelectConfig,public auth: LoginService, public router:Router, private vinilos:ViniloService, private overlay: Overlay){
+        this.config.notFoundText = 'No encontramos un vinilo con ese nombre';
     }
+   
+
+
+
     isCollapsed=false;
 
     model: any;
@@ -33,15 +39,7 @@ export class SearchBarComponent implements OnInit{
 
 
 
-    search = (text$: Observable<string>) =>
-    text$.pipe(
-      debounceTime(500),
-      distinctUntilChanged(),
-      tap(() => this.searching = true),
-      map(term => term.length < 2 ? []
-        : this.nombreVinilos.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10)),
-      tap(() => this.searching = false),  
-    )
+  
 
 
     ngOnInit(){
@@ -68,4 +66,8 @@ export class SearchBarComponent implements OnInit{
         document.getElementById("menu").classList.toggle("clickMenuFive");
         
     }
+
+
+
+
 }
