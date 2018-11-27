@@ -18,7 +18,7 @@ export class Vinilo {
     /**
      * Fecha de lanzamiento del Vinilo.
      */
-    fechaLanzamiento: Date;
+    fechaLanzamiento: any;
 
     /**
      * Precio del Vinilo.

@@ -44,7 +44,7 @@ export class SearchBarComponent implements OnInit{
 
     ngOnInit(){
         
-        this.vinilos.getVinilos().subscribe(vin=>{
+        this.vinilos.getVinilos(1).subscribe(vin=>{
             this.ListaVinilos= vin
             this.nombreVinilos= this.ListaVinilos.map(v=>v.nombre);
         
@@ -52,7 +52,13 @@ export class SearchBarComponent implements OnInit{
 
         
     }
+<<<<<<< HEAD
+    llenarLista(){
+        this.nombreVinilos= this.ListaVinilos.map(v=>v.nombre);
+    }
+=======
  
+>>>>>>> 1da3bc43cd21934536b29e9ef3ef4884906606a5
     logout(){
         console.log("salido");
         this.auth.logout();

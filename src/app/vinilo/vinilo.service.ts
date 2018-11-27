@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 /**
  * URL para hacer la petición HTTP
  */
-const API_URL = 'http://localhost:8080/s3_tiendadiscos-api/api/vinilos/';
+const API_URL = 'http://localhost:8080/s3_tiendadiscos-api/api/vinilos/usuarios/';
 
 /**
  * El servicio que utiliza el modulo vinilo.
@@ -23,7 +23,21 @@ export class ViniloService{
     /**
      * obtiene todos los vinilos.
      */
-    getVinilos(): Observable<Vinilo[]> {
-        return this.http.get<Vinilo[]>(API_URL);
+    getVinilos(id): Observable<Vinilo[]> {
+        return this.http.get<Vinilo[]>(API_URL+id);
     }
-}
+
+    /**
+     * El usuario crea un vinilo
+     */
+    createVinilos(vinilo,id): Observable<Vinilo> {
+        return this.http.post<Vinilo>(API_URL+id, vinilo);
+      }
+      updateVinilo(vinilo, tipo): Observable<Vinilo> {
+        return this.http.put<Vinilo>(API_URL + tipo, vinilo);
+     }
+
+     deleteVinilo(id): Observable<Vinilo> {
+        return this.http.delete<Vinilo>('http://localhost:8080/s3_tiendadiscos-api/api/vinilos/'+id);
+    }
+    }
