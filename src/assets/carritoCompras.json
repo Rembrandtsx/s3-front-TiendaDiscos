@@ -9,8 +9,9 @@
                 "precio": 80000,
                 "productora": "DGC Records", 
                 "previewURL":null,
+                "usuario":{"id":2},
                 "url" :"https://jazztojazz.com/wp-content/uploads/feeling-good-vinil.jpg",
-                "id":1
+                "id":3
             },
             {
                 "nombre":"Forever Nerverland",
@@ -19,8 +20,9 @@
                 "precio": 100000,
                 "productora": "Chess Club/RCA Victor", 
                 "previewURL":null,
+                "usuario":{"id":1},
                 "url" :"https://s3.amazonaws.com/dev1.mtimg.com/product_photos/imgs/000/041/142/full/M_C3_98_20FN_20Vinyl.jpg",
-                "id":2
+                "id":3
             },
             {
                 "nombre":"Nevermind",
@@ -29,6 +31,7 @@
                 "precio": 80000,
                 "productora": "DGC Records", 
                 "previewURL":null,
+                "usuario":{"id":2},
                 "url" :"https://jazztojazz.com/wp-content/uploads/feeling-good-vinil.jpg",
                 "id":3
             },
@@ -39,18 +42,9 @@
                 "precio": 80000,
                 "productora": "DGC Records", 
                 "previewURL":null,
+                "usuario":{"id":2},
                 "url" :"https://jazztojazz.com/wp-content/uploads/feeling-good-vinil.jpg",
-                "id":4
-            },
-            {
-                "nombre":"Nevermind",
-                "artista":"Nirvana",
-                "fechaLanzamiento":"1999-09-24",
-                "precio": 80000,
-                "previewURL":null,
-                "url" :"https://jazztojazz.com/wp-content/uploads/feeling-good-vinil.jpg",
-                "id":5
+                "id":3
             }
         ]
     }
-

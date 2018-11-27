@@ -14,7 +14,7 @@ export class BillingInformation{
     /**
      * numero de cuenta de un BillingInformation
      */
-    cuentaDeAhorros: number;
+    cuentaAhorro: string;
 
     /**
      *  cantidad gastada de un billing
