@@ -12,7 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPermissionsModule } from 'ngx-permissions';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ViniloEditComponent } from './vinilo-edit/vinilo-edit.component';
-
+import { ViniloListarComponent } from './vinilo-listar/vinilo-listar.component';
+import { ViniloDetailComponent } from './vinilo-detailG/vinilo-detail.component';
 
 @NgModule({
   imports: [
@@ -34,19 +35,24 @@ import { ViniloEditComponent } from './vinilo-edit/vinilo-edit.component';
     ViniloComponent,
     ViniloCreateComponent,
     ViniloEditComponent,
+    ViniloListarComponent,
+    ViniloDetailComponent
   ],
   providers: [
     ViniloService,
     ViniloCreateComponent,
     ViniloEditComponent,
     ViniloComponent,
-    
+    ViniloListarComponent,
+    ViniloDetailComponent
   ],
   exports: [
     ViniloListComponent,
     ViniloComponent,
     ViniloCreateComponent,
-    ViniloEditComponent
+    ViniloEditComponent,
+    ViniloListarComponent,
+    ViniloDetailComponent
   ]
 })
 export class ViniloModule { }
