@@ -12,7 +12,8 @@ i.container2:after, .login-form .username:after,
 .login-wrapper, .login-form {
  /* Center elements */
  position: absolute;
- 
+ width: 100%;
+ max-width: 484px;
  left: 50%;
  -webkit-transform: translate(-50%, 0%);
          transform: translate(-50%, 0%);
@@ -28,17 +29,8 @@ i.container2:after, .login-form .username:after,
   transition: all .5s ease;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
 
-body {
-  font-size: 1em;
-  line-height: 1.4;
-  background: #1f2226;
-}
+
 
 .container2 {
   max-width: 760px;
@@ -47,12 +39,7 @@ body {
 
 
 
-@media (min-width: 484px) {
-  .login-wrapper {
-    width: 484px;
-    height: 484px;
-  }
-}
+
 
 .login-form {
   z-index: 1;

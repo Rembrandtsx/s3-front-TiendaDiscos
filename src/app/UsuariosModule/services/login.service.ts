@@ -80,7 +80,8 @@ export class LoginService{
         this.permissionsService.flushPermissions();
         this.roleService.flushRoles();
         this.permissionsService.loadPermissions(['edit_author_permission', 'delete_author_permission', 'leave_review']);
-        const usuario = JSON.parse(localStorage.getItem('usuario'));
+        if(localStorage.getItem("usuario")){
+            const usuario = JSON.parse(localStorage.getItem('usuario'));
         console.log(usuario.role)
         if(usuario){
             this.currentUser= usuario;
@@ -92,6 +93,9 @@ export class LoginService{
         } else {
             this.setClientRole();
         }
+        }
+        
+        
     }
 
 

@@ -33,13 +33,14 @@ export class Vinilo {
     /**
      * URL de una vista prieva mp3 del Vinilo.
      */
-    previewURL: String;
+    previewURI: String;
 
     /**
      * El id del vinilo
      */
     id: number;
 
+    informacionAdicional:String;
     usuario: Usuario;
 
     canciones:Canciones[];
