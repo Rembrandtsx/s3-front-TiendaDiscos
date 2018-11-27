@@ -44,6 +44,7 @@
     "@nguniversal/express-engine": "^6.0.0",
     "@nguniversal/module-map-ngfactory-loader": "^6.0.0",
     "core-js": "^2.4.1",
+    "ngx-modal-dialog": "^3.0.0",
     "ngx-permissions": "^6.0.4",
     "ngx-toastr": "^9.1.1",
     "rxjs": "^6.2.2",

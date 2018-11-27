@@ -24,7 +24,6 @@ export class CancionesService{
      * obtiene todos las canciones.
      */
     getCanciones(tipo:string): Observable<Canciones[]> {
-        console.log(API_URL + tipo);
         return this.http.get<Canciones[]>(API_URL+tipo);
     }
 

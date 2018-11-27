@@ -1,16 +1,17 @@
 import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
-
+import {DatePipe} from '@angular/common';
 import {ToastrService} from 'ngx-toastr';
 import { ActivatedRoute } from '@angular/router';
-import {Canciones } from '../canciones';
-import { CancionesService } from '../canciones.service';
+import {Vinilo } from '../vinilo';
+import { ViniloService } from '../vinilo.service';
 
 @Component({
-    selector: 'app-cancion-create',
-    templateUrl: './canciones-create.component.html',
-    styleUrls: ['./canciones-create.component.css']
+    selector: 'app-vinilo-create',
+    templateUrl: './vinilo-create.component.html',
+    styleUrls: ['./vinilo-create.component.css'],
+    providers: [DatePipe]
 })
-export class CancionCreateComponent implements OnInit {
+export class ViniloCreateComponent implements OnInit {
 
     /**
     * Constructor for the component
@@ -18,7 +19,8 @@ export class CancionCreateComponent implements OnInit {
     * @param toastrService The toastr to show messages to the user 
     */
     constructor(
-        private cancionesService: CancionesService,
+        private dp: DatePipe,
+        private vinilosService: ViniloService,
         private toastrService: ToastrService,
         private routes: ActivatedRoute,
     ) {}
@@ -26,7 +28,7 @@ export class CancionCreateComponent implements OnInit {
     /**
     * The new editorial
     */
-   cancion: Canciones;
+   vinilo: Vinilo;
 
     /**
     * The output which tells the parent component
@@ -38,23 +40,21 @@ export class CancionCreateComponent implements OnInit {
     * The output which tells the parent component
     * that the user created a new editorial
     */
-    @Output() create = new EventEmitter();
+    @Output()  create= new EventEmitter();
 
 
 
     /**
     * Creates a new editorial
     */
-    createCancion(): Canciones {
-        this.cancionesService.createCanciones(this.cancion,+this.routes.snapshot.paramMap.get('id')+'/canciones')
-            .subscribe(cancion => {
-                this.cancion = cancion;
-                this.create.emit();
-                this.toastrService.success("The editorial was created", "Editorial creation");
-            }, err => {
-                this.toastrService.error(err, "Error");
-            });
-        return this.cancion;
+    createVinilo(): Vinilo {
+        let dateB: Date = new Date(this.vinilo.fechaLanzamiento.year, this.vinilo.fechaLanzamiento.month - 1, this.vinilo.fechaLanzamiento.day);
+        this.vinilo.fechaLanzamiento = this.dp.transform(dateB, 'yyyy-MM-dd');
+        this.vinilosService.createVinilos(this.vinilo,1)
+            .subscribe(vinilo => {
+                this.vinilo = vinilo;
+                this.create.emit();});
+        return this.vinilo; 
     }
 
     /**
@@ -68,6 +68,6 @@ export class CancionCreateComponent implements OnInit {
     * This function will initialize the component
     */
     ngOnInit() {
-        this.cancion = new Canciones();
-;    }
+        this.vinilo = new Vinilo();
+    }
 }
