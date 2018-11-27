@@ -16,6 +16,10 @@ import { VgControlsModule } from "videogular2/controls";
 import { VgOverlayPlayModule } from "videogular2/overlay-play";
 import { VgBufferingModule } from "videogular2/buffering";
 import { AudioPlayerComponent } from './audioPlayer/audio-player.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { BusquedaComponent } from './searchbar/busqueda/busqueda.component';
+import { LimitTo } from './pipes/limitTo.pipe';
+
 
 
 @NgModule({
@@ -25,7 +29,9 @@ import { AudioPlayerComponent } from './audioPlayer/audio-player.component';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    AudioPlayerComponent
+    AudioPlayerComponent, 
+    BusquedaComponent,
+    LimitTo
   ],
   imports: [
     NgbModule,
@@ -35,11 +41,19 @@ import { AudioPlayerComponent } from './audioPlayer/audio-player.component';
     VgCoreModule,
     VgControlsModule,
     VgOverlayPlayModule,
-    VgBufferingModule
+    VgBufferingModule,
+    NgSelectModule
     
   ],
   providers: [LoginService],
   bootstrap: [],
-  exports:[SearchBarComponent,NavbarBarComponent,HomeComponent,RegisterComponent,AudioPlayerComponent]
+  exports:[
+    SearchBarComponent,
+    NavbarBarComponent,
+    HomeComponent,
+    RegisterComponent,
+    AudioPlayerComponent,
+    LimitTo
+  ]
 })
 export class UtilsModule { }

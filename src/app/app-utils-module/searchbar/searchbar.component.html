@@ -1,7 +1,7 @@
 <div class="searchbar" style="">
     <!--Imagen-->
     <div class="image">
-        <a routerLink="/">
+        <a routerLink="/" >
             <img src="../../../assets/logo.png" class="image1" style="height:10vh;" />
             <img src="../../../assets/logomob.png" class="image2" style="width: 7.5vh; margin: .3vh" />
         </a>
@@ -12,13 +12,38 @@
             <span style="flex-grow: 2;">
                 <i class="fas fa-search"></i>
             </span>
-            <input style="flex-grow: 30;" type="text" placeholder="Search" [class.is-invalid]="searchFailed"
-                [(ngModel)]="model" [ngbTypeahead]="search" />
+            
+            <ng-select style="flex-grow: 30"  [loading]="searching" [items]="ListaVinilos"  bindLabel="nombre"
+             class="custom">
+                    <ng-template ng-option-tmp let-item="item" let-index="index" let-search="searchTerm">
+                        
+                        <div style="margin: 10px 0;" class="card">
+                            <div class="card-body" routerLink="/vinilos/{{item.id}}" (click)="clearSearchTe">
+                               <div class="imagen">
+                                    <img [src]="item.previewURI"/>
+                               </div>
+                                <div class="texto">
+                                        <h5 class="card-title" [ngOptionHighlight]="search">{{item.nombre}}</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">{{item.informacionAdicional | limitTo: 40}}</h6>
+
+                                        <p style="color:#ccc;">Precio</p>
+                                        <h6 class="card-subtitle " style="color:var(--primary) !important;">{{item.precio | currency:'COP'}}</h6>
+                                </div>
+                                   
+                                    
+                                
+                            </div>
+                        </div>
+                    </ng-template>
+                </ng-select>
             <span>
                 <i class="fas fa-spinner fa-spin" style="flex-grow: 2;" *ngIf="searching"></i>
             </span>
         </div>
     </div>
+
+
+    
     <!---Botones WishList y Carrito de Compras-->
     <div class="buttons" style="display:flex;flex-direction: column;justify-content: center;">
         <div style="font-size: 1.5em; display: flex; justify-content: space-around">

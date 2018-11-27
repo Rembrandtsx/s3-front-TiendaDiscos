@@ -7,10 +7,6 @@ body{
   background: #000;
 }
 
-*{
-  
-}
-
 
 .btn:hover,.btn:active, .btn:focus, .btn:visited{
     outline: none !important;
@@ -22,7 +18,34 @@ body{
 button:focus,button:active {
   outline:0;  
 }
+.dropdown-item.active, .dropdown-item:active{
+  color: #000 !important;
+  word-wrap: break-word !important;
+}
+.card{
+  word-wrap: break-word !important;
+  
+  
+}
+.ng-dropdown-panel-items{
+  background:#fff;
+  border-radius: .25rem;
+  border: 1px solid rgba(0,0,0,.125);
+  padding: 5% 5% 0 5%;
+  
+}
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option{
+  overflow: visible !important;
+}
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option .card{
+  border: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option .card:hover{
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
+}
 
 vg-controls vg-scrub-bar-current-time .background{
   border: 1px solid brown;
@@ -30,4 +53,11 @@ vg-controls vg-scrub-bar-current-time .background{
 vg-scrub-bar-current-time .background
 {
   background: var(--primary);
+}
+
+ngb-typeahead-window{
+  left: 0 !important;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: scroll;
 }

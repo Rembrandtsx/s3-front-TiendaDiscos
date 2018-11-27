@@ -1,4 +1,5 @@
 import { Vinilo } from "../vinilo/vinilo";
+import { Usuario } from "../UsuariosModule/interfaces/usuario";
 
 /**
  * Esta clase representa una transaccion de VinilApp
@@ -12,5 +13,7 @@ export class Transaccion{
     id?: number;
     estado?: string;
     formaDePago?: string;
-    vinilo: Vinilo
+    vinilo: Vinilo;
+    usuarioComprador?: Usuario;
+    usuarioVendedor?: Usuario;
 }
