@@ -121,6 +121,7 @@ div.side-panel {
   top: 100%;
   display: none;
   overflow-y: scroll;
+  
 }
 
 div.side-panel.open{
