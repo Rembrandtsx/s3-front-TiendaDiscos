@@ -17,12 +17,14 @@
     </div>
     <button [ngClass]="{ 'button-light save': !showCreate, 'button-light save': showCreate }" type="button" class="btn"
     (click)="showHideCreate()">Ver comentarios</button>
+    <button [ngClass]="{ 'button-light save': !showCreates, 'button-light save': showCreates }" type="button" class="btn"
+    (click)="showHideCreates()">Editar cancion</button>
+    <button class="btn btn-danger text-center" (click)="deleteVinilo()" ><span class="fa fa-trash"></span></button>
     <div *ngIf="showCreate">
     <app-comentario-list [tipo]="tipo" [id] = "cancion?.id" ></app-comentario-list>
      </div>
-     <button [ngClass]="{ 'button-light save': !showCreates, 'button-light save': showCreates }" type="button" class="btn"
-     (click)="showHideCreates()">Editar cancion</button>
+
      <div *ngIf="showCreates">
-     <app-cancion-edit [cancion_id] = "cancion?.id"></app-cancion-edit>
+     <app-cancion-edit [cancion_id] = "cancion?.id" (cancel)="showHideCreates()" (update)="ngOnInit()"></app-cancion-edit>
       </div>
     </div>

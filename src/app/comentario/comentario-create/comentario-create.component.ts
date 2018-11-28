@@ -52,7 +52,7 @@ export class ComentarioCreateComponent implements OnInit {
             .subscribe((comentario) => {
                 this.comentario = comentario;
                 this.create.emit();
-                this.toastrService.success("The editorial was created", "Editorial creation");
+                this.toastrService.success("Comentario creado", "Se creo el comentario");
             }, err => {
                 this.toastrService.error(err, "Error");
             });

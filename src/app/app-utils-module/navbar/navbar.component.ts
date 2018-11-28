@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { LoginService } from '../../UsuariosModule/services/login.service';
-
+import {NgxPermissionsService } from 'ngx-permissions';
 @Component({
     selector:"app-navbar",
     templateUrl:"./navbar.component.html",
@@ -9,7 +9,7 @@ import { LoginService } from '../../UsuariosModule/services/login.service';
 export class NavbarBarComponent implements OnInit{
     loggeado:boolean=false;
     abierto:boolean=false;
-    constructor(private loginService: LoginService){
+    constructor(private loginService: LoginService,private permissionsService: NgxPermissionsService){
 
     }
     ngOnInit(){

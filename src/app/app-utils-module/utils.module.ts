@@ -22,6 +22,7 @@ import { LimitTo } from './pipes/limitTo.pipe';
 import { DropZoneComponent } from './dropZone/dropzone-component/dropzone.component';
 import { DropZoneDirective } from './dropZone/dropzone.directive';
 import { RegisterService } from '../UsuariosModule/services/register.service';
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 
 
@@ -36,7 +37,8 @@ import { RegisterService } from '../UsuariosModule/services/register.service';
     BusquedaComponent,
     LimitTo,
     DropZoneComponent,
-    DropZoneDirective
+    DropZoneDirective,
+    
   ],
   imports: [
     NgbModule,
@@ -47,7 +49,8 @@ import { RegisterService } from '../UsuariosModule/services/register.service';
     VgControlsModule,
     VgOverlayPlayModule,
     VgBufferingModule,
-    NgSelectModule
+    NgSelectModule,
+    NgxPermissionsModule.forChild()
     
   ],
   providers: [LoginService, DropZoneDirective, RegisterService],

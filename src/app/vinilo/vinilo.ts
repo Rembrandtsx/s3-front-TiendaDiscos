@@ -41,8 +41,18 @@ export class Vinilo {
      */
     id: number;
 
-    informacionAdicional?:String;
-    usuario?: Usuario;
+    /**
+     * Información adicional sobre el vinilo
+     */
+    informacionAdicional:String;
 
+    /**
+     * usuario que creo el vinilo
+     */
+    usuario: Usuario;
+
+    /**
+     * Arreglo con las canciones del vinilo
+     */
     canciones:Canciones[];
 }
