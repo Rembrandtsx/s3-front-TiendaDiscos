@@ -60,7 +60,7 @@ export class ViniloEditComponent implements OnInit {
     }
 
     getVinilos(): void {
-        this.viniloService.getVinilo()
+        this.viniloService.getVinilos()
 
             .subscribe(cancion => {
                 this.vinilo = cancion.filter(obj=>{ return obj.id == this.vinilo_id})[0];

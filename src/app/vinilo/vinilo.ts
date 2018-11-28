@@ -54,4 +54,6 @@ export class Vinilo {
      * Arreglo con las canciones del vinilo
      */
     canciones:Canciones[];
+
+    categoria:String;
 }

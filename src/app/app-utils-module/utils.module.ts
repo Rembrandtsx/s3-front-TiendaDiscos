@@ -23,6 +23,9 @@ import { DropZoneComponent } from './dropZone/dropzone-component/dropzone.compon
 import { DropZoneDirective } from './dropZone/dropzone.directive';
 import { RegisterService } from '../UsuariosModule/services/register.service';
 
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { ViniloModule } from '../vinilo/vinilo.module';
+
 
 
 @NgModule({
@@ -47,7 +50,9 @@ import { RegisterService } from '../UsuariosModule/services/register.service';
     VgControlsModule,
     VgOverlayPlayModule,
     VgBufferingModule,
-    NgSelectModule
+    NgSelectModule,
+    SlickCarouselModule,
+    ViniloModule
     
   ],
   providers: [LoginService, DropZoneDirective, RegisterService],

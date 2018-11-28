@@ -1,3 +1,21 @@
 <button (click)="local()">
     Holaaaaaaaaaaaaaa LocalStorage
 </button>
+
+<ngx-slick-carousel *ngIf="vinilosRock" class="carousel" 
+                        #slickModal="slick-carousel"
+                        (init)="slickInit($event)" 
+                        [config]="slideConfig" >
+        <div ngxSlickItem *ngFor="let vinilo of vinilosRock" class="slide" >
+              <card-vinilo [vinilo]="vinilo"></card-vinilo>
+        </div>
+    </ngx-slick-carousel>
+
+    <button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
+    <button (click)="slickModal.unslick()">unslick</button>
+
+
+
+    <div *ngFor="let vinilo of vinilosRock" style="height:10vh;">
+        <card-vinilo [vinilo]="vinilo"></card-vinilo>
+  </div>
