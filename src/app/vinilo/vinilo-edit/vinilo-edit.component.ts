@@ -10,7 +10,7 @@ import {DatePipe} from '@angular/common';
 @Component({
     selector: 'app-vinilo-edit',
     templateUrl: './vinilo-edit.component.html',
-    styleUrls: ['./vinilo-edit.component.css'];
+    styleUrls: ['./vinilo-edit.component.css'],
     providers: [DatePipe]
 })
 export class ViniloEditComponent implements OnInit {

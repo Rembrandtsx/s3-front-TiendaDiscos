@@ -76,7 +76,6 @@ showHideCreates(): void {
 * This function deletes the book from the BookStore 
 */
 deleteVinilo(): void {
-  
   this.viniloService.deleteVinilo(this.id).subscribe(obj=>this.router.navigate(["vinilos"]));
 }
 
