@@ -1,7 +1,7 @@
 import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 
 import {ToastrService} from 'ngx-toastr';
-
+import {LoginService } from '../../UsuariosModule/services/login.service'
 import {Comentario } from '../comentario';
 import { ComentarioService } from '../comentario.service';
 
@@ -19,7 +19,8 @@ export class ComentarioCreateComponent implements OnInit {
     */
     constructor(
         private comentarioService: ComentarioService,
-        private toastrService: ToastrService
+        private toastrService: ToastrService,
+        private login : LoginService,
     ) {}
 
     /**
@@ -48,7 +49,7 @@ export class ComentarioCreateComponent implements OnInit {
     * Creates a new editorial
     */
     createComentario(): Comentario {
-        this.comentarioService.createComentarios(this.comentario,this.tipo,this.id)
+        this.comentarioService.createComentarios(this.comentario,this.tipo,this.id,this.login.getUserObject().id)
             .subscribe((comentario) => {
                 this.comentario = comentario;
                 this.create.emit();
