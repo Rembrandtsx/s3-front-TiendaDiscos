@@ -37,6 +37,6 @@ export class TransaccionService {
         return this.http.post<Transaccion>(API_URL, transaccion);
     }
     getTransaccionDetail(transaccionId):Observable<TransaccionDetail>{
-        return this.http.get<TransaccionDetail>(API_URL);
+        return this.http.get<TransaccionDetail>(API_URL2+transaccionId);
     }
 }

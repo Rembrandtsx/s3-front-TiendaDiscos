@@ -8,26 +8,35 @@ import { TransaccionDetailComponent } from './transaccion-detail/transaccion-det
 import { FormsModule } from '@angular/forms';
 import { RouterVinylAppModule } from '../router-module/router.module';
 import { ViniloComponent } from './vinilo-detail/vinilo.component';
+import { MapsComponent } from './maps/maps.component';
+import { AgmDirectionModule } from 'agm-direction'
+import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
     FormsModule,
-    RouterVinylAppModule
+    RouterVinylAppModule,
+
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAIbUwPPbxW1zie05rkUQx87Pv-5WwXgC8'
+    }),
+    AgmDirectionModule
   ],
   declarations: [
     TransaccionListComponent,
     TransaccionDetailComponent,
-    ViniloComponent
+    ViniloComponent,
+    MapsComponent
   ],
   providers: [
-    TransaccionService,
+    TransaccionService, ,GoogleMapsAPIWrapper
   ],
   exports: [
     TransaccionListComponent,
     TransaccionDetailComponent,
-     ViniloComponent
+     ViniloComponent, MapsComponent
   ]
 })
 export class TransaccionModule { }
