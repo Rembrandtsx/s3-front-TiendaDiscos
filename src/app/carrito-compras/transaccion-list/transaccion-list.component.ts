@@ -3,6 +3,7 @@ import { Transaccion } from '../../transaccion/transaccion';
 import { TransaccionService} from '../../transaccion/transaccion.service';
 import { Observable } from 'rxjs';
 import { TransaccionDetail } from '../../transaccion/transaccion-detail';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'transaccionesGeneradas-list',
@@ -11,7 +12,7 @@ import { TransaccionDetail } from '../../transaccion/transaccion-detail';
 })
 export class TransaccionGeneradasListComponent implements OnInit {
 
-  constructor(private transaccionService: TransaccionService ) { }
+  constructor(private transaccionService: TransaccionService, private router: Router ) { }
 
   @Input() transacciones: TransaccionDetail[];
   @Input() valorTotal: number;
@@ -20,7 +21,9 @@ export class TransaccionGeneradasListComponent implements OnInit {
     console.log(this.transaccionService);
     this.transaccionService.getUsuario().subscribe((usu) =>{ this.transacciones= usu.transaccionesGeneradas;console.log(usu)});
   }
-  
+  verDetail(t:TransaccionDetail){
+    this.router.navigate(['/transacciones/'+t.id]);
+  }
   ngOnInit() {
     
     

@@ -62,7 +62,7 @@ showHideCreates(): void {
 }
   
   getVinilos(id:number): void{
-    this.viniloService.getVinilos(1).subscribe(vinilos => 
+    this.viniloService.getVinilosUsuario(1).subscribe(vinilos => 
         {
             
             

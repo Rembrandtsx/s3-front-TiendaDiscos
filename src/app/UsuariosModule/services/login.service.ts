@@ -9,7 +9,6 @@ import {NgxRolesService, NgxPermissionsService} from 'ngx-permissions'
 
 
 
-const API_URL = '../../assets/JSON/usuariosEjemplo.json';
 
 @Injectable()
 export class LoginService{
@@ -106,9 +105,9 @@ export class LoginService{
 
     setClientRole (): void {
         this.roleService.flushRoles();
-        this.roleService.addRole('CLIENT', ['leave_review']);
+        this.roleService.addRole('USUARIO', ['leave_review']);
         localStorage.setItem('usuario', JSON.stringify(this.currentUser));
-        localStorage.setItem('role', 'CLIENT');
+        localStorage.setItem('role', 'USUARIO');
     }
 
     setAdministratorRole (): void {

@@ -2,12 +2,13 @@ import { Injectable } from  '@angular/core';
 import {  HttpClientModule, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { BillingInformation } from './billinginformation';
+import { environment } from '../../environments/environment.prod';
 
 
 /**
  * URL para hacer la peticion HTTP
  */
-const API_URL = '../../assets/JSON/JSONBilling.json';
+const API_URL = environment.apiUrl;
 //const BILLINGS = "/billing"
 /**
  * El servicio que utiliza el modulo BillingInformation
@@ -30,5 +31,8 @@ export class BillingInformationService {
 
     getBillingInformationDetail(): Observable<BillingInformation> {
         return this.http.get<BillingInformation>(API_URL);
+    }
+    postBillingInformation(billing:BillingInformation, usuarioId:number): Observable<BillingInformation>{
+        return this.http.post<BillingInformation>(API_URL+`usuarios/${usuarioId}/billing`,billing)
     }
 } 

@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("./assets/bootstrap.css");
+@import url("./assets/toastrCustom.css");
 @import url("./assets/videogular2.css");
-
+@import url("./assets/animate.css");
 
 body{
   background: #000;
@@ -26,6 +27,9 @@ button:focus,button:active {
   word-wrap: break-word !important;
   
   
+}
+.menu-responsive{
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 .ng-dropdown-panel-items{
   background:#fff;
