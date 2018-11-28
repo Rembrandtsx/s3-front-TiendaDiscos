@@ -64,11 +64,9 @@ showHideCreates(): void {
   getVinilos(id:number): void{
     this.viniloService.getVinilosUsuario(1).subscribe(vinilos => 
         {
-            
-            
+
             this.vinilo = vinilos.filter(obj=>{ return obj.id == id})[0];
-           
-        
+
         })
   }
 
