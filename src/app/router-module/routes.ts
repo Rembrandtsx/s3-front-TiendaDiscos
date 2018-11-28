@@ -31,7 +31,6 @@ import { TransaccionGeneradasListComponent } from '../carrito-compras/transaccio
 
 export const routes : Routes = [
     { path: '', component: HomeComponent, pathMatch: 'full'},
-    { path: 'map', component: SearchBarComponent, pathMatch: 'full'},
      { path: 'carrito-compras',component: CarritoComprasDetailComponent  , pathMatch: 'full' },
      
     { path: 'billing', component:BillinginformationListComponent , pathMatch: 'full' },
