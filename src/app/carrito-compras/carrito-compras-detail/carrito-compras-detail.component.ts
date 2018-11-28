@@ -29,17 +29,25 @@ export class CarritoComprasDetailComponent implements OnInit {
  showListVinilos:boolean;
  showListTrans:boolean;
  showOpPago:boolean;
+ showResumen:boolean;
  tarjetas: TarjetaDeCredito[];
  billing: BillingInformation;
  
   getCarritoComprasDetail():void{
-  this.carritoComprasService.getCarritoComprasDetail(this.carritoComprasid).subscribe(carritoComprasDetail=>{this.carritoComprasDetail=carritoComprasDetail;});
+  this.carritoComprasService.getCarritoComprasDetail().subscribe(carritoComprasDetail=>{this.carritoComprasDetail=carritoComprasDetail;});
 
   }
   generarTransaccion(){
-    this.carritoComprasService.obtenerBilling().subscribe((bili)=>{this.billing=bili;this.carritoComprasService.obtenerTarjetas().subscribe((t)=>{this.tarjetas=t;this.mostrarOpPago();})} );
+    this.carritoComprasService.obtenerBilling().subscribe((bili)=>{this.billing=bili;this.carritoComprasService.obtenerTarjetas().subscribe((t)=>{this.tarjetas=t;this.mostrarOpPago();
+      })} );
   }
   comprarT(){
+    this.billing.spent=this.billing.spent+this.obtenerCostoCarrito();
+    this.billing.tarjetasDeCredito=this.tarjetas;
+    console.log(this.billing);
+    this.carritoComprasService.actualizarBilling(this.billing).subscribe();
+    this.tarjetas.forEach((t)=>this.carritoComprasService.tarjeta(t).subscribe());
+
     this.carritoComprasService.transaccionestemp= new Array<TransaccionDetail>();
     var i=0;
     
@@ -58,7 +66,7 @@ export class CarritoComprasDetailComponent implements OnInit {
     this.carritoComprasService.getUsuarioComprador().subscribe((usu)=>{
     var i=0;
     for (let vinilo of this.carritoComprasDetail.vinilos) {
-      this.carritoComprasService.getUsuario(vinilo.usuario.id).subscribe((usuV)=>
+      this.carritoComprasService.getUsuario(((vinilo.usuario!=undefined)?vinilo.usuario.id:1)).subscribe((usuV)=>
       {
       this.transaccionActual= new TransaccionDetail();
       this.transaccionActual.estado= "Peticion";
@@ -96,6 +104,9 @@ export class CarritoComprasDetailComponent implements OnInit {
   verbilling(){
     this.router.navigate(['/billing']);
   }
+  verT(){
+    this.router.navigate(['/transacciones']);
+  }
  obtenerUsuarioActual(){
    this.carritoComprasService.getUsuarioComprador().subscribe((usu)=>this.usuarioActual=usu);
  }
@@ -109,7 +120,14 @@ export class CarritoComprasDetailComponent implements OnInit {
     this.showListTrans=true;
     this.showOpPago=true;
   }
-  obtenerCostoCarrito(){
+  mostrarResumen(){
+    this.showListTrans=true;
+    this.showListVinilos=false;
+    this.showOpPago=false;
+    this.showResumen=true;
+    this.comprarT();
+  }
+  obtenerCostoCarrito(): number{
   var rta=0;
     this.carritoComprasDetail.vinilos.forEach(element => {
       rta+= element.precio;
@@ -120,14 +138,13 @@ export class CarritoComprasDetailComponent implements OnInit {
     this.showListTrans=false;
     this.showListVinilos=true;
     this.showOpPago=false;
-
+this.showResumen=false;
   
     
-    this.carritoComprasid=3;
     this.carritoComprasDetail=new CarritoComprasDetail();
     this.transaccionesDetail=new Array<TransaccionDetail>();
     
     this.usuarioActual= new Usuario();
     this.getCarritoComprasDetail();
-    
+    this.obtenerUsuarioActual();
     }}

@@ -6,7 +6,7 @@
                     <h5 clas="card-title">{{vinilo.nombre}}</h5>
                     <p class="card-text"> Precio: ${{vinilo.precio}}</p>
                     <p class="card-text"> Productora: ${{vinilo.productora}}</p>
-                    <button class="button-light save">Eliminar del carrito</button>
+                    <button class="button-light save" (click)="eliminarDelCarrito(vinilo)">Eliminar del carrito</button>
                   
                      </div>
         </div>
