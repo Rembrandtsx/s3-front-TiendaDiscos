@@ -43,7 +43,7 @@
 
   <button [ngClass]="{ 'button-light save': !showEdit, 'button-light save': showEdit }" type="button" class="btn"
   (click)="showHideEdit()">Editar vinilo</button>
-
+  <button class="btn btn-danger text-center" (click)="deleteVinilo()" ><span class="fa fa-trash"></span></button>
   <div *ngIf="showCreate">
   <app-comentario-list [tipo]="tipo" [id] = "id" ></app-comentario-list>
 
@@ -58,6 +58,6 @@
   <app-vinilo-edit [vinilo_id] = "id" (cancel)="showHideEdit()" (update)="ngOnInit()"   *ngIf="showEdit"></app-vinilo-edit>
 </div>
 
-<button class="btn btn-danger text-center" (click)="deleteVinilo()" ><span class="fa fa-trash"></span></button>
+
   </div>
 

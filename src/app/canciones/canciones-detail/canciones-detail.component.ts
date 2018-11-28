@@ -36,6 +36,8 @@ export class CancionComponent implements OnInit {
   ngOnInit() {
     this.getCancion();
     this.tipo = 'vinilos/'+this.routes.snapshot.paramMap.get('id')+'/canciones';
+    this.showCreate =false;
+    this.showCreates=false;
   }
 
 }

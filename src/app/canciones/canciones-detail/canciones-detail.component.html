@@ -23,6 +23,6 @@
      <button [ngClass]="{ 'button-light save': !showCreates, 'button-light save': showCreates }" type="button" class="btn"
      (click)="showHideCreates()">Editar cancion</button>
      <div *ngIf="showCreates">
-     <app-cancion-edit [cancion_id] = "cancion?.id"></app-cancion-edit>
+     <app-cancion-edit [cancion_id] = "cancion?.id" (cancel)="showHideCreates()" (update)="ngOnInit()"></app-cancion-edit>
       </div>
     </div>
