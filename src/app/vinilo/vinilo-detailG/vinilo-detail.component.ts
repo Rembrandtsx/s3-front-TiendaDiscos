@@ -24,6 +24,8 @@ export class ViniloDetailComponent implements OnInit {
   vinilo : Vinilo;
   tipo : string;
   id:number;
+  e:boolean;
+  agregado:boolean;
 
   showComentarios: boolean;
 
@@ -45,13 +47,30 @@ export class ViniloDetailComponent implements OnInit {
         })
   }
   agregarCarrito(){
-    this.carritoService.agregarViniloDeCarritoCompras(this.vinilo);
+    this.carritoService.getCarritoComprasDetail().subscribe(
+      (u)=>{this.e=false; u.vinilos.forEach(element => {
+        if(element.id==this.vinilo.id){
+          this.e=true;
+        }
+      });
+    if(this.e==false){
+      this.carritoService.agregarViniloDeCarritoCompras(this.vinilo).subscribe();
+    }
+    this.agregado=true;
+
+    
+    
+    }
+    
+    );
+    
 
   }
 
 
 
   ngOnInit() {
+    this.agregado=false;
     let viniloId = +this.routes.snapshot.paramMap.get('id'); 
     this.getVinilos(viniloId);
     this.tipo = 'vinilos';
