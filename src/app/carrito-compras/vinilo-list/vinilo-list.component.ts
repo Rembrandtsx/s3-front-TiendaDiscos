@@ -27,6 +27,9 @@ this.ngOnInit();
     this.carritoComprasService.getCarritoComprasDetail().subscribe((u)=>{ this.vinilos=u.vinilos; });
 
   }
+  verVinilo(id:number){
+    this.router.navigate(["/viniloss/"+id]);
+  }
   ngOnChanges() {
    this.ngOnInit();
   }
