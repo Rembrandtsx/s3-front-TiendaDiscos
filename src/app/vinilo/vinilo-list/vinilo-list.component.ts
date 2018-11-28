@@ -1,7 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Vinilo } from '../vinilo';
 import { ViniloService } from '../vinilo.service';
-
+import {LoginService } from '../../UsuariosModule/services/login.service'
 @Component({
   selector: "list-vinilos",
   templateUrl: './vinilo-list.component.html',
@@ -9,12 +9,12 @@ import { ViniloService } from '../vinilo.service';
 })
 export class ViniloListComponent implements OnInit {
 
-  constructor(private viniloService: ViniloService) { }
+  constructor(private viniloService: ViniloService,private service:LoginService) { }
 
   @Input() vinilos: Vinilo[];
   
   showCreate: boolean;
-  getVinilosUsuario
+
   showEdit: boolean;
 
   showHideCreate(): void {
@@ -30,7 +30,7 @@ showHideEdit(): void {
 }
 
   getVinilos(): void {
-    this.viniloService.getVinilosUsuario(1).subscribe(vinilos => this.vinilos = vinilos);
+    this.viniloService.getVinilosUsuario(this.service.getUserObject().id).subscribe(vinilos => this.vinilos = vinilos);
  
   }
 

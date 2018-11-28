@@ -1,7 +1,7 @@
 import { Component, OnInit,ViewContainerRef,Optional } from '@angular/core';
 import { Vinilo } from '../vinilo';
 import { ViniloService } from '../vinilo.service';
-
+import {LoginService } from '../../UsuariosModule/services/login.service'
 import { ActivatedRoute, Router } from '@angular/router';
 
 
@@ -18,7 +18,7 @@ export class ViniloComponent implements OnInit {
   constructor(private viniloService : ViniloService, 
               private routes: ActivatedRoute, 
               private router : Router,
-
+              private service:LoginService,
               private toastrService: ToastrService
   ) { }
 
@@ -62,7 +62,7 @@ showHideCreates(): void {
 }
   
   getVinilos(id:number): void{
-    this.viniloService.getVinilosUsuario(1).subscribe(vinilos => 
+    this.viniloService.getVinilosUsuario(this.service.getUserObject().id).subscribe(vinilos => 
         {
 
             this.vinilo = vinilos.filter(obj=>{ return obj.id == id})[0];
