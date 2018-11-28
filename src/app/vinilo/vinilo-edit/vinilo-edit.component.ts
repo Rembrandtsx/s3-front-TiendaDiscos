@@ -1,6 +1,6 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {ToastrService} from 'ngx-toastr';
-
+import {LoginService } from '../../UsuariosModule/services/login.service'
 import {ViniloService} from '../vinilo.service';
 import { Vinilo } from '../vinilo';
 import { ActivatedRoute } from '@angular/router';
@@ -25,6 +25,7 @@ export class ViniloEditComponent implements OnInit {
         private toastrService: ToastrService,
         private routes: ActivatedRoute,
         private dp: DatePipe,
+        private service:LoginService,
     ) {}
 
     /**
@@ -60,7 +61,7 @@ export class ViniloEditComponent implements OnInit {
     }
 
     getVinilos(): void {
-        this.viniloService.getVinilosUsuario(1)
+        this.viniloService.getVinilosUsuario(this.service.getUserObject().id)
 
             .subscribe(cancion => {
                 this.vinilo = cancion.filter(obj=>{ return obj.id == this.vinilo_id})[0];

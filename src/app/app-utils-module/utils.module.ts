@@ -22,6 +22,7 @@ import { LimitTo } from './pipes/limitTo.pipe';
 import { DropZoneComponent } from './dropZone/dropzone-component/dropzone.component';
 import { DropZoneDirective } from './dropZone/dropzone.directive';
 import { RegisterService } from '../UsuariosModule/services/register.service';
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ViniloModule } from '../vinilo/vinilo.module';
@@ -39,7 +40,8 @@ import { ViniloModule } from '../vinilo/vinilo.module';
     BusquedaComponent,
     LimitTo,
     DropZoneComponent,
-    DropZoneDirective
+    DropZoneDirective,
+    
   ],
   imports: [
     NgbModule,
@@ -52,7 +54,8 @@ import { ViniloModule } from '../vinilo/vinilo.module';
     VgBufferingModule,
     NgSelectModule,
     SlickCarouselModule,
-    ViniloModule
+    ViniloModule,
+    NgxPermissionsModule.forRoot()
     
   ],
   providers: [LoginService, DropZoneDirective, RegisterService],

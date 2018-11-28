@@ -7,8 +7,12 @@
                 <div class="card-body">
                     <h4 class="card-title">{{com.escritoPor.nombre}}</h4>
                     <p class="card-text"> {{com.contenido}}</p>
+                    <div *ngIf="soyYo(com.escritoPor.id)">
+                    <button class="btn btn-danger text-center" (click)="deleteComentarios(com.id)" ><span class="fa fa-trash"></span></button>
+                </div>
                 </div>
         </div>
+
         <div class="row justify-content-center align-self-center">
                 <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button-light save" class="btn"
                     (click)="showHideCreate()" style="background:var(--primary)">Agregar un comentario</button>
@@ -21,5 +25,6 @@
                     [tipo] = "tipo" [id] = id></app-comentario-create>
                 </div>
                 </div>
+
         </div>
     </div> 

@@ -10,9 +10,8 @@
                     <a class="nav-link" routerLink="/map">Publicaciones</a>
 
                     <a class="nav-link" routerLink="/transacciones">Transacciones</a>
-                    <a class="nav-link" routerLink="/vinilos">Mis Vinilos</a>
-                    <a class="nav-link" routerLink="/canciones">Canciones</a>
-
+                    <a class="nav-link" *ngxPermissionsOnly="['USUARIO']" routerLink="/vinilos">Mis Vinilos</a>
+                    <a class="nav-link" routerLink="/viniloss">Ver Vinilos</a>
                 </nav>
 
                 <nav class="nav flex-column" *ngIf="loggeado">

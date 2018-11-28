@@ -4,7 +4,7 @@ import {ToastrService} from 'ngx-toastr';
 import { ActivatedRoute } from '@angular/router';
 import {Vinilo } from '../vinilo';
 import { ViniloService } from '../vinilo.service';
-
+import {LoginService } from '../../UsuariosModule/services/login.service'
 @Component({
     selector: 'app-vinilo-create',
     templateUrl: './vinilo-create.component.html',
@@ -23,6 +23,7 @@ export class ViniloCreateComponent implements OnInit {
         private vinilosService: ViniloService,
         private toastrService: ToastrService,
         private routes: ActivatedRoute,
+        private service:LoginService,
     ) {}
 
     /**
@@ -50,10 +51,14 @@ export class ViniloCreateComponent implements OnInit {
     createVinilo(): Vinilo {
         let dateB: Date = new Date(this.vinilo.fechaLanzamiento.year, this.vinilo.fechaLanzamiento.month - 1, this.vinilo.fechaLanzamiento.day);
         this.vinilo.fechaLanzamiento = this.dp.transform(dateB, 'yyyy-MM-dd');
-        this.vinilosService.createVinilos(this.vinilo,1)
+        this.vinilosService.createVinilos(this.vinilo,this.service.getUserObject().id)
             .subscribe(vinilo => {
                 this.vinilo = vinilo;
-                this.create.emit();});
+                this.create.emit();
+                this.toastrService.success("Crear Vinilo", "Se creo el vinilo de forma existosa");
+            }, err => {
+                this.toastrService.error(err, "Error");
+            });
         return this.vinilo; 
     }
 

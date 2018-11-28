@@ -17,12 +17,16 @@ export class Comentario{
      * Id del vinilo
      */
     vinilo: number;
-    /**
+    /** 
      * Id de la cancion
      */
     cancion: number;
     /**
-     * Id de la cancion
+     * Usuario que comentaron
      */
     usuario: Usuario;
+    /**
+     * Usuario que comento
+     */
+    escritoPor: Usuario;
 }
