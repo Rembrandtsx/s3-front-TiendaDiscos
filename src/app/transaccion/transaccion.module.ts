@@ -11,6 +11,8 @@ import { ViniloComponent } from './vinilo-detail/vinilo.component';
 import { MapsComponent } from './maps/maps.component';
 import { AgmDirectionModule } from 'agm-direction'
 import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
+import { EditTransaccionComponent } from './edit-transaccion/edit-transaccion.component';
+import { EditEnvioComponent } from './edit-envio/edit-envio.component';
 
 @NgModule({
   imports: [
@@ -28,7 +30,9 @@ import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
     TransaccionListComponent,
     TransaccionDetailComponent,
     ViniloComponent,
-    MapsComponent
+    MapsComponent,
+    EditTransaccionComponent,
+    EditEnvioComponent
   ],
   providers: [
     TransaccionService, ,GoogleMapsAPIWrapper

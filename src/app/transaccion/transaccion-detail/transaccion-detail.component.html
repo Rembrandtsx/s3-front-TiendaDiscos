@@ -9,11 +9,14 @@
         <h3  style="color:#ffffff">Informacion</h3>
         
         <br>
-        <table class="table table-dark">
+        <table class="table table-dark" *ngIf="editTransaccion==false">
             <tbody>
                     <tr>
                             <th scope="row">Estado</th>
                             <td>{{transaccionDetail.estado}}</td>
+                            <td><button class="button-light save" (click)="editarTransaccion()" >Editar</button>
+                            </td>
+
                         </tr>
                 <tr>
                     <th scope="row"> Forma de Pago</th>
@@ -22,6 +25,9 @@
                 
             </tbody>
         </table>
+        <div *ngIf="editTransaccion==true">
+                <app-edit-transaccion [transaccionDetail]="transaccionDetail" (cancel)="ocultarEditT()"></app-edit-transaccion>
+        </div>
         <br>
         <h3  style="color:#ffffff">Vinilo</h3>
         

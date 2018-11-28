@@ -1,3 +1,7 @@
+
+
+<div *ngIf="carritoComprasDetail!=undefined">
+
 <div *ngIf="carritoComprasDetail.vinilos!=undefined&&showListVinilos">
 <div class="row">
     <div class="col-sm-4">
@@ -31,7 +35,7 @@
         <h1  style="color:#ffffff">Información de pago</h1>
         <br>
         <br>
-    <div class="container" *ngIf="tarjetas.length==0">
+    <div class="container" *ngIf="tarjetas!=undefined&&tarjetas.length==0">
             
            <h6  style="color:#ffffff">No cuenta con medios de pago registrados.</h6>
             <br>
@@ -39,7 +43,7 @@
         <button class="button-light save" (click)="verbilling()">Registrar opciones pago</button>
              
     </div>
-    <div *ngIf="!(tarjetas.length==0)">
+    <div *ngIf="tarjetas!=undefined&&!(tarjetas.length==0)">
         
             <h3  style="color:#ffffff">Cuenta de ahorros:    {{billing.cuentaAhorro}}</h3>
             <br>
@@ -153,7 +157,7 @@
          
 </div>
 
-<div *ngIf="carritoComprasDetail.vinilos!=undefined&&carritoComprasDetail.vinilos.length!=0&&(carritoComprasDetail.vinilos.length==carritoComprasService.transaccionestemp.length)&&showListTrans" ng-Init= "mostrarTransacciones()">
+<div *ngIf="carritoComprasDetail!=undefined&&carritoComprasDetail.vinilos!=undefined&&carritoComprasDetail.vinilos.length!=0&&(carritoComprasDetail.vinilos.length==carritoComprasService.transaccionestemp.length)&&showListTrans" ng-Init= "mostrarTransacciones()">
 
         <h3  style="color:#ffffff">Transacciones</h3>
         <br>
@@ -165,5 +169,9 @@
 </div>
 
 <transaccionesGeneradas-list [transacciones]="carritoComprasService.transaccionestemp"></transaccionesGeneradas-list>
+
+</div>
+</div>
+<div *ngIf="carritoComprasDetail==undefined" ng-Init= "verL()">
 
 </div>
