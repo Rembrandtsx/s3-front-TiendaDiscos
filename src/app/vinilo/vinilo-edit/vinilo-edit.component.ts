@@ -10,7 +10,7 @@ import {DatePipe} from '@angular/common';
 @Component({
     selector: 'app-vinilo-edit',
     templateUrl: './vinilo-edit.component.html',
-  //  styleUrls: ['./vinilo-edit.component.css'];
+    styleUrls: ['./vinilo-edit.component.css'],
     providers: [DatePipe]
 })
 export class ViniloEditComponent implements OnInit {
@@ -60,7 +60,8 @@ export class ViniloEditComponent implements OnInit {
     }
 
     getVinilos(): void {
-        this.viniloService.getVinilosUsuario(1)
+        this.viniloService.getVinilo()
+
             .subscribe(cancion => {
                 this.vinilo = cancion.filter(obj=>{ return obj.id == this.vinilo_id})[0];
             });

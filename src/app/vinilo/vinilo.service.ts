@@ -47,7 +47,7 @@ export class ViniloService{
      * @param tipo Complmento para el path 
      */
     updateVinilo(vinilo, tipo): Observable<Vinilo> {
-        return this.http.put<Vinilo>(API_URL + tipo, vinilo);
+        return this.http.put<Vinilo>('http://localhost:8080/s3_tiendadiscos-api/api/vinilos/' + tipo, vinilo);
      }
      /**
       * El usuario que creo el vinilo lo elimina de su coleccion
