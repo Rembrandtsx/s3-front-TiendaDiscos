@@ -107,6 +107,9 @@ export class CarritoComprasDetailComponent implements OnInit {
   verT(){
     this.router.navigate(['/transacciones']);
   }
+  verL(){
+    this.router.navigate(['/login']);
+  }
  obtenerUsuarioActual(){
    this.carritoComprasService.getUsuarioComprador().subscribe((usu)=>this.usuarioActual=usu);
  }
