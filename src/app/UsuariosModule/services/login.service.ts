@@ -40,6 +40,7 @@ export class LoginService{
                             this.currentUser = x;
                             localStorage.setItem("usuario", JSON.stringify(this.currentUser))
                             localStorage.setItem("rol", JSON.stringify(this.currentUser.rol));
+                            this.roleService.addRole(localStorage.getItem("rol"), ['leave_review']);
                             this.router.navigate(['/me'])
                         }
                         else{
