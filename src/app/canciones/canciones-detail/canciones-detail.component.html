@@ -22,6 +22,7 @@
     <button class="btn btn-danger text-center" (click)="deleteVinilo()" ><span class="fa fa-trash"></span></button>
     <div *ngIf="showCreate">
     <app-comentario-list [tipo]="tipo" [id] = "cancion?.id" ></app-comentario-list>
+    
      </div>
 
      <div *ngIf="showCreates">
