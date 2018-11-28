@@ -23,7 +23,12 @@ export class ViniloDetailComponent implements OnInit {
   tipo : string;
   id:number;
 
+  showComentarios: boolean;
 
+  showHideComentarios(): void {
+    this.showComentarios = !this.showComentarios;
+
+}
   
 
   
@@ -45,6 +50,7 @@ export class ViniloDetailComponent implements OnInit {
     this.getVinilos(viniloId);
     this.tipo = 'vinilos';
     this.id =  +this.routes.snapshot.paramMap.get('id');
+    this.showComentarios = false;
   }
 
 }
