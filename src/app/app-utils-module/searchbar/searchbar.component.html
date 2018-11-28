@@ -72,7 +72,7 @@
  
         <div ngbDropdown class="menu menus">
             <div class="profile" ngbDropdownToggle>
-                <img src="https://via.placeholder.com/150x150" alt="" class="pic">
+                <img [src]="this.auth.getUserObject().imagen" alt="" class="pic">
                 <div class="btn " id="dropdownBasic1">{{this.auth.getUserObject().nombre}}</div>
                 <i class="fas fa-chevron-down"></i>
             </div>
