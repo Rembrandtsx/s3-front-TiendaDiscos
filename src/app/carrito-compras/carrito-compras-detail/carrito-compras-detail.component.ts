@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 import { ObserveOnOperator } from 'rxjs/internal/operators/observeOn';
 import { TarjetaDeCredito } from '../../billinginformation/tarjetadecredito';
 import { BillingInformation } from '../../billinginformation/billinginformation';
+import { LoginService } from '../../UsuariosModule/services/login.service';
 
 @Component({
   selector: 'detail-carrito-compras',
@@ -18,7 +19,7 @@ import { BillingInformation } from '../../billinginformation/billinginformation'
 })
 export class CarritoComprasDetailComponent implements OnInit {
 
-  constructor (private carritoComprasService: CarritoComprasService, private router: Router){ }
+  constructor (private carritoComprasService: CarritoComprasService, private router: Router, private auth: LoginService){ }
 
   carritoComprasid: number;
   carritoComprasDetail: CarritoComprasDetail;
@@ -138,6 +139,7 @@ export class CarritoComprasDetailComponent implements OnInit {
     return rta;
   }
   ngOnInit() {
+    if(this.auth.currentUser!=undefined){
     this.showListTrans=false;
     this.showListVinilos=true;
     this.showOpPago=false;
@@ -150,4 +152,8 @@ this.showResumen=false;
     this.usuarioActual= new Usuario();
     this.getCarritoComprasDetail();
     this.obtenerUsuarioActual();
+    }else{
+      this.verL();
     }}
+  }
+

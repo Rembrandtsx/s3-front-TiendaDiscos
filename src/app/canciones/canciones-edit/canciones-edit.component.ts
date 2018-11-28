@@ -10,7 +10,7 @@ import { filter } from 'rxjs/operators';
 @Component({
     selector: 'app-cancion-edit',
     templateUrl: './canciones-edit.component.html',
-    styleUrls: ['./canciones-edit.component.css']
+    styleUrls: ['./canciones-edit.component.css'],
 })
 export class CancionEditComponent implements OnInit {
 

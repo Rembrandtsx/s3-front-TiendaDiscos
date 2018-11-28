@@ -39,6 +39,8 @@ export class LoginService{
                         if(x.contrasenha== contrasenha){
                             this.currentUser = x;
                             localStorage.setItem("usuario", JSON.stringify(this.currentUser))
+                            localStorage.setItem("rol", JSON.stringify(this.currentUser.rol));
+                            this.roleService.addRole(localStorage.getItem("rol"), ['leave_review']);
                             this.router.navigate(['/me'])
                         }
                         else{
@@ -60,7 +62,7 @@ export class LoginService{
     logout(){
         this.currentUser= null;
         localStorage.removeItem("usuario");
-        localStorage.removeItem("role")
+        localStorage.removeItem("rol")
     }
     getUserObject():Usuario{
         return this.currentUser;
@@ -107,14 +109,16 @@ export class LoginService{
         this.roleService.flushRoles();
         this.roleService.addRole('USUARIO', ['leave_review']);
         localStorage.setItem('usuario', JSON.stringify(this.currentUser));
-        localStorage.setItem('role', 'USUARIO');
+        localStorage.setItem("CambiooAlgo","cambió!")
+        localStorage.setItem('rol',"USUARIO");
     }
 
     setAdministratorRole (): void {
         this.roleService.flushRoles();
         this.roleService.addRole('ADMIN', ['edit_author_permission', 'delete_author_permission']);
         localStorage.setItem('usuario', JSON.stringify(this.currentUser));
-        localStorage.setItem('role', 'ADMIN');
+        localStorage.setItem("CambiooAlgo","cambió!")
+        localStorage.setItem('rol',"ADMIN");
     }
 
     printRole (): void {

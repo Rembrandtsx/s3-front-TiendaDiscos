@@ -23,4 +23,6 @@ export class Envio{
      * Estado del envio
      */
     estado: string;
+
+    posicionActual:string;
 }

@@ -24,7 +24,7 @@
     
               <div class="album__actions">
               
-                <button class="button-light save">Agregar a carrito</button>
+                <button class="button-light save" (click)="agregarCarrito()">Agregar a carrito</button>
     
                 <button class="button-light save">Agregar a wishlist</button>
                 
@@ -40,3 +40,10 @@
         </div>
         
       <listar-canciones [canciones] = "vinilo?.canciones"></listar-canciones>
+      <button [ngClass]="{ 'button-light save': !showCreate, 'button-light save': showCreate }" type="button" class="btn"
+      (click)="showHideComentarios()">Ver comentarios Vinilo</button>
+      <div *ngIf="showComentarios">
+          <app-comentario-list [tipo]="tipo" [id] = "id" ></app-comentario-list>
+        
+        </div>
+    

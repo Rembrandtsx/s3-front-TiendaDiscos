@@ -8,20 +8,17 @@ import { Usuario } from "../../UsuariosModule/interfaces/usuario";
     styleUrls:['./login.component.css']
 })
 export class LoginComponent implements OnInit{
-    credenciales:Usuario={
-        username:"",
-        email:"",
-        contrasenha:""
-    };
+    credenciales:Usuario;
     constructor(public auth: LoginService){
         
     }
     ngOnInit(){
-        
+        this.credenciales = new Usuario();
     }
 
-    login(){
 
+    login(){
+        
         this.auth.login(this.credenciales.email,this.credenciales.contrasenha);
         
     }
