@@ -4,33 +4,33 @@ export class TarjetaDeCredito {
     /**
      * Id de la tarjeta
      */
-    id:number;
+    id?:number;
 
     
     /**
      * Numero de la tarjeta
      */
-    numero:number;
+    numero?:number;
 
         /**
      * Numero de verificacion de la tarjeta
      */
-    numeroVerificacion: number;
+    numeroVerificacion?: number;
 
     /**
      * fecha de vencimiento de la tarjeta
      */
-    fechaVencimiento:Date;
+    fechaVencimiento?:Date;
 
     /**
      * nombre del dueño de la tarjeta
      */
-    name:String;
+    name?:String;
 
     /**
      * cvc de la tarjeta
      */
-    cvc:String;
+    cvc?:String;
 
 
 

@@ -28,7 +28,7 @@ export class ViniloDetailComponent implements OnInit {
 
   
   getVinilos(id:number): void{
-    this.viniloService.getVinilo().subscribe(vinilos => 
+    this.viniloService.getVinilos().subscribe(vinilos => 
         {
             
             

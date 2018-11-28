@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("./assets/bootstrap.css");
+@import url("./assets/toastrCustom.css");
 @import url("./assets/videogular2.css");
-
+@import url("./assets/animate.css");
 
 body{
   background: #000;
