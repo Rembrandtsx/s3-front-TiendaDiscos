@@ -5,16 +5,18 @@ import {Observable} from 'rxjs';
 import {environment} from '../../environments/environment';
 import {Vinilo} from '../vinilo/vinilo';
 import {TransaccionDetail} from '../transaccion/transaccion-detail';
+import { LoginService } from '../UsuariosModule/services/login.service';
+import { Usuario } from '../UsuariosModule/interfaces/usuario';
+import { BillingInformation } from '../billinginformation/billinginformation';
+import { TarjetaDeCredito } from '../billinginformation/tarjetadecredito';
+import { CarritoCompras } from './carrito-compras';
 
 const API_URL='../../assets/carritoCompras.json';
 const URL="http://localhost:8080/s3_tiendadiscos-api/api/transacciones";
 const URLUSUARIO="http://localhost:8080/s3_tiendadiscos-api/api/usuarios/";
 
 
-import { LoginService } from '../UsuariosModule/services/login.service';
-import { Usuario } from '../UsuariosModule/interfaces/usuario';
-import { BillingInformation } from '../billinginformation/billinginformation';
-import { TarjetaDeCredito } from '../billinginformation/tarjetadecredito';
+
 
 @Injectable()
 export class CarritoComprasService{
@@ -29,7 +31,9 @@ export class CarritoComprasService{
    
    usuarioComprador: Usuario;
    usuarioVendedor:Usuario;
-
+    postCarritoCompras(carritoCompras:CarritoCompras, usuarioId:number): Observable<CarritoCompras>{
+        return this.http.post<CarritoCompras>(URLUSUARIO+`${usuarioId}/carrito`, carritoCompras);
+    }
 
    eliminarViniloDeCarritoCompras(id):Observable<CarritoComprasDetail>{
        return this.http.delete<CarritoComprasDetail>(URLUSUARIO+this.auth.currentUser.id+"/carrito/vinilos/"+id);

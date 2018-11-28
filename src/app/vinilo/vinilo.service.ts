@@ -23,14 +23,14 @@ export class ViniloService{
     /**
      * obtiene todos sus vinilos.
      */
-    getVinilos(id): Observable<Vinilo[]> {
+    getVinilosUsuario(id): Observable<Vinilo[]> {
         return this.http.get<Vinilo[]>(API_URL+id);
     }
 
     /**
     * obtiene todos los vinilos de la tienda
     */
-    getVinilo(): Observable<Vinilo[]> {
+    getVinilos(): Observable<Vinilo[]> {
         return this.http.get<Vinilo[]>('http://localhost:8080/s3_tiendadiscos-api/api/vinilos/');
     }
 

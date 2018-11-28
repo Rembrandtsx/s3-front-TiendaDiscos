@@ -15,7 +15,7 @@ export class ViniloListarComponent implements OnInit {
 
 
   getVinilos(): void {
-    this.viniloService.getVinilo().subscribe(vinilos => this.vinilos = vinilos);
+    this.viniloService.getVinilos().subscribe(vinilos => this.vinilos = vinilos);
  
   }
 
