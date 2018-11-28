@@ -8,7 +8,7 @@ import { CancionComponent } from './canciones-detail/canciones-detail.component'
 import { CancionCreateComponent} from './canciones-create/canciones-create.component';
 import { FormsModule } from '@angular/forms';
 import { CancionEditComponent } from './canciones-edit/canciones-edit.component';
-
+import { CancionesListarComponent } from './canciones-listar/canciones-listar.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -20,18 +20,21 @@ import { CancionEditComponent } from './canciones-edit/canciones-edit.component'
     CancionesComponent,
     CancionComponent,
     CancionCreateComponent,
-    CancionEditComponent
+    CancionEditComponent,
+    CancionesListarComponent
   ],
   providers: [
     CancionesService,
     CancionComponent,
     CancionCreateComponent,
-    CancionEditComponent
+    CancionEditComponent,
+    CancionesListarComponent
   ],
   exports: [
     CancionesComponent,
     CancionCreateComponent,
-    CancionEditComponent
+    CancionEditComponent,
+    CancionesListarComponent
   ]
 })
 export class CancionModule { }

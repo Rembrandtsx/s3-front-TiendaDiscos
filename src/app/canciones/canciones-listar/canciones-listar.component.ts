@@ -5,11 +5,11 @@ import { Overlay} from '../overlay';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'list-canciones',
-  templateUrl: './canciones.component.html',
-  styleUrls: [ './canciones.component.css']
+  selector: 'listar-canciones',
+  templateUrl: './canciones-listar.component.html',
+  styleUrls: [ './canciones-listar.component.css']
 })
-export class CancionesComponent implements OnInit,OnDestroy {
+export class CancionesListarComponent implements OnInit,OnDestroy {
 
   constructor(private cancionesService : CancionesService,private overlay:Overlay,private routes: ActivatedRoute) { 
       this.urlCancionActual = null;
@@ -20,11 +20,7 @@ export class CancionesComponent implements OnInit,OnDestroy {
   tipo : string;
   id:number[];
 
-  showCreate: boolean;
-  
-  showHideCreate(): void {
-    this.showCreate = !this.showCreate;
-}
+
   getCanciones(): void{
     this.cancionesService.getCanciones(+this.routes.snapshot.paramMap.get('id') + '/canciones').subscribe((vinilos: Canciones[]) =>{
        this.canciones = vinilos;

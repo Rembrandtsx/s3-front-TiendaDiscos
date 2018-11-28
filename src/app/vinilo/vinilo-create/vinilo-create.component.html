@@ -1,0 +1,45 @@
+<div class = "row">
+    <div class ="col12">
+        
+        <h4>Crear un vinilo</h4>
+        <form name = "vinilo" (ngSubmit) = "f.form.valid && createVinilo()" #f="ngForm" novalidate>
+            <div class = "form-group" >
+                <label for = "contenidoMensaje"><b>Nombre del vinilo</b></label>
+                <input type = "text" name = "contenidoMensaje" class = "form-control" id= "contenidoMensaje" [(ngModel)] = "vinilo.nombre" 
+                #contenidoMensaje = "ngModel" [ngClass]="{'is-valid' : f.submitted && contenidoMensaje.invalid}" required>
+            </div>
+            <div class = "form-group" >
+                <label for = "artista"><b>Artista</b></label>
+                <input type = "text" name = "artista" class = "form-control" id= "artista" [(ngModel)] = "vinilo.artista" 
+                #artista = "ngModel" [ngClass]="{'is-valid' : f.submitted && artista.invalid}" required>
+            </div>
+            <div class = "form-group" >
+                <label for = "fechaLanzamiento"><b>FechaLanzamiento</b></label>
+                <div [ngClass]="{ 'is-invalid': f.submitted && fechaLanzamiento.invalid }">
+                    <input type = "text" name = "fechaLanzamiento" class = "form-control" id= "fechaLanzamiento" [(ngModel)] = "vinilo.fechaLanzamiento" 
+                    ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" #fechaLanzamiento = "ngModel" [ngClass]="{'is-valid' : f.submitted && (fechaLanzamiento.untouched || fechaLanzamiento.invalid)}" required>
+                </div>
+            </div> 
+            <div class = "form-group" >
+                <label for = "precio"><b>Precio</b></label>
+                <input type = "text" name = "precio" class = "form-control" id= "precio" [(ngModel)] = "vinilo.precio" 
+                #precio = "ngModel" [ngClass]="{'is-valid' : f.submitted && precio.invalid}" required>
+            </div> 
+            <div class = "form-group" >
+                <label for = "productora"><b>Productoran</b></label>
+                <input type = "text" name = "productora" class = "form-control" id= "productora" [(ngModel)] = "vinilo.productora" 
+                #productora = "ngModel" [ngClass]="{'is-valid' : f.submitted && productora.invalid}" required>
+            </div> 
+            <div class = "form-group" >
+                <label for = "previewURI"><b>URL</b></label>
+                <input type = "text" name = "previewURI" class = "form-control" id= "previewURI" [(ngModel)] = "vinilo.previewURI" 
+                #previewURI = "ngModel" [ngClass]="{'is-valid' : f.submitted && previewURI.invalid}" required>
+            </div> 
+            <div class = "row form-inline justify-content-center aliign-self-center">
+                <button type = "submit" class = "button-light save">Crear</button>
+                <div class = "divider"></div>
+                <button type = "button" class = "button-light saver" (click) = "cancelCreation()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>

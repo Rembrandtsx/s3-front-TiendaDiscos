@@ -21,6 +21,8 @@ import { CancionesComponent } from '../canciones/canciones-list/canciones.compon
 import { ViniloComponent } from '../vinilo/vinilo-detail/vinilo.component';
 import { UsuarioComponent } from '../UsuariosModule/usuario-detail/usuario.component';
 import { ComentarioCreateComponent } from '../comentario/comentario-create/comentario-create.component';
+import { ViniloListarComponent } from '../vinilo/vinilo-listar/vinilo-listar.component';
+import { ViniloDetailComponent } from '../vinilo/vinilo-detailG/vinilo-detail.component';
 import { TransaccionGeneradasListComponent } from '../carrito-compras/transaccion-list/transaccion-list.component';
 
 
@@ -34,8 +36,12 @@ export const routes : Routes = [
      
     { path: 'billing', component:BillinginformationListComponent , pathMatch: 'full' },
     { path: 'vinilos' , component : ViniloListComponent, pathMatch : 'full'},
+    { path: 'viniloss' , component : ViniloListarComponent, pathMatch : 'full'},
     {
       path: 'vinilos/:id', component: ViniloComponent, pathMatch:'full'
+    },
+    {
+      path: 'viniloss/:id', component: ViniloDetailComponent, pathMatch:'full'
     },
     { path: 'usuarios', component:UsuarioListComponent , pathMatch: 'full' },
     { path: 'me', component:UsuarioComponent, pathMatch:'full', canActivate:[AuthGuard]},

@@ -15,6 +15,7 @@
     margin-left: calc(2*100vw/12);
     height: 35vh;
     background: #333;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 .centrado{
     display: flex;

@@ -13,16 +13,32 @@ export class ViniloListComponent implements OnInit {
 
   @Input() vinilos: Vinilo[];
   
+  showCreate: boolean;
   
+  showEdit: boolean;
+
+  showHideCreate(): void {
+    this.showCreate = !this.showCreate;
+    this.showEdit = false;
+}
  
+
+
+showHideEdit(): void {
+  this.showEdit = !this.showEdit;
+  this.showCreate = false;
+}
+
   getVinilos(): void {
-    this.viniloService.getVinilos().subscribe(vinilos => this.vinilos = vinilos);
+    this.viniloService.getVinilos(1).subscribe(vinilos => this.vinilos = vinilos);
  
   }
 
   ngOnInit() {
   
     this.getVinilos();
+    this.showCreate = false;
+    this.showEdit = false;
 
   }
 

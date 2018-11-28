@@ -7,7 +7,13 @@ import { ViniloComponent } from './vinilo-detail/vinilo.component';
 import { CancionModule } from '../canciones/canciones.module';
 import { RouterVinylAppModule } from '../router-module/router.module';
 import { ComentarioModule } from '../comentario/comentario.module'
-
+import { ViniloCreateComponent } from './vinilo-create/vinilo-create.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxPermissionsModule } from 'ngx-permissions';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ViniloEditComponent } from './vinilo-edit/vinilo-edit.component';
+import { ViniloListarComponent } from './vinilo-listar/vinilo-listar.component';
+import { ViniloDetailComponent } from './vinilo-detailG/vinilo-detail.component';
 
 @NgModule({
   imports: [
@@ -15,19 +21,38 @@ import { ComentarioModule } from '../comentario/comentario.module'
     HttpClientModule,
     CancionModule,
     RouterVinylAppModule,
-    ComentarioModule
+    ComentarioModule,
+    FormsModule,
+    NgxPermissionsModule,
+    HttpClientModule,
+    NgbModule,
+    ReactiveFormsModule,
+    
+    
   ],
   declarations: [
     ViniloListComponent,
-    ViniloComponent
+    ViniloComponent,
+    ViniloCreateComponent,
+    ViniloEditComponent,
+    ViniloListarComponent,
+    ViniloDetailComponent
   ],
   providers: [
     ViniloService,
-    
+    ViniloCreateComponent,
+    ViniloEditComponent,
+    ViniloComponent,
+    ViniloListarComponent,
+    ViniloDetailComponent
   ],
   exports: [
     ViniloListComponent,
-    ViniloComponent
+    ViniloComponent,
+    ViniloCreateComponent,
+    ViniloEditComponent,
+    ViniloListarComponent,
+    ViniloDetailComponent
   ]
 })
 export class ViniloModule { }

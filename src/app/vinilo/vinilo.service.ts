@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 /**
  * URL para hacer la petición HTTP
  */
-const API_URL = 'http://localhost:8080/s3_tiendadiscos-api/api/vinilos/';
+const API_URL = 'http://localhost:8080/s3_tiendadiscos-api/api/vinilos/usuarios/';
 
 /**
  * El servicio que utiliza el modulo vinilo.
@@ -21,9 +21,39 @@ export class ViniloService{
     constructor(private http : HttpClient){}
 
     /**
-     * obtiene todos los vinilos.
+     * obtiene todos sus vinilos.
      */
-    getVinilos(): Observable<Vinilo[]> {
-        return this.http.get<Vinilo[]>(API_URL);
+    getVinilos(id): Observable<Vinilo[]> {
+        return this.http.get<Vinilo[]>(API_URL+id);
+    }
+
+    /**
+    * obtiene todos los vinilos de la tienda
+    */
+    getVinilo(): Observable<Vinilo[]> {
+        return this.http.get<Vinilo[]>('http://localhost:8080/s3_tiendadiscos-api/api/vinilos/');
+    }
+
+    /**
+     * El usuario crea un vinilo en su coleccion
+     */
+    createVinilos(vinilo,id): Observable<Vinilo> {
+        return this.http.post<Vinilo>(API_URL+id, vinilo);
+      }
+
+    /**
+     * El usuario modifica la información de uno de sus vinilos
+     * @param vinilo Vinilo que remplaza el vinilo actual
+     * @param tipo Complmento para el path 
+     */
+    updateVinilo(vinilo, tipo): Observable<Vinilo> {
+        return this.http.put<Vinilo>(API_URL + tipo, vinilo);
+     }
+     /**
+      * El usuario que creo el vinilo lo elimina de su coleccion
+      * @param id id del vinilo a eliminar
+      */
+     deleteVinilo(id): Observable<Vinilo> {
+        return this.http.delete<Vinilo>('http://localhost:8080/s3_tiendadiscos-api/api/vinilos/'+id);
     }
 }

@@ -4,6 +4,7 @@ div.col-2{
   position: fixed;
   background: var(--gray-dark);
   padding: 2vh 0;
+  z-index: -1;
 }
 
 .titulo{
@@ -120,6 +121,7 @@ div.side-panel {
   top: 100%;
   display: none;
   overflow-y: scroll;
+  
 }
 
 div.side-panel.open{
@@ -163,6 +165,9 @@ div.side-panel.close{
   }
   .row{
     display: none;
+  }
+  div.side-panel {
+    height: 81vh;
   }
 
 }
