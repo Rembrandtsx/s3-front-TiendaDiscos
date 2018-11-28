@@ -6,6 +6,6 @@ export class WishList {
     /**
      * Contenido del comentario
      */
-    costoTotal: number;
+    totalCost: number;
 }
 

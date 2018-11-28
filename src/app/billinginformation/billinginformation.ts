@@ -9,24 +9,24 @@ export class BillingInformation{
     /**
      * Id de un BillingInformation
      */
-    id: number;
+    id?: number;
 
     /**
      * numero de cuenta de un BillingInformation
      */
-    cuentaAhorro: string;
+    cuentaAhorro?: string;
 
     /**
      *  cantidad gastada de un billing
      */
-    spent: number;
+    spent?: number;
 
         /**
      *  cantidad recivida en un billing
      */
-    received: number;
+    received?: number;
 
-    tarjetasDeCredito:TarjetaDeCredito[];
+    tarjetasDeCredito?:TarjetaDeCredito[];
 
 
 }

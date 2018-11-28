@@ -1,34 +1,54 @@
 <div class="container2">
-    <div class="login-wrapper">
-        <div class="login-form">
-            <h1 class="display-4" style="color: #fff;margin-bottom: 1em;">Registro</h1>
-          
+  <div class="login-wrapper">
 
-          <!-- username --> 
-          <div class="username">
-            <label><span class="entypo-user"><i class="fas fa-at"></i></span></label>
-            <input type="email" placeholder="Email"  />
-          </div>
-          <!--email-->
-          <div class="password">
-            <label><span class="entypo-lock"><i class="fas fa-user-circle"></i></span></label>
-            <input type="text" placeholder="Username" />
-          </div>  
-          <!-- password -->
-          <div class="password">
-            <label><span class="entypo-lock"><i class="fas fa-lock"></i></span></label>
-            <input type="password" placeholder="Contraseña" />
-          </div>
-          <!--dirección-->  
-          <div class="password">
-            <label><span class="entypo-lock"><i class="fas fa-map-marker-alt"></i></span></label>
-            <input type="text" placeholder="Direccion" />
-          </div>
-          <!-- button -->
-          <button class="btn" (click)="register()">Registrarse</button>
-          <p>
-            Ya tienes una cuenta y quieres loguearte? <a routerLink="/login" class="link">Ingresa ahora! <span class="entypo-right-thin"></span></a>
-          </p>
-        </div>
-      </div> 
+    <h1 class="display-4" style="color: #fff;margin-bottom: 1em;">Registro</h1>
+
+    <form name="registro" class="login-form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
+      <!-- username -->
+      <div class="username animated" [ngClass]="{'shake': f.sumbitted && email.invalid}">
+        <label><span class="entypo-user"><i class="fas fa-at"></i></span></label>
+        <input type="text" name="email" id="email" [(ngModel)]="usuario.email" #email="ngModel" 
+          placeholder="Email" required />
+      </div>
+      <div class="password animated" [ngClass]="{'shake': f.sumbitted && username.invalid}">
+        <label><span class="entypo-user"><i class="far fa-user-circle"></i></span></label>
+        <input type="text" name="username" id="username" [(ngModel)]="usuario.username" #username="ngModel" 
+          placeholder="Username" required />
+      </div>
+      <div class="password animated" [ngClass]="{'shake': f.sumbitted && nombre.invalid}">
+        <label><span class="entypo-user"><i class="fas fa-signature"></i></span></label>
+        <input type="text" name="nombre" id="nombre" [(ngModel)]="usuario.nombre" #nombre="ngModel" 
+          placeholder="Nombre" required />
+      </div>
+      <div class="password animated" [ngClass]="{'shake': f.sumbitted && direccion.invalid}">
+        <label><span class="entypo-user"><i class="fas fa-map-marker-alt"></i></span></label>
+        <input type="text" name="direccion" id="direccion" [(ngModel)]="usuario.direccion" #direccion="ngModel" 
+          placeholder="Direccion" required />
+      </div>
+      <div class="password animated" [ngClass]="{'shake': f.sumbitted && cuentaAhorros.invalid}">
+        <label><span class="entypo-user"><i class="fas fa-map-marker-alt"></i></span></label>
+        <input [attr.maxlength]="'10'" maxlength="10" type="tel" name="cuentaAhorros" id="cuentaAhorros" [(ngModel)]="billing.cuentaAhorro" #cuentaAhorros="ngModel" 
+          placeholder="Numero de Cuenta" required />
+      </div>
+
+      <div class="password animated" [ngClass]="{'shake': f.sumbitted && contrasenha.invalid}">
+        <label><span class="entypo-user"><i class="fas fa-lock"></i></span></label>
+        <input type="password" name="contrasenha" id="contrasenha" [(ngModel)]="usuario.contrasenha" #contrasenha="ngModel" 
+          placeholder="Contraseña" required />
+      </div>
+
+      <app-drop-zone [mensaje]="'imagen de perfil'" style="margin-top: 20px;" (rutaFoto)="anadirImagen($event)"></app-drop-zone>
+      <img [src]="usuario.imagen" *ngIf="usuario.imagen" style="border-radius: 50%; max-height: 5vh;">
+
+      <!-- button -->
+      <button class="btn" type="submit">Registrarse</button>
+      <p>
+        Ya tienes una cuenta y quieres loguearte? <a routerLink="/login" class="link">Ingresa ahora! <span class="entypo-right-thin"></span></a>
+      </p>
+    </form>
+
+
+
+
+  </div>
 </div>

@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent implements OnInit{
+  
   constructor(public overlay: Overlay, public auth:LoginService, private router: Router){
 
   }
