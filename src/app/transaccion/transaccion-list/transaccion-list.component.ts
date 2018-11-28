@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Transaccion } from '../transaccion';
 import { TransaccionService} from '../transaccion.service';
 import { Observable } from 'rxjs';
+import { LoginService } from '../../UsuariosModule/services/login.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'transacciones-list',
@@ -10,7 +12,7 @@ import { Observable } from 'rxjs';
 })
 export class TransaccionListComponent implements OnInit {
 
-  constructor(private transaccionService: TransaccionService ) { }
+  constructor(private transaccionService: TransaccionService,  private router: Router,private route: ActivatedRoute,  private auth: LoginService ) { }
 
   @Input() transacciones: Transaccion[];
   compras:boolean=true;
@@ -33,8 +35,15 @@ export class TransaccionListComponent implements OnInit {
     this.compras=false;
     this.ngOnInit();
   }
-  ngOnInit() {
+  verL(){
+    this.router.navigate(['/login']);
+  }
+ngOnInit() {
+if(this.auth.currentUser!=undefined){
     console.log(this.transaccionService);
     this.getTransacciones();
+  }else{
+    this.verL();
+  }
   }
 }

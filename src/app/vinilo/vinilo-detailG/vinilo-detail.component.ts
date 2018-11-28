@@ -2,6 +2,7 @@ import { Component, OnInit,ViewContainerRef,Optional } from '@angular/core';
 import { Vinilo } from '../vinilo';
 import { ViniloService } from '../vinilo.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import {CarritoComprasService} from '../../carrito-compras/carrito-compras.service';
 
 import {ToastrService} from 'ngx-toastr';
 @Component({
@@ -12,7 +13,8 @@ import {ToastrService} from 'ngx-toastr';
 })
 export class ViniloDetailComponent implements OnInit {
 
-  constructor(private viniloService : ViniloService, 
+  constructor(private viniloService : ViniloService,
+    private carritoService : CarritoComprasService,  
               private routes: ActivatedRoute, 
               private router : Router,
 
@@ -36,6 +38,10 @@ export class ViniloDetailComponent implements OnInit {
            
         
         })
+  }
+  agregarCarrito(){
+    this.carritoService.agregarViniloDeCarritoCompras(this.vinilo);
+
   }
 
 

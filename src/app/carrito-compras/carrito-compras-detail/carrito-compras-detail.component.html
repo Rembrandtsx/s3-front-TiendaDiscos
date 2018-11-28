@@ -1,6 +1,6 @@
 
 
-<div *ngIf="carritoComprasDetail!=undefined">
+<div *ngIf="this.auth.currentUser!=null&&carritoComprasDetail!=undefined">
 
 <div *ngIf="carritoComprasDetail.vinilos!=undefined&&showListVinilos">
 <div class="row">
@@ -172,6 +172,6 @@
 
 </div>
 </div>
-<div *ngIf="carritoComprasDetail==undefined" ng-Init= "verL()">
+<div *ngIf="this.auth.currentUser==null" ng-Init= "verL()">
 
 </div>

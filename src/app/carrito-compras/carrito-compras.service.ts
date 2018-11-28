@@ -10,9 +10,10 @@ import { Usuario } from '../UsuariosModule/interfaces/usuario';
 import { BillingInformation } from '../billinginformation/billinginformation';
 import { TarjetaDeCredito } from '../billinginformation/tarjetadecredito';
 import { CarritoCompras } from './carrito-compras';
+import { Envio } from '../transaccion/envio';
 
 const API_URL='../../assets/carritoCompras.json';
-const URL="http://localhost:8080/s3_tiendadiscos-api/api/transacciones";
+const URL="http://localhost:8080/s3_tiendadiscos-api/api/transacciones/";
 const URLUSUARIO="http://localhost:8080/s3_tiendadiscos-api/api/usuarios/";
 
 
@@ -28,13 +29,21 @@ export class CarritoComprasService{
     }
    transacciontemp: TransaccionDetail ;
    transaccionestemp: TransaccionDetail[] ;
-   
+   envioTemp: Envio;
    usuarioComprador: Usuario;
    usuarioVendedor:Usuario;
+   billingTemp: BillingInformation;
     postCarritoCompras(carritoCompras:CarritoCompras, usuarioId:number): Observable<CarritoCompras>{
         return this.http.post<CarritoCompras>(URLUSUARIO+`${usuarioId}/carrito`, carritoCompras);
     }
+    postEnvio(envio:Envio, id:number): Observable<Envio>{
+        return this.http.post<Envio>(URL+id+"/envio", envio);
+    }
 
+    agregarViniloDeCarritoCompras( v:Vinilo):Observable<CarritoComprasDetail>{
+        return this.http.post<CarritoComprasDetail>(URLUSUARIO+this.auth.currentUser.id+"/carrito/vinilos/"+v.id, v);
+ 
+    }
    eliminarViniloDeCarritoCompras(id):Observable<CarritoComprasDetail>{
        return this.http.delete<CarritoComprasDetail>(URLUSUARIO+this.auth.currentUser.id+"/carrito/vinilos/"+id);
 
@@ -90,7 +99,17 @@ export class CarritoComprasService{
         this.transacciontemp.usuarioVendedor=this.usuarioVendedor;
 
         console.log(this.transacciontemp);
-        this.comprarT(this.transacciontemp).subscribe((u)=>{this.transaccionestemp.push(u); console.log(this.transaccionestemp); this.eliminarViniloDeCarritoCompras(vinilo.id).subscribe();});
+        this.comprarT(this.transacciontemp).subscribe((u)=>{this.transaccionestemp.push(u); console.log(this.transaccionestemp); 
+            this.envioTemp=new Envio();
+            this.envioTemp.direccionEntrega=usuarioC.direccion;
+            this.envioTemp.direccionSalida=usuarioV.direccion;
+            this.envioTemp.posicionActual=usuarioV.direccion;
+
+            this.envioTemp.estado="PROGRESO";
+            this.envioTemp.id=1;
+
+            this.postEnvio(this.envioTemp, u.id).subscribe( ()=>{this.eliminarViniloDeCarritoCompras(vinilo.id).subscribe();});
+            });
             } );
         
         }
