@@ -5,15 +5,76 @@
         <app-viniloTransaccion [vinilo]="transaccionDetail.vinilo"></app-viniloTransaccion>
 </div>
 <br>
-<div class="album__name"  style="color: white">ESTADO:</div>
+       
+        <h3  style="color:#ffffff">Informacion</h3>
+        
+        <br>
+        <table class="table table-dark">
+            <tbody>
+                    <tr>
+                            <th scope="row">Estado</th>
+                            <td>{{transaccionDetail.estado}}</td>
+                        </tr>
+                <tr>
+                    <th scope="row"> Forma de Pago</th>
+                    <td>{{transaccionDetail.formaDePago}}</td>
+                </tr>
+                
+            </tbody>
+        </table>
+        <br>
+        <h3  style="color:#ffffff">Vinilo</h3>
+        
+        <br>
+        <table class="table table-dark">
+            <tbody>
+                    <tr>
+                            <th scope="row">Nombre</th>
+                            <td>{{transaccionDetail.vinilo.nombre}}</td>
+                        </tr>
+                        <tr>
+                                        <th scope="row"> Autor</th>
+                                        <td>{{transaccionDetail.vinilo.artista}}</td>
+                                    </tr>
+                <tr>
 
-<div class="album__name"  style="color: white">{{transaccionDetail.estado}}</div>
-<br>
-<div class="album__name"  style="color: white; font-size: 1em">FORMA DE PAGO:</div>
+                    <th scope="row"> Productora</th>
+                    <td>{{transaccionDetail.vinilo.productora}}</td>
+                </tr>
+                <tr>
+                                <th scope="row"> Informacion Adicional</th>
+                                <td>{{transaccionDetail.vinilo.informacionAdicional}}</td>
+                            </tr>
+            </tbody>
+        </table>
+        <br>
+        <h3  style="color:#ffffff">Envio</h3>
+        
+        <br>
+        <table class="table table-dark">
+            <tbody>
+                    <tr>
+                            <th scope="row">Estado</th>
+                            <td>{{transaccionDetail.estado}}</td>
+                        </tr>
+                <tr>
+                    <th scope="row"> Dirección Salida</th>
+                    <td>{{transaccionDetail.usuarioVendedor.direccion}}</td>
+                </tr>
+                <tr>
+                                <tr>
+                                                <th scope="row"> Ubicación actual</th>
+                                                <td>{{transaccionDetail.usuarioVendedor.direccion}}</td>
+                                            </tr>
+                                            <tr>
+                                <th scope="row"> Direccion envio</th>
+                                <td>{{transaccionDetail.usuarioComprador.direccion}}</td>
+                            </tr>
+                
+            </tbody>
+        </table>
+        <br>
+        <app-maps [direccionSalida]="transaccionDetail.usuarioVendedor.direccion" [direccionLlegada]="transaccionDetail.usuarioComprador.direccion"></app-maps>
 
-<div class="album__name"  style="color: white">{{transaccionDetail.formaDePago}}</div>
-<br>
-<div class="album__name"  style="color: white; font-size: 1em">DESCRIPCION:</div>
 
-<div class="album__name"  style="color: white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur dui a felis vulputate convallis. Donec consectetur odio id lobortis gravida. Donec eu mollis tellus. Integer commodo volutpat justo et convallis. Cras a quam a turpis varius fringilla. Aliquam fermentum elementum mi, sit amet tempus lectus suscipit ut.</div>
        

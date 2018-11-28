@@ -19,6 +19,9 @@ import { AudioPlayerComponent } from './audioPlayer/audio-player.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { BusquedaComponent } from './searchbar/busqueda/busqueda.component';
 import { LimitTo } from './pipes/limitTo.pipe';
+import { DropZoneComponent } from './dropZone/dropzone-component/dropzone.component';
+import { DropZoneDirective } from './dropZone/dropzone.directive';
+import { RegisterService } from '../UsuariosModule/services/register.service';
 
 
 
@@ -31,7 +34,9 @@ import { LimitTo } from './pipes/limitTo.pipe';
     RegisterComponent,
     AudioPlayerComponent, 
     BusquedaComponent,
-    LimitTo
+    LimitTo,
+    DropZoneComponent,
+    DropZoneDirective
   ],
   imports: [
     NgbModule,
@@ -45,7 +50,7 @@ import { LimitTo } from './pipes/limitTo.pipe';
     NgSelectModule
     
   ],
-  providers: [LoginService],
+  providers: [LoginService, DropZoneDirective, RegisterService],
   bootstrap: [],
   exports:[
     SearchBarComponent,
@@ -53,7 +58,8 @@ import { LimitTo } from './pipes/limitTo.pipe';
     HomeComponent,
     RegisterComponent,
     AudioPlayerComponent,
-    LimitTo
+    LimitTo,
+    DropZoneComponent
   ]
 })
 export class UtilsModule { }

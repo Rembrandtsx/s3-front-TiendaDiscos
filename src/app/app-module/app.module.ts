@@ -20,6 +20,13 @@ import { ComentarioModule } from '../comentario/comentario.module';
 import { WishListModule } from '../wishList/wishList.module';
 import { CancionModule } from '../canciones/canciones.module';
 import { Overlay } from '../canciones/overlay';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpErrorInterceptor } from '../interceptors/httperrorinterceptor.service';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../../environments/environment.prod';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+
 
 
 @NgModule({
@@ -41,9 +48,18 @@ import { Overlay } from '../canciones/overlay';
     CarritoComprasModule,
     CancionModule,
     NgxPermissionsModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireStorageModule
     
   ],
-  providers: [Overlay],
+  providers: [Overlay,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
   exports: []
 })
