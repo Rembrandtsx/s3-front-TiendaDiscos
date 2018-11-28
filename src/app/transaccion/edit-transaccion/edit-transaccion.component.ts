@@ -15,15 +15,14 @@ export class EditTransaccionComponent implements OnInit, OnChanges {
 
   @Input() transaccionDetail: TransaccionDetail;
   @Output() cancel= new EventEmitter();
+  @Output() update= new EventEmitter();
   transaccionTemp: TransaccionDetail;
   estado:string;
 
-  actualizar()
+  actualizar1()
   {
     
-    console.log(this.transaccionDetail);
-    this.transaccionService.getTransaccionDetail(this.transaccionDetail.id).subscribe((u)=>{this.transaccionTemp=u; this.transaccionTemp.estado=this.transaccionDetail.estado;  ; this.transaccionService.actualizarTransaccionDetail(this.transaccionTemp.id, this.transaccionTemp).subscribe((u)=>this.salir());
-      });
+    this.update.emit();
   }
   salir(){
     this.cancel.emit();
@@ -35,6 +34,7 @@ export class EditTransaccionComponent implements OnInit, OnChanges {
   }
   
   ngOnInit() {
+    
   }
   ngOnChanges() {
   }

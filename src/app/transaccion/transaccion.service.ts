@@ -10,7 +10,7 @@ import { Usuario } from '../UsuariosModule/interfaces/usuario';
 /**
  * URL para hacer la petion HTTP
  */
-const API_URL2 = "http://localhost:8080/s3_tiendadiscos-api/api/transacciones/";
+const API_URL2= "http://localhost:8080/s3_tiendadiscos-api/api/transacciones/";
 const transaccion= '';
 const API_URL="http://localhost:8080/s3_tiendadiscos-api/api/usuarios/";
 /**
@@ -23,7 +23,7 @@ export class TransaccionService {
      * Constructor del servicio
      * @param http -Requerido para pedir en la peticion de una lista de transacciones
      */
-    constructor(private http: HttpClient, private auth: LoginService ) { }
+    constructor(private http: HttpClient,  private auth: LoginService ) { }
 
     /**
      * Obtiene todas las transacciones
@@ -40,6 +40,7 @@ export class TransaccionService {
         return this.http.get<TransaccionDetail>(API_URL2+transaccionId);
     }
     actualizarTransaccionDetail(transaccionId:number, transaccion: TransaccionDetail):Observable<TransaccionDetail>{
-        return this.http.put<TransaccionDetail>(API_URL2+transaccion.id, transaccion);
+    return  this.http.put<TransaccionDetail>(API_URL2, transaccion);
+       
     }
 }

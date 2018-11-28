@@ -8,22 +8,23 @@ export class Vinilo {
     /**
      * Nombre del Vinilo.
      */
-    nombre: String;
+    nombre?: String;
 
     /**
      * Artista del Vinilo.
      */
-    artista: String;
+    artista?: String;
 
+    categoria?:String;
     /**
      * Fecha de lanzamiento del Vinilo.
      */
-    fechaLanzamiento: any;
+    fechaLanzamiento?: any;
 
     /**
      * Precio del Vinilo.
      */
-    precio: number;
+    precio?: number;
 
     /**
      * Productora del Vinilo.
@@ -33,7 +34,7 @@ export class Vinilo {
     /**
      * URL de una vista prieva mp3 del Vinilo.
      */
-    previewURI: String;
+    previewURI?: String;
 
     /**
      * El id del vinilo

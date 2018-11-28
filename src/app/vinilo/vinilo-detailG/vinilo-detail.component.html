@@ -24,13 +24,20 @@
     
               <div class="album__actions">
               
-                <button class="button-light save">Agregar a carrito</button>
+                <button class="button-light save" (click)="agregarCarrito()">Agregar a carrito</button>
     
                 <button class="button-light save">Agregar a wishlist</button>
                 
                 
               </div>
-              
+            <div *ngIf="agregado==true">
+              <div class="alert alert-light alert-dismissable">
+                  <button type="button" class="close" data-dismiss="alert" (click)="agregado=false">&times;</button>
+                  <strong>¡Agregado!</strong> Vinilo agregado exitosamente.
+                </div>
+                
+                
+              </div>
             </div>
             
           </div>

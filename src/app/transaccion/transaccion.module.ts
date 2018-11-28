@@ -24,7 +24,8 @@ import { EditEnvioComponent } from './edit-envio/edit-envio.component';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAIbUwPPbxW1zie05rkUQx87Pv-5WwXgC8'
     }),
-    AgmDirectionModule
+    AgmDirectionModule,
+    
   ],
   declarations: [
     TransaccionListComponent,
