@@ -38,7 +38,7 @@ export class ComentarioListComponent implements OnInit {
   }
 
   deleteComentarios(id) : void {
-    this.comentarioService.deleteVinilo(id).subscribe(obj => this.router.navigate([this.tipo+"/"+this.id]))
+    this.comentarioService.deleteVinilo(id).subscribe(obj => this.ngOnInit())
   }
 
   ngOnInit() {

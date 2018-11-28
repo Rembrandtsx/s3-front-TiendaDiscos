@@ -54,7 +54,11 @@ export class ViniloCreateComponent implements OnInit {
         this.vinilosService.createVinilos(this.vinilo,this.service.getUserObject().id)
             .subscribe(vinilo => {
                 this.vinilo = vinilo;
-                this.create.emit();});
+                this.create.emit();
+                this.toastrService.success("Crear Vinilo", "Se creo el vinilo de forma existosa");
+            }, err => {
+                this.toastrService.error(err, "Error");
+            });
         return this.vinilo; 
     }
 
