@@ -26,17 +26,28 @@ export class CancionesService{
     getCanciones(tipo:string): Observable<Canciones[]> {
         return this.http.get<Canciones[]>(API_URL+tipo);
     }
-
+    /**
+     * Se crea una cancion y se asocia la vinilo actual
+     * @param cancion Cancion creada por el usuario actual
+     * @param tipo Complemento de la URL
+     */
     createCanciones(cancion , tipo: string): Observable<Canciones> {
 
         return this.http.post<Canciones>(API_URL + tipo, cancion);
       }
-          /**
+    /**
     * Updates an author
     * @param author The author's information updated
     * @returns The confirmation that the author was updated
     */
     updateCancion(cancion, tipo): Observable<Canciones> {
         return this.http.put<Canciones>(API_URL + tipo, cancion);
+    }
+    /**
+     * Se elimina una cancion del vinilo
+     * @param tipo  Complemento de la URL
+     */
+    deleteCancion(tipo): Observable<Canciones> {
+        return this.http.delete<Canciones>('http://localhost:8080/s3_tiendadiscos-api/api/vinilos/'+tipo);
     }
 }

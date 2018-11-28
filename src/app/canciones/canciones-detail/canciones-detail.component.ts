@@ -1,16 +1,16 @@
-import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter, Input, OnChanges} from '@angular/core';
 import { Canciones } from '../canciones';
 import { CancionesService } from '../canciones.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-cancion-detail',
   templateUrl: './canciones-detail.component.html',
   styleUrls: [ './canciones-detail.component.css']
 })
-export class CancionComponent implements OnInit {
+export class CancionComponent implements OnInit, OnChanges {
 
-  constructor(private service : CancionesService,private routes : ActivatedRoute) { }
+  constructor(private service : CancionesService,private routes : ActivatedRoute, private router : Router) { }
 
   @Input () cancion : Canciones;
   tipo : string;
@@ -30,14 +30,28 @@ export class CancionComponent implements OnInit {
   
   getCancion(): void{
     this.service.getCanciones(+this.routes.snapshot.paramMap.get('id')+'/canciones').subscribe((vinilos: Canciones[]) =>
-    {this.cancion = vinilos.filter(obj=>{ return obj.id == this.id})[0]})
+    {
+      this.cancion = vinilos.filter(obj=>{ return obj.id == this.id})[0]})
+    }
+
+  /**
+  * This function deletes the book from the BookStore 
+  */
+  deleteVinilo(): void {
+  
+      this.service.deleteCancion(
+        +this.routes.snapshot.paramMap.get('id') + '/canciones/' + this.id).subscribe(
+          obj=>this.router.navigate(['vinilos']));
   }
 
   ngOnInit() {
     this.getCancion();
     this.tipo = 'vinilos/'+this.routes.snapshot.paramMap.get('id')+'/canciones';
-    this.showCreate =false;
-    this.showCreates=false;
+    this.showCreate = false;
+    this.showCreates = false;
   }
 
+  ngOnChanges(){
+    this.ngOnInit();
+  }
 }
