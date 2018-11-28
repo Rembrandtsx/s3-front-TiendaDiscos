@@ -5,6 +5,7 @@
 <br>
 
 <br>
+<div *ngIf="transacciones!=undefined">
 <div class="container">
             <ul class="nav" style="display:flex; color:#ffffff;">
                 
@@ -14,7 +15,7 @@
                 
               </ul>
             </div>
-            <div *ngIf="transacciones.length!=0">
+            <div *ngIf="transacciones!=undefined&&transacciones.length!=0">
                     <br><br>
     <div class="row">
       
@@ -40,7 +41,7 @@
        
        
     </div>
-    <div *ngIf="transacciones.length==0&&compras==true">
+    <div *ngIf="transacciones!=undefined&&transacciones.length==0&&compras==true">
         <br>
         <br>
             <h6  style="color:#ffffff">No tiene compras registradas.</h6>
@@ -50,3 +51,4 @@
             <br>
             <h6  style="color:#ffffff">No tiene ventas registradas.</h6>
     </div>
+</div>

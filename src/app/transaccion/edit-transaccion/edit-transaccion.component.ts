@@ -15,13 +15,15 @@ export class EditTransaccionComponent implements OnInit, OnChanges {
 
   @Input() transaccionDetail: TransaccionDetail;
   @Output() cancel= new EventEmitter();
+  transaccionTemp: TransaccionDetail;
   estado:string;
 
   actualizar()
   {
     
     console.log(this.transaccionDetail);
-    this.transaccionService.actualizarTransaccionDetail(this.transaccionDetail.id, this.transaccionDetail).subscribe((u)=>this.salir());
+    this.transaccionService.getTransaccionDetail(this.transaccionDetail.id).subscribe((u)=>{this.transaccionTemp=u; this.transaccionTemp.estado=this.transaccionDetail.estado;  ; this.transaccionService.actualizarTransaccionDetail(this.transaccionTemp.id, this.transaccionTemp).subscribe((u)=>this.salir());
+      });
   }
   salir(){
     this.cancel.emit();
