@@ -40,7 +40,7 @@ export class TransaccionService {
         return this.http.get<TransaccionDetail>(API_URL2+transaccionId);
     }
     actualizarTransaccionDetail(transaccionId:number, transaccion: TransaccionDetail):Observable<TransaccionDetail>{
-    return  this.http.put<TransaccionDetail>(API_URL2, transaccion);
+    return  this.http.put<TransaccionDetail>(API_URL2+transaccion.id, transaccion);
        
     }
 }
