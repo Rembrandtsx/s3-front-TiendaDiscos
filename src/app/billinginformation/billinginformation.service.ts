@@ -27,11 +27,7 @@ export class BillingInformationService {
     /**
      * Obtiene todos los BillingInformation, que en este caso solo es uno
      */
-    getBillingsInformation(): Observable<BillingInformation[]>{
-        return this.http.get<BillingInformation[]>(API_URL+'usuarios/'+this.login.getUserObject().id+'/billing');
-    }
-
-    getBillingInformationDetail(): Observable<BillingInformation> {
+    getBillingsInformation(): Observable<BillingInformation>{
         return this.http.get<BillingInformation>(API_URL+'usuarios/'+this.login.getUserObject().id+'/billing');
     }
     postBillingInformation(billing:BillingInformation, usuarioId:number): Observable<BillingInformation>{
