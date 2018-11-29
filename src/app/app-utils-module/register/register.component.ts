@@ -33,7 +33,8 @@ export class RegisterComponent implements OnInit{
     ngOnInit(){
         this.usuario = new Usuario();
         this.billing = new BillingInformation();
-            
+        this.billing.spent,this.billing.received=0;
+        
     }
     anadirImagen(evento:any){
         this.usuario.imagen= evento;
