@@ -11,7 +11,9 @@
     align-items: center;
     color: #fff;
 }
-
+.height-50{
+    height: 50vh !important;
+}
 
 
 .router-outlet{

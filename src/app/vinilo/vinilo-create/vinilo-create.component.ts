@@ -70,6 +70,12 @@ export class ViniloCreateComponent implements OnInit {
     }
 
     /**
+     * Añadir la ruta de la foto por firebase
+     */
+    anadirImagen(event){
+        this.vinilo.previewURI = event;
+    }
+    /**
     * This function will initialize the component
     */
     ngOnInit() {
