@@ -1,0 +1,45 @@
+<div class = "row">
+        <div class ="col12">
+            
+            <h4>Crear una tarjeta</h4>
+            <form name = "tarjeta" (ngSubmit) = "f.form.valid && createTarjeta()" #f="ngForm" novalidate>
+                <div class = "form-group" >
+                    <label for = "name"><b>Nombre de la tarejta</b></label>
+                    <input type = "text" name = "name" class = "form-control" id= "name" [(ngModel)] = "tarjeta.name" 
+                    #name = "ngModel" [ngClass]="{'is-valid' : f.submitted && name.invalid}" required>
+                </div>
+                <div class = "form-group" >
+                    <label for = "numero"><b>Numero</b></label>
+                    <input type = "number" name = "numero" class = "form-control" id= "numero" [(ngModel)] = "tarjeta.numero" 
+                    #numero = "ngModel" [ngClass]="{'is-valid' : f.submitted && numero.invalid}" required>
+                </div>
+                <div class = "form-group" >
+                        <label for = "fechaVencimiento"><b>Fecha Vencimiento</b></label>
+                        <div [ngClass]="{ 'is-invalid': f.submitted && fechaVencimiento.invalid }">
+                            <input type = "text" name = "fechaVencimiento" class = "form-control" id= "fechaVencimiento" [(ngModel)] = "tarjeta.fechaVencimiento" 
+                            ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" #fechaVencimiento = "ngModel" [ngClass]="{'is-valid' : f.submitted && (fechaVencimiento.untouched || fechaVencimiento.invalid)}" required>
+                        </div>
+                    </div>  
+                <div class = "form-group" >
+                    <label for = "numeroVerificacion"><b>Numero Verificacion</b></label>
+                    <input type = "number" min="0" name = "numeroVerificacion" class = "form-control" id= "numeroVerificacion" [(ngModel)] = "tarjeta.numeroVerificacion" 
+                    #numeroVerificacion = "ngModel" [ngClass]="{'is-valid' : f.submitted && numeroVerificacion.invalid}" required>
+                </div> 
+                <div class = "form-group" >
+                        <label for = "cvc"><b>cvc</b></label>
+                        <input type = "text" name = "cvc" class = "form-control" id= "cvc" [(ngModel)] = "tarjeta.cvc" 
+                        #cvc = "ngModel" [ngClass]="{'is-valid' : f.submitted && cvc.invalid}" required>
+                    </div> 
+                <div class = "form-group" >
+                    <label for = "imagen"><b>Imagen</b></label>
+                    <input type = "text" name = "imagen" class = "form-control" id= "imagen" [(ngModel)] = "tarjeta.imagen" 
+                    #imagen = "ngModel" [ngClass]="{'is-valid' : f.submitted && imagen.invalid}" required>
+                </div> 
+                <div class = "row form-inline justify-content-center aliign-self-center">
+                    <button type = "submit" class = "button-light save">Crear</button>
+                    <div class = "divider"></div>
+                    <button type = "button" class = "button-light saver" (click) = "cancelCreation()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>

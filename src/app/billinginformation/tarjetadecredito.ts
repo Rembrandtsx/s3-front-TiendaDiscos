@@ -20,7 +20,7 @@ export class TarjetaDeCredito {
     /**
      * fecha de vencimiento de la tarjeta
      */
-    fechaVencimiento?:Date;
+    fechaVencimiento:any;
 
     /**
      * nombre del dueño de la tarjeta
@@ -31,7 +31,10 @@ export class TarjetaDeCredito {
      * cvc de la tarjeta
      */
     cvc?:String;
-
+    /**
+     * Imagen asociada al medio de pago.
+     */
+    imagen: string;
 
 
 

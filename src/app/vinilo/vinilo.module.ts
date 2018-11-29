@@ -28,7 +28,6 @@ import { UtilsModule } from '../app-utils-module/utils.module';
     ComentarioModule,
     FormsModule,
     NgxPermissionsModule,
-    HttpClientModule,
     NgbModule,
     ReactiveFormsModule,
     UtilsModule

@@ -13,7 +13,7 @@ import { AgmDirectionModule } from 'agm-direction'
 import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
 import { EditTransaccionComponent } from './edit-transaccion/edit-transaccion.component';
 import { EditEnvioComponent } from './edit-envio/edit-envio.component';
-
+import{ComentarioModule}from '../comentario/comentario.module'
 @NgModule({
   imports: [
     CommonModule,
@@ -25,7 +25,7 @@ import { EditEnvioComponent } from './edit-envio/edit-envio.component';
       apiKey: 'AIzaSyAIbUwPPbxW1zie05rkUQx87Pv-5WwXgC8'
     }),
     AgmDirectionModule,
-    
+    ComentarioModule
   ],
   declarations: [
     TransaccionListComponent,

@@ -20,13 +20,18 @@ export class BillinginformationListComponent implements OnInit {
    */
   billingInformation: BillingInformation;
 
+  showCreate : boolean;
+
+  showHideCreate() : void{
+    this.showCreate = !this.showCreate;
+  }
 
   /**
    * Pregunta al servicio para actualizar la lista de billingInformation
    */
   getBillingInformation(): void {
-    this.billingInformationService.getBillingInformation().subscribe(billingInformation => {
-      this.billingInformation = billingInformation 
+    this.billingInformationService.getBillingsInformation().subscribe(billingInformation => {
+      this.billingInformation = billingInformation ;
       console.log(billingInformation);
     });
   }
@@ -34,6 +39,7 @@ export class BillinginformationListComponent implements OnInit {
 
     this.billingInformation = new BillingInformation();
     this.getBillingInformation();
+    this.showCreate = false;
   }
 
 }

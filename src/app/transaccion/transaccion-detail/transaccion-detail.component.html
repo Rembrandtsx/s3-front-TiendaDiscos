@@ -87,7 +87,12 @@
                 <app-edit-envio [transaccionDetail]="transaccionDetail" (update)="actualizarT()"(cancel)="ocultarEditE()"></app-edit-envio>
         </div>
         <br>
-
+        <button [ngClass]="{ 'button-light save': !showComentarios, 'button-light save': showComentarios }" type="button" class="btn"
+        (click)="showHideComentarios()">Ver comentarios transaccion</button>
+        <div *ngIf="showComentarios">
+            <app-comentario-list [tipo]="tipo" [id] = "id" ></app-comentario-list>
+          
+          </div>
         <app-maps [direccionSalida]="transaccionDetail.usuarioVendedor.direccion" [direccionLlegada]="transaccionDetail.usuarioComprador.direccion"></app-maps>
 
 
