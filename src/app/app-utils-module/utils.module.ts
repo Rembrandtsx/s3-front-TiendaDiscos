@@ -24,6 +24,9 @@ import { DropZoneDirective } from './dropZone/dropzone.directive';
 import { RegisterService } from '../UsuariosModule/services/register.service';
 import { NgxPermissionsModule } from 'ngx-permissions';
 
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { ViniloModule } from '../vinilo/vinilo.module';
+
 
 
 @NgModule({
@@ -50,7 +53,9 @@ import { NgxPermissionsModule } from 'ngx-permissions';
     VgOverlayPlayModule,
     VgBufferingModule,
     NgSelectModule,
-    NgxPermissionsModule.forChild()
+    SlickCarouselModule,
+    ViniloModule,
+    NgxPermissionsModule.forRoot()
     
   ],
   providers: [LoginService, DropZoneDirective, RegisterService],

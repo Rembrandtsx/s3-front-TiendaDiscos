@@ -41,7 +41,7 @@ export class CancionComponent implements OnInit, OnChanges {
   
       this.service.deleteCancion(
         +this.routes.snapshot.paramMap.get('id') + '/canciones/' + this.id).subscribe(
-          obj=>this.router.navigate(['vinilos']));
+          obj=>this.ngOnInit());
   }
 
   ngOnInit() {
