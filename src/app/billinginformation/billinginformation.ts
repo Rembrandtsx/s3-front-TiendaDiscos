@@ -26,6 +26,9 @@ export class BillingInformation{
      */
     received?: number;
 
+    /**
+     * Tarjetas de credito
+     */
     tarjetasDeCredito?:TarjetaDeCredito[];
 
 

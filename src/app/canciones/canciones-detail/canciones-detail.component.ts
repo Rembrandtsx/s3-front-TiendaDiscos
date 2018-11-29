@@ -37,7 +37,7 @@ export class CancionComponent implements OnInit, OnChanges {
   /**
   * This function deletes the book from the BookStore 
   */
-  deleteVinilo(): void {
+  deleteCancion(): void {
   
       this.service.deleteCancion(
         +this.routes.snapshot.paramMap.get('id') + '/canciones/' + this.id).subscribe(

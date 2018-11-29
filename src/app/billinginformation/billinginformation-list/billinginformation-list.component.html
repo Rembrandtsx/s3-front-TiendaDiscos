@@ -37,6 +37,15 @@
   </div>
   <!--*ngIf="billingInformation.tarjetasDeCredito.length > 0" -->
   <div>
+
       <app-tarjetacredito-list [billingtarjetas]="billingInformation.tarjetasDeCredito"></app-tarjetacredito-list>
+      <button [ngClass]="{ 'button-light save': !showEdit, 'button-light save': showEdit }" type="button" class="btn"
+      (click)="showHideCreate()">Crear Tarjeta</button>
+
+      <div *ngIf="showCreate">
+          <app-tarjeta-create (cancel) = "showHideCreate()" (create) = "ngOnInit()"></app-tarjeta-create>
+    
+    </div>
+     
   </div>
    
