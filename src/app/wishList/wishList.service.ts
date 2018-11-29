@@ -34,7 +34,7 @@ export class WishListService{
    usuarioVendedor:Usuario;
    billingTemp: BillingInformation;
     
-   postWish(w:WishList, usuarioId:number): Observable<WishList>{
+   postWishList(w:WishList, usuarioId:number): Observable<WishList>{
         return this.http.post<WishList>(URLUSUARIO+`${usuarioId}/wishlist`, w);
     }
     postEnvio(envio:Envio, id:number): Observable<Envio>{
