@@ -20,7 +20,7 @@ export class TarjetaDeCredito {
     /**
      * fecha de vencimiento de la tarjeta
      */
-    fechaVencimiento?:any;
+    fechaVencimiento:any;
 
     /**
      * nombre del dueño de la tarjeta

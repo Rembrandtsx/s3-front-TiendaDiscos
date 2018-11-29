@@ -25,7 +25,6 @@ import { CardViniloComponent } from './card-vinilo/card-vinilo.component';
     ComentarioModule,
     FormsModule,
     NgxPermissionsModule,
-    HttpClientModule,
     NgbModule,
     ReactiveFormsModule,
   

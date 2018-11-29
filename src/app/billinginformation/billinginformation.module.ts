@@ -6,20 +6,26 @@ import { RouterVinylAppModule } from '../router-module/router.module';
 import { BillinginformationDetailComponent } from './billinginformation-detail/billinginformation-detail.component';
 import { TarjetacreditoListComponent } from './tarjetacredito-list/tarjetacredito-list.component';
 import { TarjetaCreateComponent } from './tarjeta-create/tarjeta-create.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TarjetaEditComponent } from './tarjeta-edit/tarjeta-edit.component';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterVinylAppModule,
+    FormsModule,
+    NgbModule,
+    ReactiveFormsModule
     
   ],
   declarations: [
     BillinginformationListComponent,
     BillinginformationDetailComponent,
     TarjetacreditoListComponent,
-    TarjetaCreateComponent
+    TarjetaCreateComponent,
+    TarjetaEditComponent
   ],
-  providers: [BillingInformationService,TarjetaCreateComponent],
-  exports: [TarjetaCreateComponent]
+  providers: [BillingInformationService,TarjetaCreateComponent,TarjetacreditoListComponent,TarjetaEditComponent],
 })
 export class BillinginformationModule { }

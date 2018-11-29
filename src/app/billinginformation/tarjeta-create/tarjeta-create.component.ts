@@ -2,7 +2,6 @@ import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 import {DatePipe} from '@angular/common';
 import {ToastrService} from 'ngx-toastr';
 import { ActivatedRoute } from '@angular/router';
-import {BillinginformationModule } from '../billinginformation.module';
 import { BillingInformationService } from '../billinginformation.service';
 import {LoginService } from '../../UsuariosModule/services/login.service'
 import {TarjetaDeCredito } from '../tarjetadecredito'
@@ -50,8 +49,10 @@ export class TarjetaCreateComponent implements OnInit {
     * Creates a new editorial
     */
     createTarjeta(): TarjetaDeCredito {
-        let dateB: Date = new Date(this.tarjeta.fechaVencimiento.year, this.tarjeta.fechaVencimiento.month - 1, this.tarjeta.fechaVencimiento.day);
+        let dateB: Date = new Date(this.tarjeta.fechaVencimiento.year,
+             this.tarjeta.fechaVencimiento.month - 1, this.tarjeta.fechaVencimiento.day);
         this.tarjeta.fechaVencimiento = this.dp.transform(dateB, 'yyyy-MM-dd');
+        console.log(this.tarjeta.fechaVencimiento)
         this.serviceB.postTarjeta(this.tarjeta)
             .subscribe(vinilo => {
                 this.tarjeta = vinilo;

@@ -38,6 +38,14 @@ export class BillingInformationService {
         return this.http.post<BillingInformation>(API_URL+`usuarios/${usuarioId}/billing`,billing)
     }
     postTarjeta(billing:TarjetaDeCredito): Observable<TarjetaDeCredito>{
-        return this.http.post<TarjetaDeCredito>(API_URL+'usuarios/'+this.login.getUserObject().id+'/billing/',billing)
+        return this.http.post<TarjetaDeCredito>(API_URL+'usuarios/'+this.login.getUserObject().id+'/billing/tarjetasDeCredito',billing)
     }
+    getTarjeta(): Observable<TarjetaDeCredito[]> {
+        return this.http.get<TarjetaDeCredito[]>(API_URL+'usuarios/'+this.login.getUserObject().id+'/billing/tarjetasDeCredito/');
+    }
+
+    updateTarjeta(tarjeta:TarjetaDeCredito, id:number): Observable<TarjetaDeCredito> {
+        return this.http.put<TarjetaDeCredito>('http://localhost:8080/s3_tiendadiscos-api/api/usuarios/'+
+        this.login.getUserObject().id+'/billing/tarjetasDeCredito/' + id, tarjeta);
+     }
 } 
