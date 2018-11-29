@@ -20,11 +20,9 @@ export class ComentarioListComponent implements OnInit {
 
   @Input() id:number;
   
-  showCreate: boolean;
   
-  showHideCreate(): void {
-    this.showCreate = !this.showCreate;
-  }
+  
+
 
 
   soyYo(id):boolean{
@@ -42,10 +40,14 @@ export class ComentarioListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.showCreate = false;
+    
     this.getComentarios();
 
 
+  }
+  getUrl(string)
+  {
+  return `url('${string}')`;
   }
 
 }

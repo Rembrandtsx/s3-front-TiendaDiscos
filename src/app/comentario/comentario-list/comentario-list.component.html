@@ -1,30 +1,30 @@
     <div class="row">
-            <div class="col-md-4">
-                    <br>
-
-        <div class="col-sm-12"  *ngFor="let com of comentario">
-            
-                <div class="card-body">
-                    <h4 class="card-title">{{com.escritoPor.nombre}}</h4>
-                    <p class="card-text"> {{com.contenido}}</p>
-                    <div *ngIf="soyYo(com.escritoPor.id)">
-                    <button class="btn btn-danger text-center" (click)="deleteComentarios(com.id)" ><span class="fa fa-trash"></span></button>
-                </div>
-                </div>
-        </div>
-
-        <div class="row justify-content-center align-self-center">
-                <button [ngClass]="{ 'btn-primary': !showCreate, 'btn-danger': showCreate }" type="button-light save" class="btn"
-                    (click)="showHideCreate()" style="background:var(--primary)">Agregar un comentario</button>
-            </div>
-            <br>
-            <br>
-        <div class="col-sm-12">
-                <div *ngIf="showCreate">
-                    <app-comentario-create (cancel)="showHideCreate()" (create)="ngOnInit()" *ngIf="showCreate"
+            <div class="col-12">
+                    
+                    <app-comentario-create  (create)="ngOnInit()" 
                     [tipo] = "tipo" [id] = id></app-comentario-create>
-                </div>
-                </div>
+                    <div class="comments">
+                            <div class="comment-wrap" *ngFor="let com of comentario">
+                                <div class="photo">
+                                    <img class="avatar" [src]="com.escritoPor.imagen">
+                                </div>
+                                <div class="comment-block">
+                                    <b>{{com.escritoPor.nombre}}</b>
+                                    <p class="comment-text">{{com.contenido}}</p>
+                                    <div *ngIf="soyYo(com.escritoPor.id)" style="float:right;">
+                                            <button class="btn btn-danger text-center" (click)="deleteComentarios(com.id)" ><span class="fa fa-trash"></span></button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        
+                    </div>
+
+    
 
         </div>
     </div> 
+
+
+
+

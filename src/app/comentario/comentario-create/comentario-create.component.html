@@ -1,18 +1,17 @@
-<div class = "row">
-    <div class ="col12">
-        
-        <h4>Crear un comentario</h4>
-        <form name = "comentario" (ngSubmit) = "f.form.valid && createComentario()" #f="ngForm" novalidate>
-            <div class = "form-group" >
-                <label for = "contenidoMensaje"><b>Contenido del mensaje</b></label>
-                <input type = "text" name = "contenidoMensaje" class = "form-control" id= "contenidoMensaje" [(ngModel)] = "comentario.contenido" 
-                #contenidoMensaje = "ngModel" [ngClass]="{'is-valid' : f.submitted && contenidoMensaje.invalid}" required>
-            </div>
-            <div class = "row form-inline justify-content-center aliign-self-center">
-                <button type = "submit" class = "button-light save">Crear</button>
-                <div class = "divider"></div>
-                <button type = "button" class = "button-light saver" (click) = "cancelCreation()">Cancelar</button>
-            </div>
-        </form>
-    </div>
+
+
+<div class="comments">
+<div class="comment-wrap">
+        <div class="photo">
+                <img class="avatar" [src]="this.login.currentUser.imagen">
+        </div>
+        <div class="comment-block">
+                <form name = "comentario" (ngSubmit) = "f.form.valid && createComentario()" #f="ngForm" novalidate>
+                        <div style="position: relative;">
+                                <textarea name = "contenidoMensaje" id= "contenidoMensaje" [(ngModel)] = "comentario.contenido" #contenidoMensaje = "ngModel" [ngClass]="{'is-valid' : f.submitted && contenidoMensaje.invalid}" required cols="30" rows="3" placeholder="Comentar..."></textarea>
+                                <button type = "submit" style="position:absolute; bottom:0; right: 0; border-radius: .25em; background: var(--primary); color:white;"><i class="far fa-paper-plane"></i></button>
+                        </div>
+                        </form>
+        </div>
+</div>
 </div>
