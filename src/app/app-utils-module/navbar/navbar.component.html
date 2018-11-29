@@ -17,7 +17,7 @@
                 <nav class="nav flex-column" *ngIf="loggeado">
                     <span class="nav-link disabled">Mi Cuenta</span>
                     <a class="nav-link" routerLink="/billing">Información de pago</a>
-                    <a class="nav-link" *ngxPermissionsOnly="['USUARIO']" routerLink="/misVinilos">Mis Vinilos</a>
+                    <a class="nav-link" *ngxPermissionsOnly="['USUARIO','ADMIN']" routerLink="/misVinilos">Mis Vinilos</a>
                    
                     
 

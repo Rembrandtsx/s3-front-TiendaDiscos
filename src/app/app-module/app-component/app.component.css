@@ -5,6 +5,11 @@
     background: url('../../../assets/bg.png');
     background-size: cover;
     z-index: -1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
 }
 
 
