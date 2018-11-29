@@ -15,20 +15,23 @@ export class ViniloListComponent implements OnInit, OnChanges {
 
   @Input() vinilos: Vinilo[];
   @Output() update = new EventEmitter();
+  salir:boolean;
 
 eliminarDelCarrito(vinilo: Vinilo){
   
 this.carritoComprasService.eliminarViniloDeCarritoCompras(vinilo.id).subscribe(()=>{this.ngOnChanges();});
+
 this.update.emit();
 
 this.ngOnInit();
 }
   ngOnInit() {
+    this.salir=false;
     this.carritoComprasService.getCarritoComprasDetail().subscribe((u)=>{ this.vinilos=u.vinilos; });
 
   }
   verVinilo(id:number){
-    this.router.navigate(["/viniloss/"+id]);
+    this.router.navigate(["/vinilos/"+id]);
   }
   ngOnChanges() {
    this.ngOnInit();

@@ -28,7 +28,7 @@ this.ngOnInit();
 
   }
   verVinilo(id:number){
-    this.router.navigate(["/viniloss/"+id]);
+    this.router.navigate(["/vinilos/"+id]);
   }
   ngOnChanges() {
    this.ngOnInit();
