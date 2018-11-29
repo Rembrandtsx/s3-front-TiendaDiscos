@@ -1,16 +1,14 @@
-<section style="position:absolute; width: 100%; heigth:40vh; background: var(--primary);">
 
-</section>
-
-<ngx-slick-carousel *ngIf="vinilosRock" class="carousel" #slickModal="slick-carousel" (init)="slickInit($event)"
+<h3 *ngIf="vinilosRock?.length >0">Rock</h3>
+<ngx-slick-carousel *ngIf="vinilosRock?.length >0" class="carousel" #slickModal="slick-carousel" (init)="slickInit($event)"
     [config]="slideConfig">
     <div ngxSlickItem *ngFor="let vinilo of vinilosRock" class="slide">
         <card-vinilo [vinilo]="vinilo"></card-vinilo>
     </div>
 </ngx-slick-carousel>
 
-
-<ngx-slick-carousel *ngIf="vinilosPop" class="carousel" #slickModal="slick-carousel" (init)="slickInit($event)"
+<h3 *ngIf="vinilosPop?.length >0">Pop</h3>
+<ngx-slick-carousel *ngIf="vinilosPop?.length >0" class="carousel" #slickModal="slick-carousel" (init)="slickInit($event)"
     [config]="slideConfig">
     <div ngxSlickItem *ngFor="let vinilo of vinilosPop" class="slide">
         <card-vinilo [vinilo]="vinilo"></card-vinilo>
