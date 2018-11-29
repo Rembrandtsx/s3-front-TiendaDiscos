@@ -6,6 +6,7 @@ import { environment } from '../../environments/environment';
 import {TransaccionDetail} from './transaccion-detail';
 import { LoginService } from '../UsuariosModule/services/login.service';
 import { Usuario } from '../UsuariosModule/interfaces/usuario';
+import { Envio } from './envio';
 
 /**
  * URL para hacer la petion HTTP
@@ -42,5 +43,9 @@ export class TransaccionService {
     actualizarTransaccionDetail(transaccionId:number, transaccion: TransaccionDetail):Observable<TransaccionDetail>{
     return  this.http.put<TransaccionDetail>(API_URL2+transaccion.id, transaccion);
        
+    }
+    actualizarEnvio(id:number, envio: Envio):Observable<Envio>{
+        return  this.http.put<Envio>(API_URL2+id+"/envio", envio);
+           
     }
 }

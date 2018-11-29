@@ -28,7 +28,7 @@
         <h6  style="color:#ffffff">No existen vinilos registrados en el carrito de compras.</h6>
 </div>
 <div>
-    <list-vinilosCarritoCompras [vinilos]="carritoComprasDetail.vinilos"></list-vinilosCarritoCompras>
+    <list-vinilosCarritoCompras [vinilos]="carritoComprasDetail.vinilos" (update)="ngOnChanges()"></list-vinilosCarritoCompras>
 </div>
 </div>
 <div *ngIf="showOpPago">

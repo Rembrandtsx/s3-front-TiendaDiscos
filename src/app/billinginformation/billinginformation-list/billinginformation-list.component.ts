@@ -30,7 +30,10 @@ export class BillinginformationListComponent implements OnInit {
    * Pregunta al servicio para actualizar la lista de billingInformation
    */
   getBillingInformation(): void {
-    this.billingInformationService.getBillingInformationDetail().subscribe(billingInformation => this.billingInformation = billingInformation );
+    this.billingInformationService.getBillingInformation().subscribe(billingInformation => {
+      this.billingInformation = billingInformation 
+      console.log(billingInformation);
+    });
   }
   ngOnInit() {
 

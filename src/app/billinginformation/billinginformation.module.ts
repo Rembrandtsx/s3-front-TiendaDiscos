@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { BillinginformationListComponent } from './billinginformation-list/billinginformation-list.component';
 import { BillingInformationService } from './billinginformation.service';
 import { RouterVinylAppModule } from '../router-module/router.module';
-import { BillinginformationDetailComponent } from './billinginformation-detail/billinginformation-detail.component';
 import { TarjetacreditoListComponent } from './tarjetacredito-list/tarjetacredito-list.component';
 import { TarjetaCreateComponent } from './tarjeta-create/tarjeta-create.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -21,7 +20,6 @@ import { TarjetaEditComponent } from './tarjeta-edit/tarjeta-edit.component';
   ],
   declarations: [
     BillinginformationListComponent,
-    BillinginformationDetailComponent,
     TarjetacreditoListComponent,
     TarjetaCreateComponent,
     TarjetaEditComponent

@@ -1,5 +1,5 @@
 <div class="titulo mx-auto text-center">
-  <h1 class="display-4">Pricing</h1>
+  <h1 class="display-4">Información de pago</h1>
 </div>
 <div class="container">
   <div class="card-deck mb-3 text-center">
@@ -8,7 +8,7 @@
         <h4 class="my-0 font-weight-normal">Cuenta De Ahorros</h4>
       </div>
       <div class="card-body">
-        <h1 class="">{{billingInformation.cuentaDeAhorros}}</h1>
+        <h1 class="">{{billingInformation.cuentaAhorro}}</h1>
         <ul class="list-unstyled mt-3 mb-4">
         </ul>
       </div>
@@ -28,7 +28,7 @@
         <h4 class="my-0 font-weight-normal">Recibido</h4>
       </div>
       <div class="card-body">
-        <h1 class="card-title pricing-card-title">$ {{billingInformation.received}} </h1>
+        <h1 class="card-title pricing-card-title">$ {{billingInformation.received || '0'}} </h1>
         <ul class="list-unstyled mt-3 mb-4">
         </ul>
       </div>

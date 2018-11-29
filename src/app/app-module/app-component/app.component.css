@@ -1,3 +1,21 @@
+.main-page{
+    height: 40vh;
+    margin-left: calc(100vw*2/12);
+    overflow: hidden;
+    background: url('../../../assets/bg.png');
+    background-size: cover;
+    z-index: -1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+.height-50{
+    height: 50vh !important;
+}
+
+
 .router-outlet{
     position: fixed; 
     margin-left: calc(100vw*2/12); 

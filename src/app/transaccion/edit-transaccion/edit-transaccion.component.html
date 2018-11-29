@@ -3,7 +3,17 @@
             <tr>
                     <th scope="row">Estado</th>
                     <td>{{transaccionDetail.estado}}</td>
+<td><div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text" for="estado">Estado</label>
+    </div>
 
+    <select class="custom-select-dark" id="estado" [(ngModel)]="transaccionDetail.estado" #estado="ngModel" >
+      <option value="Finalizada">Finalizada</option>
+      <option value="Peticion">Peticion</option>
+      <option value="Cancelada">Cancelada</option>
+    </select>
+  </div></td>
 
 
                 </tr>
@@ -14,17 +24,7 @@
         
     </tbody>
 </table>
-<div class="input-group mb-3">
-    <div class="input-group-prepend">
-      <label class="input-group-text" for="estado">Estado</label>
-    </div>
 
-    <select class="custom-select-dark" id="estado" [(ngModel)]="transaccionDetail.estado" #estado="ngModel" >
-      <option value="Finalizada">Finalizada</option>
-      <option value="Peticion">Peticion</option>
-      <option value="Cancelada">Cancelada</option>
-    </select>
-  </div>
 
 <div class="container">
 <button class="button-light save" (click)="actualizar1()">Aceptar</button>

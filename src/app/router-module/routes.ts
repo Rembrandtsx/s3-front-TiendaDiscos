@@ -15,8 +15,7 @@ import { LoggedGuard } from '../UsuariosModule/guards/logged.guard';
 import { LoginComponent } from '../app-utils-module/login/login.component';
 import { RegisterComponent } from '../app-utils-module/register/register.component';
 import { ComentarioListComponent } from '../comentario/comentario-list/comentario-list.component';
-import { WishListListComponent } from '../wishList/wishList-list/wishList-list.component';
-import { WishListDetailComponent } from '../wishList/wishList-detail/wishList-detail.component';
+import { WishListDetailComponent } from '../wishList/wishlist-detail/wishlist-detail.component';
 import { CancionesComponent } from '../canciones/canciones-list/canciones.component';
 import { ViniloComponent } from '../vinilo/vinilo-detail/vinilo.component';
 import { UsuarioComponent } from '../UsuariosModule/usuario-detail/usuario.component';
@@ -34,25 +33,23 @@ export const routes : Routes = [
      { path: 'carrito-compras',component: CarritoComprasDetailComponent  , pathMatch: 'full' },
      
     { path: 'billing', component:BillinginformationListComponent , pathMatch: 'full' },
-    { path: 'vinilos' , component : ViniloListComponent, pathMatch : 'full'},
-    { path: 'viniloss' , component : ViniloListarComponent, pathMatch : 'full'},
+    { path: 'misVinilos' , component : ViniloListComponent, pathMatch : 'full'},
+    { path: 'vinilos' , component : ViniloListarComponent, pathMatch : 'full'},
     {
-      path: 'vinilos/:id', component: ViniloComponent, pathMatch:'full'
+      path: 'misVinilos/:id', component: ViniloComponent, pathMatch:'full'
     },
     {
-      path: 'viniloss/:id', component: ViniloDetailComponent, pathMatch:'full'
+      path: 'vinilos/:id', component: ViniloDetailComponent, pathMatch:'full'
     },
     { path: 'usuarios', component:UsuarioListComponent , pathMatch: 'full' },
     { path: 'me', component:UsuarioComponent, pathMatch:'full', canActivate:[AuthGuard]},
     { path: 'login', component: LoginComponent, pathMatch:'full', canActivate:[LoggedGuard]},
     { path: 'register', component: RegisterComponent, pathMatch:'full', canActivate:[LoggedGuard]},
     { path: 'comentariosCreate', component: ComentarioCreateComponent , pathMatch: 'full' },
-    { path: 'wishList', component: WishListListComponent , pathMatch: 'full' },
-    { path: 'wishListt', component: WishListDetailComponent , pathMatch: 'full' },
+    { path: 'wishList', component: WishListDetailComponent , pathMatch: 'full' },
     { path: 'transacciones', component:TransaccionListComponent , pathMatch: 'full' },
     { path: 'transacciones/:id', component: TransaccionDetailComponent  , pathMatch: 'full' },
     { path: 'comentarios', component: ComentarioListComponent , pathMatch: 'full' },
-    { path: 'wishList', component: WishListListComponent , pathMatch: 'full' },
-    { path: 'wishListt', component: WishListDetailComponent , pathMatch: 'full' },
+    { path: 'wishList', component: WishListDetailComponent , pathMatch: 'full' },
     { path:'canciones', component: CancionesComponent, pathMatch: 'full' }
   ]

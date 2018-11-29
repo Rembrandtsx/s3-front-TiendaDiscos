@@ -26,6 +26,7 @@ import { NgxPermissionsModule } from 'ngx-permissions';
 
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ViniloModule } from '../vinilo/vinilo.module';
+import { CardViniloComponent } from '../vinilo/card-vinilo/card-vinilo.component';
 
 
 
@@ -41,6 +42,7 @@ import { ViniloModule } from '../vinilo/vinilo.module';
     LimitTo,
     DropZoneComponent,
     DropZoneDirective,
+    CardViniloComponent
     
   ],
   imports: [
@@ -54,7 +56,6 @@ import { ViniloModule } from '../vinilo/vinilo.module';
     VgBufferingModule,
     NgSelectModule,
     SlickCarouselModule,
-    ViniloModule,
     NgxPermissionsModule.forRoot()
     
   ],

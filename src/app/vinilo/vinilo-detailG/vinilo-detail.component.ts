@@ -3,6 +3,7 @@ import { Vinilo } from '../vinilo';
 import { ViniloService } from '../vinilo.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import {CarritoComprasService} from '../../carrito-compras/carrito-compras.service';
+import {WishListService} from '../../wishList/wishList.service';
 
 import {ToastrService} from 'ngx-toastr';
 @Component({
@@ -14,7 +15,7 @@ import {ToastrService} from 'ngx-toastr';
 export class ViniloDetailComponent implements OnInit {
 
   constructor(private viniloService : ViniloService,
-    private carritoService : CarritoComprasService,  
+    private carritoService : CarritoComprasService,  private wishService : WishListService,
               private routes: ActivatedRoute, 
               private router : Router,
 
@@ -51,12 +52,15 @@ export class ViniloDetailComponent implements OnInit {
       (u)=>{this.e=false; u.vinilos.forEach(element => {
         if(element.id==this.vinilo.id){
           this.e=true;
+          this.toastrService.error("Vinilo ya esta agregado en el carrito", "Vinilo");
         }
       });
     if(this.e==false){
       this.carritoService.agregarViniloDeCarritoCompras(this.vinilo).subscribe();
+      this.toastrService.success("El vinilo fue agregado al carrito.", "Vinilo");
     }
-    this.agregado=true;
+    
+
 
     
     
@@ -66,7 +70,31 @@ export class ViniloDetailComponent implements OnInit {
     
 
   }
+  agregarWish(){
+    this.wishService.getWishListDetail().subscribe(
+      (u)=>{this.e=false; u.vinilos.forEach(element => {
+        if(element.id==this.vinilo.id){
+          this.e=true;
+          this.toastrService.error("Vinilo ya esta agregado en la wish list", "Vinilo");
 
+        }
+      });
+    if(this.e==false){
+      this.wishService.agregarViniloDeWishListDetail(this.vinilo).subscribe();
+      this.toastrService.success("El vinilo fue agregado a la wish list.", "Vinilo");
+    }
+    
+    
+               
+
+    
+    
+    }
+    
+    );
+    
+
+  }
 
 
   ngOnInit() {

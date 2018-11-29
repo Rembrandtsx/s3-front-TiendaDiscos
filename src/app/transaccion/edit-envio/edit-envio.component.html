@@ -1,3 +1,48 @@
-<p>
-  edit-envio works!
-</p>
+        
+        <br>
+        <table class="table table-dark">
+            <tbody>
+                    <tr>
+                            <th scope="row">Estado</th>
+                            <td>{{transaccionDetail.estado}}</td>
+                            <td><div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <label class="input-group-text" for="estado">Estado</label>
+                                </div>
+                            
+                                <select class="custom-select-dark" id="estado" [(ngModel)]="transaccionDetail.estado" #estado="ngModel" >
+                                  <option value="Finalizada">Finalizada</option>
+                                  <option value="Peticion">Peticion</option>
+                                  <option value="Cancelada">Cancelada</option>
+                                </select>
+                              </div></td>
+                        </tr>
+                <tr>
+                    <th scope="row"> Dirección Salida</th>
+                    <td>{{transaccionDetail.usuarioVendedor.direccion}}</td>
+                </tr>
+                <tr>
+                                <tr>
+                                                <th scope="row"> Ubicación actual</th>
+                                                <td>{{transaccionDetail.usuarioVendedor.direccion}}</td>
+                                                <td>
+                                                      <div class="form-group">
+                                                            <label for="direccion"><b>Direccion</b></label>
+                                                            <input type="text" name="direccion"  id="direccion" [(ngModel)]="transaccionDetail.usuarioVendedor.direccion" #direccion="ngModel">
+                                                      </div>
+                                                    
+                                                    </td>
+                                            
+                                            
+                                            </tr>
+                                            <tr>
+                                <th scope="row"> Direccion envio</th>
+                                <td>{{transaccionDetail.usuarioComprador.direccion}}</td>
+                            </tr>
+                
+            </tbody>
+        </table>
+        <div class="container">
+                <button class="button-light save" (click)="actualizar1()">Aceptar</button>
+                  <button class="button-light save" (click)="salir()">Cancelar</button>
+                  </div>
