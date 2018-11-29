@@ -1,21 +1,18 @@
-<button (click)="local()">
-    Holaaaaaaaaaaaaaa LocalStorage
-</button>
+<section style="position:absolute; width: 100%; heigth:40vh; background: var(--primary);">
 
-<ngx-slick-carousel *ngIf="vinilosRock" class="carousel" 
-                        #slickModal="slick-carousel"
-                        (init)="slickInit($event)" 
-                        [config]="slideConfig" >
-        <div ngxSlickItem *ngFor="let vinilo of vinilosRock" class="slide" >
-              <card-vinilo [vinilo]="vinilo"></card-vinilo>
-        </div>
-    </ngx-slick-carousel>
+</section>
 
-    <button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
-    <button (click)="slickModal.unslick()">unslick</button>
-
-
-
-    <div *ngFor="let vinilo of vinilosRock" style="height:10vh;">
+<ngx-slick-carousel *ngIf="vinilosRock" class="carousel" #slickModal="slick-carousel" (init)="slickInit($event)"
+    [config]="slideConfig">
+    <div ngxSlickItem *ngFor="let vinilo of vinilosRock" class="slide">
         <card-vinilo [vinilo]="vinilo"></card-vinilo>
-  </div>
+    </div>
+</ngx-slick-carousel>
+
+
+<ngx-slick-carousel *ngIf="vinilosPop" class="carousel" #slickModal="slick-carousel" (init)="slickInit($event)"
+    [config]="slideConfig">
+    <div ngxSlickItem *ngFor="let vinilo of vinilosPop" class="slide">
+        <card-vinilo [vinilo]="vinilo"></card-vinilo>
+    </div>
+</ngx-slick-carousel>
