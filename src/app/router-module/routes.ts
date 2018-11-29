@@ -30,17 +30,16 @@ import { TransaccionGeneradasListComponent } from '../carrito-compras/transaccio
 
 export const routes : Routes = [
     { path: '', component: HomeComponent, pathMatch: 'full'},
-    { path: 'map', component: SearchBarComponent, pathMatch: 'full'},
      { path: 'carrito-compras',component: CarritoComprasDetailComponent  , pathMatch: 'full' },
      
     { path: 'billing', component:BillinginformationListComponent , pathMatch: 'full' },
-    { path: 'vinilos' , component : ViniloListComponent, pathMatch : 'full'},
-    { path: 'viniloss' , component : ViniloListarComponent, pathMatch : 'full'},
+    { path: 'misVinilos' , component : ViniloListComponent, pathMatch : 'full'},
+    { path: 'vinilos' , component : ViniloListarComponent, pathMatch : 'full'},
     {
-      path: 'vinilos/:id', component: ViniloComponent, pathMatch:'full'
+      path: 'misVinilos/:id', component: ViniloComponent, pathMatch:'full'
     },
     {
-      path: 'viniloss/:id', component: ViniloDetailComponent, pathMatch:'full'
+      path: 'vinilos/:id', component: ViniloDetailComponent, pathMatch:'full'
     },
     { path: 'usuarios', component:UsuarioListComponent , pathMatch: 'full' },
     { path: 'me', component:UsuarioComponent, pathMatch:'full', canActivate:[AuthGuard]},
