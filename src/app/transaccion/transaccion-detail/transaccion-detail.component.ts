@@ -20,6 +20,11 @@ export class TransaccionDetailComponent implements OnInit {
   editTransaccion:boolean=false;
   editEnvio:boolean=false;
   ob:Subscription;
+  showComentarios:boolean;
+  tipo : string;
+  id:number
+
+
 
   getTransaccionDetail():void{
   
@@ -30,6 +35,9 @@ export class TransaccionDetailComponent implements OnInit {
   }
   editarEnvio(){
     this.editEnvio=true;
+  }
+  showHideComentarios():void{
+    this.showComentarios = !this.showComentarios
   }
   ocultarEditT(){
     this.editTransaccion=false;
@@ -60,6 +68,9 @@ export class TransaccionDetailComponent implements OnInit {
     this.transaccionid= +this.route.snapshot.paramMap.get('id');
     this.transaccionDetail= new TransaccionDetail();
     this.getTransaccionDetail();
+    this.tipo = 'transacciones';
+    this.showComentarios =false;
+    this.id = this.transaccionid
     }else{
       this.verL();
     }
