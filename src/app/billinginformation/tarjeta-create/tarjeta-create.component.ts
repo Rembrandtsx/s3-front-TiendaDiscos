@@ -5,10 +5,11 @@ import { ActivatedRoute } from '@angular/router';
 import { BillingInformationService } from '../billinginformation.service';
 import {LoginService } from '../../UsuariosModule/services/login.service'
 import {TarjetaDeCredito } from '../tarjetadecredito'
+import IMask from 'imask';
 @Component({
     selector: 'app-tarjeta-create',
     templateUrl: './tarjeta-create.componet.html',
-    //styleUrls: ['./vinilo-create.component.css'],
+    styleUrls: ['./tarjeta-create.component.css'],
     providers: [DatePipe]
 })
 export class TarjetaCreateComponent implements OnInit {
@@ -76,5 +77,7 @@ export class TarjetaCreateComponent implements OnInit {
     */
     ngOnInit() {
         this.tarjeta = new TarjetaDeCredito();
+
+        
     }
 }

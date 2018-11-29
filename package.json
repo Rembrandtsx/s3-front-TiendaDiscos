@@ -50,6 +50,7 @@
     "agm-direction": "^0.7.5",
     "core-js": "^2.4.1",
     "firebase": "^5.5.9",
+    "imask": "^4.1.1",
     "jquery": "^3.3.1",
     "ngx-modal-dialog": "^3.0.0",
     "ngx-permissions": "^6.0.4",
