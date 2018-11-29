@@ -165,6 +165,7 @@ export class MapsComponent implements OnInit {
       ]
     }
   ];
+
   public location:Location = {
     lat: 51.678418,
     lng: 7.809007,
