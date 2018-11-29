@@ -1,7 +1,7 @@
 import { Component, OnInit,ViewContainerRef,Optional } from '@angular/core';
 import { Vinilo } from '../vinilo';
 import { ViniloService } from '../vinilo.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import {CarritoComprasService} from '../../carrito-compras/carrito-compras.service';
 import {WishListService} from '../../wishList/wishList.service';
 
@@ -20,14 +20,22 @@ export class ViniloDetailComponent implements OnInit {
               private router : Router,
 
               private toastrService: ToastrService
-  ) { }
+  ) {
+    this.navigationSubscription = this.router.events.subscribe((e: any) => {
+      if (e instanceof NavigationEnd) {
+          this.ngOnInit();
+      }
+  });
+
+
+   }
 
   vinilo : Vinilo;
   tipo : string;
   id:number;
   e:boolean;
   agregado:boolean;
-
+  navigationSubscription:any;
   showComentarios: boolean;
 
   showHideComentarios(): void {

@@ -2,7 +2,7 @@ import { Component, OnInit,ViewContainerRef,Optional } from '@angular/core';
 import { Vinilo } from '../vinilo';
 import { ViniloService } from '../vinilo.service';
 import {LoginService } from '../../UsuariosModule/services/login.service'
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 
 
 import {ToastrService} from 'ngx-toastr';
@@ -20,7 +20,16 @@ export class ViniloComponent implements OnInit {
               private router : Router,
               private service:LoginService,
               private toastrService: ToastrService
-  ) { }
+  ) { 
+ 
+        this.navigationSubscription = this.router.events.subscribe((e: any) => {
+          if (e instanceof NavigationEnd) {
+              this.ngOnInit();
+          }
+      });
+
+
+  }
 
 
   vinilo : Vinilo;

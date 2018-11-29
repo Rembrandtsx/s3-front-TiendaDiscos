@@ -40,7 +40,19 @@ export class HomeComponent implements OnInit {
     })
     
   }
-  slideConfig = {"slidesToShow": 3, "slidesToScroll": 1};
+  slideConfig = {
+  "slidesToShow": 3,
+  "slidesToScroll": 1,
+  "responsive": [
+    {
+      breakpoint: 900,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+
+      }
+    }]
+  };
   slickInit(event){
     console.log(this.vinilosRock);
   }
