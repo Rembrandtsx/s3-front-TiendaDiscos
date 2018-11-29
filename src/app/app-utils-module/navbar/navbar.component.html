@@ -10,15 +10,16 @@
                     <a class="nav-link" routerLink="/map">Publicaciones</a>
 
                     <a class="nav-link" routerLink="/transacciones">Transacciones</a>
-                    <a class="nav-link" *ngxPermissionsOnly="['USUARIO']" routerLink="/vinilos">Mis Vinilos</a>
-                    <a class="nav-link" routerLink="/viniloss">Ver Vinilos</a>
+                    
+                    <a class="nav-link" routerLink="/vinilos">Ver Vinilos</a>
                 </nav>
 
                 <nav class="nav flex-column" *ngIf="loggeado">
                     <span class="nav-link disabled">Mi Cuenta</span>
                     <a class="nav-link" routerLink="/billing">Información de pago</a>
-                    <a class="nav-link" href="#">Link</a>
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" *ngxPermissionsOnly="['USUARIO']" routerLink="/misVinilos">Mis Vinilos</a>
+                   
+                    
 
                 </nav>
 

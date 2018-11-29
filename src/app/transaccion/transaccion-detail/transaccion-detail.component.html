@@ -70,7 +70,7 @@
                 <tr>
                                 <tr>
                                                 <th scope="row"> Ubicación actual</th>
-                                                <td>{{transaccionDetail.envio.posicionActual}}</td>
+                                                <td>{{transaccionDetail.usuarioVendedor.direccion}}</td>
                                             </tr>
                                             <tr>
                                 <th scope="row"> Direccion envio</th>
@@ -80,7 +80,7 @@
             </tbody>
         </table>
         <br>
-        <app-maps [direccionSalida]="transaccionDetail.envio.posicionActual" [direccionLlegada]="transaccionDetail.usuarioComprador.direccion"></app-maps>
+        <app-maps *ngIf="transaccionDetail.usuarioVendedor.direccion" [direccionSalida]="transaccionDetail.usuarioVendedor.direccion" [direccionLlegada]="transaccionDetail.usuarioComprador.direccion"></app-maps>
 
 
        
