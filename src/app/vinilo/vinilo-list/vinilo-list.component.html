@@ -1,4 +1,15 @@
+
+<div *ngIf="showCreate" style="height:100%;">
+
+        <app-vinilo-create (cancel)="showHideCreate()" (create)="ngOnInit()"   *ngIf="showCreate"></app-vinilo-create>
+</div> 
+<div class="d-flex justify-content-between" style="margin-bottom: 20px;">
+        <h4 style="color:white" class="display-4">Tus Vinilos</h4> <button type="button" class="btn"
+        (click)="showHideCreate()" style="background: var(--primary); color:white" *ngIf="!showCreate">Agregar vinilo</button>
+</div>
+
 <div class="row">
+    
     <div class="col-sm-4"  *ngFor="let vinilo of vinilos">
         
          <div class="card text-white bg-dark mb-4" routerLink="/misVinilos/{{vinilo?.id}}" style="cursor: pointer;">
@@ -15,9 +26,5 @@
 
 
 </div>
-<button [ngClass]="{ 'button-light save': !showCreate, 'button-light save': showCreate }" type="button" class="btn"
-(click)="showHideCreate()">Agregar vinilo</button>
-<div *ngIf="showCreate">
 
-<app-vinilo-create (cancel)="showHideCreate()" (create)="ngOnInit()"   *ngIf="showCreate"></app-vinilo-create>
-</div>  
+ 

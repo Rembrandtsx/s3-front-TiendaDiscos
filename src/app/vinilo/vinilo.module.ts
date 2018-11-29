@@ -15,6 +15,9 @@ import { ViniloEditComponent } from './vinilo-edit/vinilo-edit.component';
 import { ViniloListarComponent } from './vinilo-listar/vinilo-listar.component';
 import { ViniloDetailComponent } from './vinilo-detailG/vinilo-detail.component';
 import { CardViniloComponent } from './card-vinilo/card-vinilo.component';
+import { UtilsModule } from '../app-utils-module/utils.module';
+
+
 
 @NgModule({
   imports: [
@@ -28,6 +31,7 @@ import { CardViniloComponent } from './card-vinilo/card-vinilo.component';
     HttpClientModule,
     NgbModule,
     ReactiveFormsModule,
+    UtilsModule
   
     
     
@@ -39,7 +43,8 @@ import { CardViniloComponent } from './card-vinilo/card-vinilo.component';
     ViniloEditComponent,
     ViniloListarComponent,
     ViniloDetailComponent,
-    CardViniloComponent
+    
+    
   ],
   providers: [
     ViniloService,
@@ -56,7 +61,7 @@ import { CardViniloComponent } from './card-vinilo/card-vinilo.component';
     ViniloEditComponent,
     ViniloListarComponent,
     ViniloDetailComponent,
-    CardViniloComponent
+   
   ]
 })
 export class ViniloModule { }
