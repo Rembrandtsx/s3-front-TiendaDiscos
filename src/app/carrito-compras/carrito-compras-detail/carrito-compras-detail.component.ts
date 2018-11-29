@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input, OnChanges } from '@angular/core';
 import { CarritoComprasService} from '../carrito-compras.service'
 import { ActivatedRoute, Router, NavigationEnd} from '@angular/router'
 import { CarritoComprasDetail } from '../carrito-compras-detail';
@@ -11,15 +11,16 @@ import { ObserveOnOperator } from 'rxjs/internal/operators/observeOn';
 import { TarjetaDeCredito } from '../../billinginformation/tarjetadecredito';
 import { BillingInformation } from '../../billinginformation/billinginformation';
 import { LoginService } from '../../UsuariosModule/services/login.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'detail-carrito-compras',
   templateUrl: './carrito-compras-detail.component.html',
   styleUrls: ['./carrito-compras-detail.component.css']
 })
-export class CarritoComprasDetailComponent implements OnInit {
+export class CarritoComprasDetailComponent implements OnInit, OnChanges {
 
-  constructor (private carritoComprasService: CarritoComprasService, private router: Router, private auth: LoginService){ }
+  constructor (private carritoComprasService: CarritoComprasService, private router: Router, private auth: LoginService, private toastrService: ToastrService){ }
 
   carritoComprasid: number;
   carritoComprasDetail: CarritoComprasDetail;
@@ -138,6 +139,9 @@ export class CarritoComprasDetailComponent implements OnInit {
     });
     return rta;
   }
+ngOnChanges(){
+  this.ngOnInit();
+}
   ngOnInit() {
     if(this.auth.currentUser!=undefined){
     this.showListTrans=false;

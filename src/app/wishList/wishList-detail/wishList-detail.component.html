@@ -28,7 +28,7 @@
         <h6  style="color:#ffffff">No existen vinilos registrados en la wish list.</h6>
 </div>
 <div>
-    <list-vinilosWishListDetail [vinilos]="wishListDetail.vinilos"></list-vinilosWishListDetail>
+    <list-vinilosWishListDetail [vinilos]="wishListDetail.vinilos" (update)="ngOnChanges()"></list-vinilosWishListDetail>
 </div>
 </div>
 <div *ngIf="showOpPago">

@@ -52,12 +52,15 @@ export class ViniloDetailComponent implements OnInit {
       (u)=>{this.e=false; u.vinilos.forEach(element => {
         if(element.id==this.vinilo.id){
           this.e=true;
+          this.toastrService.error("Vinilo ya esta agregado en el carrito", "Vinilo");
         }
       });
     if(this.e==false){
       this.carritoService.agregarViniloDeCarritoCompras(this.vinilo).subscribe();
+      this.toastrService.success("El vinilo fue agregado al carrito.", "Vinilo");
     }
-    this.agregado=true;
+    
+
 
     
     
@@ -72,12 +75,17 @@ export class ViniloDetailComponent implements OnInit {
       (u)=>{this.e=false; u.vinilos.forEach(element => {
         if(element.id==this.vinilo.id){
           this.e=true;
+          this.toastrService.error("Vinilo ya esta agregado en la wish list", "Vinilo");
+
         }
       });
     if(this.e==false){
       this.wishService.agregarViniloDeWishListDetail(this.vinilo).subscribe();
+      this.toastrService.success("El vinilo fue agregado a la wish list.", "Vinilo");
     }
-    this.agregado=true;
+    
+    
+               
 
     
     

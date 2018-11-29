@@ -57,11 +57,13 @@
         <h3  style="color:#ffffff">Envio</h3>
         
         <br>
-        <table class="table table-dark">
+        <table class="table table-dark" *ngIf="editEnvio==false">
             <tbody>
                     <tr>
                             <th scope="row">Estado</th>
                             <td>{{transaccionDetail.estado}}</td>
+                            <td><button class="button-light save" (click)="editarEnvio()" >Editar</button>
+
                         </tr>
                 <tr>
                     <th scope="row"> Dirección Salida</th>
@@ -71,6 +73,8 @@
                                 <tr>
                                                 <th scope="row"> Ubicación actual</th>
                                                 <td>{{transaccionDetail.usuarioVendedor.direccion}}</td>
+                                                <td><button class="button-light save" (click)="editarEnvio()" >Editar</button>
+
                                             </tr>
                                             <tr>
                                 <th scope="row"> Direccion envio</th>
@@ -79,6 +83,9 @@
                 
             </tbody>
         </table>
+        <div *ngIf="editEnvio==true">
+                <app-edit-envio [transaccionDetail]="transaccionDetail" (update)="actualizarT()"(cancel)="ocultarEditE()"></app-edit-envio>
+        </div>
         <br>
 
         <app-maps [direccionSalida]="transaccionDetail.usuarioVendedor.direccion" [direccionLlegada]="transaccionDetail.usuarioComprador.direccion"></app-maps>
