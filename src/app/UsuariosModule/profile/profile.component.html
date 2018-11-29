@@ -1,0 +1,35 @@
+<div class="contenedor">
+        <div class="fila">
+          <img [src]="usuario.imagen" alt="">
+          <div class="textos">
+              <div class="d-flex justify-content-between">
+                  <h2>{{usuario.nombre}}</h2>
+                  <span style="max-height: 1.5em" [className]="usuario.rol === 'ADMIN' ? 'badge badge-warning' : 'badge badge-light black'">{{usuario.rol}}</span>
+              </div>
+              <div class="d-flex justify-content-between">
+                  <h4>{{usuario.username}}</h4>
+              </div>
+          </div>
+        </div>
+      
+        <table class="table table-dark">
+            <tbody>
+              <tr>
+                <td>Calificación</td>
+                <td><ngb-rating style="color:var(--primary);" [(rate)]="usuario.calificacion" max="5"  [readonly]="true"></ngb-rating></td>
+              </tr>
+              <tr>
+                <td>Email</td>
+                <td>{{usuario.email}}</td>
+              </tr>
+            </tbody>
+          </table>
+      
+          <h3>Dirección:</h3>
+          <app-maps [direccionLlegada]="usuario.direccion"></app-maps>
+      
+      
+      </div>
+      
+              
+      

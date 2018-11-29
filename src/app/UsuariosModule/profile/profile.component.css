@@ -1,0 +1,25 @@
+*{
+    color: white;
+  }
+  span.admin{
+    color: blue;
+  }
+  span.user{
+    color: green;
+  }
+  span.black{
+    color: #000;
+  }
+  img{
+    max-width: 40%;
+    height:auto;
+    margin-right: 3vw;
+  }
+  .fila{
+    display: flex;
+    max-height: 40vh;
+    margin-bottom: 20px;
+  }
+  .d-flex{
+    margin-bottom: 20px;
+  }

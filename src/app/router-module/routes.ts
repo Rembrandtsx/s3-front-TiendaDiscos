@@ -15,7 +15,7 @@ import { LoggedGuard } from '../UsuariosModule/guards/logged.guard';
 import { LoginComponent } from '../app-utils-module/login/login.component';
 import { RegisterComponent } from '../app-utils-module/register/register.component';
 import { ComentarioListComponent } from '../comentario/comentario-list/comentario-list.component';
-import { WishListDetailComponent } from '../wishList/wishlist-detail/wishlist-detail.component';
+
 import { CancionesComponent } from '../canciones/canciones-list/canciones.component';
 import { ViniloComponent } from '../vinilo/vinilo-detail/vinilo.component';
 import { UsuarioComponent } from '../UsuariosModule/usuario-detail/usuario.component';
@@ -23,6 +23,10 @@ import { ComentarioCreateComponent } from '../comentario/comentario-create/comen
 import { ViniloListarComponent } from '../vinilo/vinilo-listar/vinilo-listar.component';
 import { ViniloDetailComponent } from '../vinilo/vinilo-detailG/vinilo-detail.component';
 import { TransaccionGeneradasListComponent } from '../carrito-compras/transaccion-list/transaccion-list.component';
+import { WishListDetailComponent } from '../wishList/wishList-detail/wishList-detail.component';
+import { componentFactoryName } from '@angular/compiler';
+import { ProfileComponent } from '../UsuariosModule/profile/profile.component';
+import { ProfileListComponent } from '../UsuariosModule/profiles/profile-list.component';
 
 
 
@@ -51,5 +55,8 @@ export const routes : Routes = [
     { path: 'transacciones/:id', component: TransaccionDetailComponent  , pathMatch: 'full' },
     { path: 'comentarios', component: ComentarioListComponent , pathMatch: 'full' },
     { path: 'wishList', component: WishListDetailComponent , pathMatch: 'full' },
-    { path:'canciones', component: CancionesComponent, pathMatch: 'full' }
+    { path:'canciones', component: CancionesComponent, pathMatch: 'full' },
+    { path: 'profiles', component:ProfileListComponent, pathMatch:'full'},
+    { path: 'profiles/:id', component:ProfileComponent, pathMatch:'full'}
+
   ]

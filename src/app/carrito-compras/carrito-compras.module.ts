@@ -21,6 +21,6 @@ import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
   ],
   declarations: [CarritoComprasDetailComponent,ViniloListComponent, TransaccionGeneradasListComponent, MapsComponent ],
   providers:[CarritoComprasService,GoogleMapsAPIWrapper],
-  exports: [ CarritoComprasDetailComponent, ViniloListComponent, TransaccionGeneradasListComponent]
+  exports: [ CarritoComprasDetailComponent, ViniloListComponent, TransaccionGeneradasListComponent, MapsComponent]
 })
 export class CarritoComprasModule { }

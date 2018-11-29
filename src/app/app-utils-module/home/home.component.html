@@ -10,7 +10,7 @@
 <h3 *ngIf="vinilosPop?.length >0">Pop</h3>
 <ngx-slick-carousel *ngIf="vinilosPop?.length >0" class="carousel" #slickModal="slick-carousel" (init)="slickInit($event)"
     [config]="slideConfig">
-    <div ngxSlickItem *ngFor="let vinilo of vinilosPop" class="slide">
-        <card-vinilo [vinilo]="vinilo"></card-vinilo>
+    <div ngxSlickItem *ngFor="let vinilo of vinilosPop" class="slide" style="margin: 0 27px;">
+        <card-vinilo [vinilo]="vinilo" ></card-vinilo>
     </div>
 </ngx-slick-carousel>

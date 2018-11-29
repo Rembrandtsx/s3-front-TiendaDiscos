@@ -5,6 +5,7 @@ import { TransaccionDetail } from '../transaccion-detail';
 import { Vinilo } from '../../vinilo/vinilo';
 import { LoginService } from '../../UsuariosModule/services/login.service';
 import { Observable, Subscription } from 'rxjs';
+import { Transaccion } from '../transaccion';
 @Component({
   selector: 'detail-transaccion',
   templateUrl: './transaccion-detail.component.html',
@@ -15,8 +16,8 @@ export class TransaccionDetailComponent implements OnInit {
   constructor (private transaccionService: TransaccionService,  private router: Router,private route: ActivatedRoute,  private auth: LoginService){ }
 
   transaccionid: number;
-  transaccionDetail: TransaccionDetail;
-  transaccionT: TransaccionDetail;
+  transaccionDetail: Transaccion;
+  transaccionT: Transaccion;
   editTransaccion:boolean=false;
   editEnvio:boolean=false;
   ob:Subscription;

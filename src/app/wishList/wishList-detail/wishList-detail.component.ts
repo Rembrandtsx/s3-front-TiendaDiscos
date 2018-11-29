@@ -1,7 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
-import { WishListService} from '../wishList.service'
+
 import { ActivatedRoute, Router, NavigationEnd} from '@angular/router'
-import { WishListDetail } from '../wishListdetail';
+
 import { Vinilo } from '../../vinilo/vinilo';
 import { TransaccionDetail } from '../../transaccion/transaccion-detail';
 import { Usuario } from '../../UsuariosModule/interfaces/usuario';
@@ -11,6 +11,8 @@ import { ObserveOnOperator } from 'rxjs/internal/operators/observeOn';
 import { TarjetaDeCredito } from '../../billinginformation/tarjetadecredito';
 import { BillingInformation } from '../../billinginformation/billinginformation';
 import { LoginService } from '../../UsuariosModule/services/login.service';
+import { WishListService } from '../wishList.service';
+import { WishListDetail } from '../wishListdetail';
 
 @Component({
   selector: 'detail-WishList',

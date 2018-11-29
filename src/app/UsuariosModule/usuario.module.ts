@@ -7,15 +7,30 @@ import { LoginService } from "./services/login.service";
 import { AuthGuard } from "./guards/auth.guard";
 import { LoggedGuard } from "./guards/logged.guard";
 import { UsuarioComponent } from "./usuario-detail/usuario.component";
+import { CarritoComprasModule } from "../carrito-compras/carrito-compras.module";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { ProfileComponent } from "./profile/profile.component";
+import { ProfileListComponent } from "./profiles/profile-list.component";
+import { RouterVinylAppModule } from "../router-module/router.module";
+import { RouterModule } from "@angular/router";
+
+
 
 @NgModule({
     imports:[
         HttpClientModule,
-        CommonModule
+        CommonModule,
+        CarritoComprasModule,
+        NgbModule,
+        RouterVinylAppModule,
+        RouterModule
     ],
     declarations:[
         UsuarioListComponent,
-        UsuarioComponent
+        UsuarioComponent,
+        ProfileComponent,
+        ProfileListComponent
+        
     ],
     providers:[
         UsuarioService,
@@ -25,7 +40,9 @@ import { UsuarioComponent } from "./usuario-detail/usuario.component";
     ],
     exports:[
         UsuarioListComponent,
-        UsuarioComponent
+        UsuarioComponent,
+        ProfileComponent,
+        ProfileListComponent
     ]
 })
 export class UsuarioModule{

@@ -1,0 +1,13 @@
+<div class="d-flex" style="flex-wrap: wrap; z-index: -1;">
+        <figure class="snip1336" *ngFor="let usu of usuarios" routerLink="/profiles/{{usu.id}}">
+            <img src="https://picsum.photos/400/400/?random" alt="sample69" />
+            <figcaption>
+                <div class="profile" style="overflow: hidden;">
+                        <img [src]="usu.imagen" alt="profile-sample5"  />
+                </div>
+              
+              <h2>{{usunombre}}<span>{{usu.username}}</span></h2>
+              <span style="max-height: 1.5em" [className]="usu.rol === 'ADMIN' ? 'badge badge-warning' : 'badge badge-light black'">{{usu.rol}}</span>
+            </figcaption>
+          </figure>
+</div>

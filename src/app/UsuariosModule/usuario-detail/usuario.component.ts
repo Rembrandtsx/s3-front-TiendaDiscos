@@ -9,14 +9,14 @@ import { LoginService } from "../services/login.service";
 })
 export class UsuarioComponent implements OnInit{
     
-    usuarios:Usuario;
+    usuario :Usuario;
 
     constructor(public usuarioService:UsuarioService, public login : LoginService){
 
     }
 
     ngOnInit(){
-        
+        this.usuario = this.login.currentUser;
     }
   
 }
