@@ -3,6 +3,7 @@ import {  HttpClientModule, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { BillingInformation } from './billinginformation';
 import { environment } from '../../environments/environment.prod';
+import { LoginService } from '../UsuariosModule/services/login.service';
 
 
 /**
@@ -20,18 +21,15 @@ export class BillingInformationService {
      * Constructor del servicio
      * @param http -Requerido para pedir en la peticion de una lista de BillingInformation
      */
-    constructor(private http: HttpClient ){ }
+    constructor(private http: HttpClient, private loginService:LoginService ){ }
 
     /**
      * Obtiene todos los BillingInformation, que en este caso solo es uno
      */
-    getBillingsInformation(): Observable<BillingInformation[]>{
-        return this.http.get<BillingInformation[]>(API_URL);
+    getBillingInformation(): Observable<BillingInformation>{
+        return this.http.get<BillingInformation>(API_URL+`usuarios/${this.loginService.currentUser.id}/billing`);
     }
 
-    getBillingInformationDetail(): Observable<BillingInformation> {
-        return this.http.get<BillingInformation>(API_URL);
-    }
     postBillingInformation(billing:BillingInformation, usuarioId:number): Observable<BillingInformation>{
         return this.http.post<BillingInformation>(API_URL+`usuarios/${usuarioId}/billing`,billing)
     }

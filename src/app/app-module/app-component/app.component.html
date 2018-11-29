@@ -2,7 +2,7 @@
 
 
 <app-searchbar></app-searchbar>
-<app-navbar></app-navbar>
+<app-navbar style="z-index: 999;"></app-navbar>
 <div style="height: 10vh;"></div>
 <div class="menu menu-responsive" *ngIf="overlay.menuToogle">
     <div class="usuario">
@@ -30,7 +30,11 @@
     </div>
 
 </div>
-<div class="container-fluid router-outlet" >
+<div class="main-page" *ngIf="currentPage">
+        
+</div>
+
+<div class="container-fluid router-outlet"  >
     <div class="row">
         <div class="col-10">
             <router-outlet></router-outlet>
