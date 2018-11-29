@@ -1,24 +1,37 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input, OnChanges, Output, EventEmitter } from '@angular/core';
 import { Vinilo } from '../../vinilo/vinilo';
 import { ViniloService } from '../../vinilo/vinilo.service';
+import { Router } from '@angular/router';
+import { WishListService } from '../wishList.service';
 
 @Component({
-  selector: 'list-vinilosWishList',
+  selector: 'list-vinilosWishListDetail',
   templateUrl: './vinilo-list.component.html',
   styleUrls: [ './vinilo-list.component.css']
 })
-export class ViniloListComponent implements OnInit {
+export class ViniloListComponent implements OnInit, OnChanges {
 
-  constructor(private viniloService: ViniloService) { }
+  constructor(private wishListDetailService: WishListService, private router: Router) { }
 
   @Input() vinilos: Vinilo[];
- 
-  getVinilos(): void {
-    this.viniloService.getVinilosUsuario(1).subscribe(vinilos => this.vinilos = vinilos)
-  }
+  @Output() update = new EventEmitter();
 
+eliminarDelWishListDetail(vinilo: Vinilo){
+  
+this.wishListDetailService.eliminarViniloDeWishListDetail(vinilo.id).subscribe(()=>{this.ngOnChanges();});
+this.update.emit();
+
+this.ngOnInit();
+}
   ngOnInit() {
-    this.getVinilos();
+    this.wishListDetailService.getWishListDetail().subscribe((u)=>{ this.vinilos=u.vinilos; });
+
+  }
+  verVinilo(id:number){
+    this.router.navigate(["/viniloss/"+id]);
+  }
+  ngOnChanges() {
+   this.ngOnInit();
   }
 
 }

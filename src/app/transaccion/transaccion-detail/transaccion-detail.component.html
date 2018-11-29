@@ -80,7 +80,9 @@
             </tbody>
         </table>
         <br>
-        <app-maps *ngIf="transaccionDetail.usuarioVendedor.direccion" [direccionSalida]="transaccionDetail.usuarioVendedor.direccion" [direccionLlegada]="transaccionDetail.usuarioComprador.direccion"></app-maps>
+
+        <app-maps [direccionSalida]="transaccionDetail.usuarioVendedor.direccion" [direccionLlegada]="transaccionDetail.usuarioComprador.direccion"></app-maps>
+
 
 
        
