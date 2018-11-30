@@ -47,10 +47,10 @@ export class RegisterComponent implements OnInit{
             this.registerService.crearUsuario(this.usuario).subscribe(usuario=>{
                 this.usuario= usuario;
                 
-                this.billingService.postBillingInformation(this.billing,this.usuario.id).subscribe();
+                this.billingService.postBillingInformation(this.billing,usuario.id).subscribe();
                 let objeto= {totalCost:0}
-                this.wishListService.postWishList(objeto as WishList, this.usuario.id).subscribe();
-                this.carritoComprasService.postCarritoCompras(objeto as CarritoCompras,this.usuario.id).subscribe();
+                this.wishListService.postWishList(objeto as WishList,usuario.id).subscribe();
+                this.carritoComprasService.postCarritoCompras(objeto as CarritoCompras,usuario.id).subscribe();
                 
                 this.toastrService.success("El usuario fue creado", "Usuario creado")
                 this.loginService.login(this.usuario.email, this.usuario.contrasenha);
